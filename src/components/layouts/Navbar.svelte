@@ -1,10 +1,10 @@
 <script>
-	// your script goes here
+	export let navWidth;
 </script>
 
 <style type="text/sass">
   .nav-wrapper
-    width: 60px
+    width: var(--width)
     height: 100%
     background: blue
     flex-shrink: 0
@@ -13,4 +13,4 @@
 
 </style>
 
-<div class="nav-wrapper" />
+<div class="nav-wrapper" style="--width: {navWidth}px" />

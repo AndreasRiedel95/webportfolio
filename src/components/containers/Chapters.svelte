@@ -3,6 +3,9 @@
 	const dispatch = createEventDispatcher();
 
 	export let templates;
+	export let headerWidth;
+	export let navWidth;
+	export let headerTotalWidth;
 	export let locked = [];
 	let sectionWidth = [];
 	let contentWidth = [];
@@ -44,7 +47,7 @@
 
 .chapter-header-wrapper
 	background: violet
-	width: 40px
+	width: var(--headerWidth)
 	flex-shrink: 0
 	z-index: var(--i)
 
@@ -56,26 +59,28 @@
 	z-index: 0
 	align-items: center
 	padding: 40px
+	transition: transform 0.7s ease-out
 
 section
 	display: flex
 	height: 100%
 	position: absolute
 	// 60 px for navbar
-	left: calc(100vw - (4 - var(--i)) * 40px - 60px)
+	left: calc(100vw - (var(--counter) - var(--i)) * var(--headerWidth) - var(--navWidth))
 	top: 0
-	width: calc(100vw - 140px)
+	width: calc(100vw - var(--sectionWidth))
 	z-index: var(--i)
 	background: grey
 	overflow: hidden
+	transition: transform 0.7s ease-out
 </style>
 
 <div class="chapters">
 	{#each templates as template, i}
 		<section
 			bind:offsetWidth={sectionWidth[i]}
-			style="--i: {i + 1}; transform: translate3d({locked[i] && locked[i].sectionTransform * -1}px,0,0)">
-			<div class="chapter-header-wrapper">
+			style="--i: {i + 1}; --counter: {templates.length + 1}; --sectionWidth: {headerTotalWidth + headerWidth / 2}px; --headerWidth: {headerWidth}px; --navWidth: {navWidth}px; transform: translate3d({locked[i] && locked[i].sectionTransform * -1}px,0,0)">
+			<div class="chapter-header-wrapper" style="--headerWidth: {headerWidth}px">
 				<div class="new-chapter-header">{template.headline}</div>
 			</div>
 			<div

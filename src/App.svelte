@@ -1,24 +1,27 @@
 <script>
+	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import Navbar from './components/layouts/Navbar.svelte';
 	import Chapters from './components/containers/Chapters.svelte';
 	import { claim_component } from 'svelte/internal';
+
 	let maxWidth;
 	let maxScrollWidth = 0;
 	let delta;
-	let touchY = 0;
+	let touchX = 0;
+	let w;
 	let transform = 0;
 	const navWidth = 60;
 	const headerWidth = 40;
-	const mulitplicator = 10;
+	let mulitplicator = 10;
 	let lockedTemplates = [];
 	let widthCounter = 0;
 	let scrollObject = null;
+	let name = 'NOOO';
 	let templates = [
-		{ id: 'about', headline: 'A', content: 3 },
-		{ id: 'projects', headline: 'P', content: 2 },
-		{ id: 'contact', headline: 'C', content: 5 },
-		{ id: 'reader', headline: 'r', content: 3 },
+		{ id: 'about', headline: 'About', content: 3 },
+		{ id: 'projects', headline: 'Projects', content: 2 },
+		{ id: 'contact', headline: 'Contact', content: 5 },
 	];
 	const headerTotalWidth = headerWidth * templates.length;
 	let locked = templates.map((_) => ({
@@ -29,13 +32,13 @@
 		contentPreLocked: false,
 	}));
 
-	const handleTouchStart = (e) => {
-		mulitplicator = 20;
-		touchY = e.touches[0].pageY;
-	};
+	function handleTouchStart(e) {
+		mulitplicator = 50;
+		touchX = e.touches[0].pageX;
+	}
 
 	const handleTouchMove = (e) => {
-		let touchDelta = touchY - e.touches[0].pageY;
+		let touchDelta = touchX - e.touches[0].pageX;
 		if (touchDelta > 0) {
 			delta = 1;
 		} else {
@@ -83,6 +86,7 @@
 	}
 
 	$: if (scrollObject && delta && transform) {
+		w = maxWidth - headerTotalWidth - transform;
 		for (let i = 0; i < scrollObject.length; i++) {
 			if (i === 0) {
 				if (transform >= scrollObject[i].section) {
@@ -127,7 +131,7 @@
 				}
 			} else {
 				if (
-					transform >= accumulateWidth('section', i) - (maxWidth + headerTotalWidth) * (i + 1) &&
+					transform >= accumulateWidth('section', i) - (maxWidth - headerTotalWidth) * (i + 1) &&
 					locked[i - 1] &&
 					locked[i - 1].contentLocked &&
 					locked[i - 1].contentPreLocked
@@ -137,6 +141,7 @@
 				}
 				if (
 					transform < accumulateWidth('section', i) &&
+					transform >= accumulateWidth('section', i) - (maxWidth - headerTotalWidth) * (i + 1) &&
 					locked[i - 1] &&
 					locked[i - 1].contentPreLocked &&
 					!locked[i - 1].contentLocked
@@ -177,7 +182,6 @@
 					locked[i + 1] &&
 					!locked[i + 1].sectionLocked
 				) {
-					console.log('CONTENT LOCK ME');
 					locked[i].contentLocked = true;
 					locked[i].contentPreLocked = true;
 					locked[i].contentTransform = scrollObject[i].content;
@@ -187,36 +191,71 @@
 	}
 </script>
 
-<style type="text/sass">
-.wrapper
-  height: 100vh
-  background: red
-  display: flex
-  position: relative
-  overflow: hidden
+<style type="text/scss">
+	.wrapper {
+		height: 100vh;
+		display: flex;
+		position: relative;
+		overflow: hidden;
+	}
 
-.home-wrapper
-  width: calc(100vw - 180px)
-  background: green
-  flex-shrink: 0
-  display: flex
-  transition: width 0.7s ease-out
+	.home-wrapper {
+		width: calc(100vw - 180px);
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		min-width: 700px;
+		padding: 80px;
+	}
 
-.content-wrapper
-  display: flex
-  width: 100%
+	.headline {
+		font-size: 50px;
+		line-height: 1;
+		font-weight: 600;
+		&.m--bold {
+			font-weight: 800;
+			letter-spacing: 1px;
+		}
+	}
 
+	.content-wrapper {
+		display: flex;
+		width: 100%;
+	}
+
+	.sub-title {
+		margin-top: 20px;
+		line-height: 1.5;
+		font-weight: 600;
+		color: #383838;
+	}
+
+	.intro-text {
+		margin-top: auto;
+		margin-left: auto;
+		max-width: 400px;
+		width: 100%;
+		text-align: right;
+	}
 </style>
 
-<svelte:window on:wheel={handleWheel} on:touchstart={handleTouchStart} on:touchmove={handleTouchMove} />
+<svelte:body on:wheel={handleWheel} on:touchstart={handleTouchStart} on:touchmove={handleTouchMove} />
 <main class="wrapper">
-	<Navbar {navWidth} />
+	<Navbar {navWidth} {w} />
 	<div class="content-wrapper" bind:clientWidth={maxWidth}>
-		<div class="home-wrapper" style="width: {maxWidth - headerTotalWidth - transform}px">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum nisi dolorum nobis repellendus iste eaque
-			ducimus tempore esse. Dolorem iste sint ab culpa cupiditate veritatis illo maiores, quisquam modi!
+		<div class="home-wrapper" style="width: {w}px">
+			<div class="headline-wrapper">
+				<div class="headline m--bold">Don't be boring!</div>
+				<div class="headline">Let's create something</div>
+				<div class="headline">fun together!</div>
+				<div class="sub-title">Digital and Print. <br /> Creative developer from Stuttgart.</div>
+			</div>
+			<div class="intro-text">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti aut nesciunt fuga harum ut, distinctio sed
+				tenetur debitis maiores voluptas. Dolores ipsam perspiciatis obcaecati a ducimus totam. Quo, animi architecto.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+			</div>
 		</div>
-
 		<Chapters
 			{locked}
 			{templates}

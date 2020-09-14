@@ -66,9 +66,9 @@
 	flex-direction: column
 	border-right: 0px solid #EBF0F2
 	border-left: 1px solid #D2D7D9
-	transition: border-color 0.7s ease-out
+	transition: border-color 0.7s
 	&.locked
-		transition: border-color 1s ease-out
+		transition: border-color 1s
 		border-right: 1px solid #D2D7D9
 		border-left: 0px solid #EBF0F2
 
@@ -94,7 +94,6 @@
 	z-index: 0
 	align-items: center
 	padding: 40px
-	transition: transform 0.8s ease-out
 
 .project-title
 	font-family: 'Playfair Display', serif
@@ -132,7 +131,6 @@ section
 	z-index: var(--i)
 	background: #EBF0F2
 	overflow: hidden
-	transition: transform 0.7s ease-out
 </style>
 
 <div class="chapters">

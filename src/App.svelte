@@ -10,10 +10,15 @@
 	let delta;
 	let touchX = 0;
 	let w;
-	let transform = 0;
+	let trPrev = 0;
+	let currentScroll = 0;
+	let scrollMin = 0;
+	let scrollLerpAmt = 1;
+	let scrollAmt = 1.1;
+	let scrollMultiplierFF = 30;
 	const navWidth = 60;
 	const headerWidth = 40;
-	let mulitplicator = 10;
+	let mulitplicator = 1;
 	let lockedTemplates = [];
 	let widthCounter = 0;
 	let scrollObject = null;
@@ -32,37 +37,32 @@
 		contentPreLocked: false,
 	}));
 
-	function handleTouchStart(e) {
-		mulitplicator = 50;
-		touchX = e.touches[0].pageX;
-	}
-
-	const handleTouchMove = (e) => {
-		let touchDelta = touchX - e.touches[0].pageX;
-		if (touchDelta > 0) {
-			delta = 1;
-		} else {
-			delta = -1;
-		}
-		delta = delta * mulitplicator;
-		if (transform <= 0 && delta < 0) {
-			transform = 0;
-		} else if (transform >= maxScrollWidth && delta > 0) {
-			transform = maxScrollWidth;
-		} else {
-			transform = transform + delta;
-		}
+	const handleWheel = (e) => {
+		let scrollY = e.deltaY;
+		let scrollX = e.deltaX;
+		navigator.userAgent.includes('Firefox') &&
+			1 === e.deltaMode &&
+			((scrollY *= scrollMultiplierFF), (scrollX *= scrollMultiplierFF)),
+			(currentScroll += (scrollY + scrollX) * scrollAmt),
+			clampScroll();
 	};
 
-	const handleWheel = (e) => {
-		delta = mulitplicator * -1 * Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
-		if (transform <= 0 && delta < 0) {
-			transform = 0;
-		} else if (transform >= maxScrollWidth && delta > 0) {
-			transform = maxScrollWidth;
-		} else {
-			transform = transform + delta;
+	const clampScroll = () => {
+		currentScroll = Math.min(Math.max(currentScroll, scrollMin), maxScrollWidth);
+		let targetScroll = currentScroll.toFixed(2);
+		let transform = (Math.floor(100 * lerp(currentScroll, targetScroll, scrollLerpAmt)) / 100).toFixed(2);
+		if (Math.abs(targetScroll - transform) < 2) {
+			targetScroll = transform;
 		}
+		window.requestAnimationFrame(() => {
+			animate(transform);
+		});
+	};
+
+	const lerp = (value1, value2, amount) => {
+		amount = amount < 0 ? 0 : amount;
+		amount = amount > 1 ? 1 : amount;
+		return value1 + (value2 - value1) * amount;
 	};
 
 	const accumulateWidth = (param, i) => {
@@ -85,7 +85,10 @@
 		maxScrollWidth = scrollObject.reduce((acc, curr) => (acc += curr.content), 0);
 	}
 
-	$: if (scrollObject && delta && transform) {
+	const animate = (transform) => {
+		console.log(transform);
+		let tr = transform - trPrev;
+		trPrev = transform;
 		w = maxWidth - headerTotalWidth - transform;
 		for (let i = 0; i < scrollObject.length; i++) {
 			if (i === 0) {
@@ -95,8 +98,8 @@
 				}
 				if (transform < scrollObject[i].section) {
 					locked[i].sectionLocked = false;
-					locked[i].sectionTransform += delta;
-					if (locked[i].sectionTransform <= mulitplicator && delta < 0) {
+					locked[i].sectionTransform += tr;
+					if (locked[i].sectionTransform < 0) {
 						locked[i].sectionTransform = 0;
 					}
 				}
@@ -107,8 +110,8 @@
 				) {
 					locked[i].contentLocked = false;
 					locked[i].contentPreLocked = false;
-					locked[i].contentTransform += delta;
-					if (locked[i].contentTransform <= mulitplicator && delta < 0) {
+					locked[i].contentTransform += tr;
+					if (locked[i].contentTransform < 0) {
 						locked[i].contentTransform = 0;
 					}
 				}
@@ -117,14 +120,16 @@
 					transform < accumulateWidth('content', i) &&
 					locked[i].sectionLocked
 				) {
+					console.log('PRELOCK');
 					locked[i].contentLocked = false;
 					locked[i].contentPreLocked = true;
-					locked[i].contentTransform += delta;
-					if (locked[i].contentTransform <= mulitplicator && delta < 0) {
+					locked[i].contentTransform += tr;
+					if (locked[i].contentTransform < 0) {
 						locked[i].contentTransform = 0;
 					}
 				}
 				if (transform >= accumulateWidth('content', i) && locked[i + 1] && !locked[i + 1].sectionLocked) {
+					console.log('LOCK');
 					locked[i].contentLocked = true;
 					locked[i].contentPreLocked = true;
 					locked[i].contentTransform = scrollObject[i].content;
@@ -136,44 +141,47 @@
 					locked[i - 1].contentLocked &&
 					locked[i - 1].contentPreLocked
 				) {
+					console.log('LOCK SECTION');
 					locked[i].sectionLocked = true;
 					locked[i].sectionTransform = scrollObject[i].section;
 				}
 				if (
-					transform < accumulateWidth('section', i) &&
+					transform <= accumulateWidth('section', i) &&
 					transform >= accumulateWidth('section', i) - (maxWidth - headerTotalWidth) * (i + 1) &&
 					locked[i - 1] &&
 					locked[i - 1].contentPreLocked &&
 					!locked[i - 1].contentLocked
 				) {
+					console.log('TRANSFORM SECTION');
 					locked[i].sectionLocked = false;
-					locked[i].sectionTransform += delta;
-					if (locked[i].sectionTransform <= mulitplicator && delta < 0) {
+					locked[i].sectionTransform += tr;
+					if (locked[i].sectionTransform < 0) {
 						locked[i].sectionTransform = 0;
 					}
 				}
 				if (
+					//Todo check if locked.i content is in width of element
 					transform < accumulateWidth('content', i) &&
 					transform < accumulateWidth('content', i) - (maxWidth - headerTotalWidth) * (i + 1) &&
 					locked[i].sectionLocked
 				) {
 					locked[i].contentLocked = false;
 					locked[i].contentPreLocked = false;
-					locked[i].contentTransform += delta;
-					if (locked[i].contentTransform <= mulitplicator && delta < 0) {
+					locked[i].contentTransform += tr;
+					if (locked[i].contentTransform < 0) {
 						locked[i].contentTransform = 0;
 					}
 				}
 				if (
 					transform > accumulateWidth('content', i) - (maxWidth - headerTotalWidth) * (i + 1) &&
 					transform < accumulateWidth('content', i) &&
-					transform < accumulateWidth('content', i) - (maxWidth - headerTotalWidth) * i &&
+					transform < accumulateWidth('content', i) + (maxWidth - headerTotalWidth) * i &&
 					locked[i].sectionLocked
 				) {
 					locked[i].contentLocked = false;
 					locked[i].contentPreLocked = true;
-					locked[i].contentTransform += delta;
-					if (locked[i].contentTransform <= mulitplicator && delta < 0) {
+					locked[i].contentTransform += tr;
+					if (locked[i].contentTransform < 0) {
 						locked[i].contentTransform = 0;
 					}
 				}
@@ -188,7 +196,7 @@
 				}
 			}
 		}
-	}
+	};
 </script>
 
 <style type="text/scss">
@@ -239,7 +247,7 @@
 	}
 </style>
 
-<svelte:body on:wheel={handleWheel} on:touchstart={handleTouchStart} on:touchmove={handleTouchMove} />
+<svelte:body on:wheel={handleWheel} />
 <main class="wrapper">
 	<Navbar {navWidth} {w} />
 	<div class="content-wrapper" bind:clientWidth={maxWidth}>

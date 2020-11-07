@@ -1,0 +1,15 @@
+body {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+  background-color: #111;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}

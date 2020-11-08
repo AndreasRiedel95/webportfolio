@@ -31,7 +31,6 @@
     &__item {
       display: flex;
       flex-shrink: 0;
-      font-size: 13px;
       white-space: nowrap;
     }
     &__link {
@@ -43,7 +42,9 @@
       font-size: 13px;
       line-height: 1.5;
       overflow: hidden;
-
+      @media screen and (max-width: 500px) {
+        font-size: 17px;
+      }
       &-mask {
         position: absolute;
         top: 0;
@@ -55,7 +56,6 @@
         transform: translate3d(-100%, 0, 0);
         transition: transform 0.75s ease;
         z-index: 2;
-
         span {
           display: block;
           padding: 0 1.5vw;
@@ -63,7 +63,9 @@
           transform: translate3d(100%, 0, 0);
           transition: transform 0.75s ease;
           color: #fff;
-
+          @media screen and (max-width: 500px) {
+            font-size: 17px;
+          }
           .filter__link:hover &,
           .filter__link.is-active & {
             transform: translate3d(0, 0, 0);

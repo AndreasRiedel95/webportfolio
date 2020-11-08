@@ -97,6 +97,7 @@
   let scrollY = 0;
   let scrollContent = [];
   let scrollHandle;
+  let scrollEle;
   let bounce = 0;
   let skew = 0;
   let scale = 0;
@@ -185,8 +186,6 @@
         }
         return accu;
       }, []);
-
-      console.log('filtertemplates', filteredTemplates);
     }, 1500);
   };
 
@@ -370,9 +369,7 @@
     let alignment = 'flex-start';
     if (i % 2 === 0) {
       alignment = 'center';
-    }
-
-    if (i % 3 === 0) {
+    } else if (i % 3 === 0) {
       alignment = 'flex-end';
     }
 
@@ -407,6 +404,7 @@
   const on = () => {
     setBounds(slideArrays[0]);
     setBounds(slideArrays[1]);
+    setStyles();
     customRequestAnimationFrame();
   };
 
@@ -454,6 +452,16 @@
     setBounds(slideArrays[0]);
     setBounds(slideArrays[1]);
     resetScroll();
+    setStyles();
+  };
+
+  const setStyles = () => {
+    scrollEle.style.position = 'fixed';
+    scrollEle.style.top = 0;
+    scrollEle.style.left = 0;
+    scrollEle.style.height = '100%';
+    scrollEle.style.width = '100%';
+    scrollEle.style.overflow = 'hidden';
   };
 
   const preload = () => {
@@ -465,7 +473,6 @@
 
   const run = () => {
     skew = 0;
-    console.log(data.current);
     data.last.one = math.lerp(data.last.one, data.current, 0.085);
     data.last.one = Math.floor(data.last.one * 100) / 100;
 
@@ -494,7 +501,7 @@
       w = w + bounds.width;
       bounds.width = w;
       bounds.max = bounds.width - windowWidth;
-      if (data.total === index && elems === slideArrays[0]) {
+      if (slideArrays[0].length - 1 === index && elems === slideArrays[0]) {
         scrollContentWidth = w;
         document.body.style.height = `${w}px`;
       }
@@ -527,7 +534,7 @@
     display: flex;
     white-space: nowrap;
     position: relative;
-    height: 100vh;
+    height: 100%;
     pointer-events: inherit;
     &--last {
       pointer-events: none;
@@ -552,51 +559,10 @@
       font-family: 'Domine', serif;
       color: #fff;
       letter-spacing: 1.1;
-    }
-  }
-
-  .menu-btn {
-    position: fixed;
-    top: 2vw;
-    right: 2vw;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    z-index: 999;
-
-    &__circles {
-      position: relative;
-      height: 0.45vw;
-      width: 0.45vw;
-      margin-right: 0.75vw;
-    }
-
-    &__circle {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      border-radius: 50%;
-
-      &--top {
-        visiblity: hidden;
-        opacity: 0;
+      @media screen and (max-width: 800px) {
+        font-size: 20px;
       }
     }
-
-    &__text {
-      color: #fff;
-      font-size: 1vw;
-    }
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   .scrollbar {
@@ -606,7 +572,6 @@
     right: 20%;
     height: 1px;
     background-color: rgba(#fff, 0.25);
-
     &__handle {
       position: absolute;
       top: 0;
@@ -630,19 +595,16 @@
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
-
     &__slice {
       flex: 1;
       background-color: #000;
     }
-
     &__inner {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
     }
-
     &-line {
       position: relative;
       transform-origin: left;
@@ -652,7 +614,6 @@
       background-color: rgba(#fff, 0.25);
       visibility: hidden;
       opacity: 0;
-
       &__inner {
         position: absolute;
         top: 0;
@@ -672,13 +633,10 @@
   bind:scrollY
   on:resize={resize}
   on:scroll={handleScroll}
-  on:touchstart={(e) => handleTouchDown(e)}
-  on:touchmove={(e) => handleTouchMove(e)}
-  on:touchend={(e) => handleMouseUp(e)}
   on:mousemove={(e) => handleMouseMove(e)}
   on:mousedown={(e) => handleMouseDown(e)}
   on:mouseup={(e) => handleMouseUp(e)} />
-<div class="scroll">
+<div class="scroll" bind:this={scrollEle}>
   <Navigation on:handleItemClick={(e) => filterTemplates(e)} />
   <div
     class="scroll-content"

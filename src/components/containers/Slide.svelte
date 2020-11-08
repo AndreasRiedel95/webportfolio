@@ -38,17 +38,28 @@
     padding: 20vh 0;
     pointer-events: none;
     align-items: var(--alignment);
+    @media screen and (max-width: 800px) {
+      width: 80vw;
+      padding: 35vw 0;
+    }
     &--image {
       pointer-events: inherit;
     }
     &:last-child {
-      width: 65vw;
-      padding-right: 10vw;
+      width: 70vw;
+      padding-right: 15vw;
+      @media screen and (max-width: 800px) {
+        width: 180vw;
+        padding-right: 100vw;
+      }
     }
     &__inner {
       position: relative;
       padding-left: 20vw;
       width: 100%;
+      @media screen and (max-width: 800px) {
+        padding-left: 15vw;
+      }
     }
     &__projectnr {
       z-index: -1;
@@ -66,6 +77,9 @@
       top: 4%;
       font-size: 12px;
       left: 7.5vw;
+      @media screen and (max-width: 800px) {
+        top: 8%;
+      }
     }
     &__title {
       position: absolute;
@@ -78,6 +92,10 @@
       line-height: 1.2;
       font-family: 'Montserrat', sans-serif;
       overflow: hidden;
+      @media screen and (max-width: 800px) {
+        font-size: 35px;
+        top: 15%;
+      }
     }
     &__project {
       color: #fff;
@@ -92,6 +110,9 @@
       overflow: hidden;
       padding-top: 65%;
       width: 100%;
+      @media screen and (max-width: 500px) {
+        padding-top: 65%;
+      }
       figure {
         position: absolute;
         top: 0;

@@ -5615,7 +5615,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (71:4) {#each linkItems as item, i}
+    // (76:4) {#each linkItems as item, i}
     function create_each_block(ctx) {
     	let li;
     	let a;
@@ -5644,17 +5644,17 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(span, "class", "svelte-1e8i39g");
-    			add_location(span, file, 73, 53, 2103);
-    			attr_dev(div, "class", "filter__link-mask svelte-1e8i39g");
+    			attr_dev(span, "class", "svelte-1h4p5tp");
+    			add_location(span, file, 78, 53, 2292);
+    			attr_dev(div, "class", "filter__link-mask svelte-1h4p5tp");
     			attr_dev(div, "area-hidden", "");
-    			add_location(div, file, 73, 10, 2060);
+    			add_location(div, file, 78, 10, 2249);
     			attr_dev(a, "href", "#");
-    			attr_dev(a, "class", "filter__link svelte-1e8i39g");
+    			attr_dev(a, "class", "filter__link svelte-1h4p5tp");
     			toggle_class(a, "is-active", /*i*/ ctx[7] === /*isActive*/ ctx[0]);
-    			add_location(a, file, 72, 8, 1941);
-    			attr_dev(li, "class", "filter__item svelte-1e8i39g");
-    			add_location(li, file, 71, 6, 1907);
+    			add_location(a, file, 77, 8, 2130);
+    			attr_dev(li, "class", "filter__item svelte-1h4p5tp");
+    			add_location(li, file, 76, 6, 2096);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5689,7 +5689,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(71:4) {#each linkItems as item, i}",
+    		source: "(76:4) {#each linkItems as item, i}",
     		ctx
     	});
 
@@ -5716,10 +5716,10 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(ul, "class", "filter__list svelte-1e8i39g");
-    			add_location(ul, file, 69, 2, 1842);
-    			attr_dev(nav, "class", "filter svelte-1e8i39g");
-    			add_location(nav, file, 68, 0, 1819);
+    			attr_dev(ul, "class", "filter__list svelte-1h4p5tp");
+    			add_location(ul, file, 74, 2, 2031);
+    			attr_dev(nav, "class", "filter svelte-1h4p5tp");
+    			add_location(nav, file, 73, 0, 2008);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6339,7 +6339,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src/components/containers/Slide.svelte";
 
-    // (115:0) {:else}
+    // (136:0) {:else}
     function create_else_block(ctx) {
     	let article;
     	let div5;
@@ -6378,23 +6378,23 @@ var app = (function () {
     			t7 = space();
     			div4 = element("div");
     			t8 = text(/*subTitle*/ ctx[4]);
-    			attr_dev(div0, "class", "slide__type svelte-l0xiah");
-    			add_location(div0, file$1, 117, 6, 2917);
+    			attr_dev(div0, "class", "slide__type svelte-17btk4f");
+    			add_location(div0, file$1, 138, 6, 3529);
     			attr_dev(div1, "class", "js-transition-title");
-    			add_location(div1, file$1, 119, 8, 2995);
-    			attr_dev(h1, "class", "slide__title svelte-l0xiah");
-    			add_location(h1, file$1, 118, 6, 2961);
-    			attr_dev(div2, "class", "slide__projectnr svelte-l0xiah");
-    			add_location(div2, file$1, 121, 6, 3060);
-    			attr_dev(div3, "class", "slide__img slide__img--proxy svelte-l0xiah");
-    			add_location(div3, file$1, 122, 6, 3115);
-    			attr_dev(div4, "class", "slide__project svelte-l0xiah");
-    			add_location(div4, file$1, 123, 6, 3166);
-    			attr_dev(div5, "class", "slide__inner svelte-l0xiah");
-    			add_location(div5, file$1, 116, 4, 2884);
-    			attr_dev(article, "class", "slide svelte-l0xiah");
+    			add_location(div1, file$1, 140, 8, 3607);
+    			attr_dev(h1, "class", "slide__title svelte-17btk4f");
+    			add_location(h1, file$1, 139, 6, 3573);
+    			attr_dev(div2, "class", "slide__projectnr svelte-17btk4f");
+    			add_location(div2, file$1, 142, 6, 3672);
+    			attr_dev(div3, "class", "slide__img slide__img--proxy svelte-17btk4f");
+    			add_location(div3, file$1, 143, 6, 3727);
+    			attr_dev(div4, "class", "slide__project svelte-17btk4f");
+    			add_location(div4, file$1, 144, 6, 3778);
+    			attr_dev(div5, "class", "slide__inner svelte-17btk4f");
+    			add_location(div5, file$1, 137, 4, 3496);
+    			attr_dev(article, "class", "slide svelte-17btk4f");
     			set_style(article, "--alignment", /*alignment*/ ctx[1]);
-    			add_location(article, file$1, 115, 2, 2802);
+    			add_location(article, file$1, 136, 2, 3414);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, article, anchor);
@@ -6436,14 +6436,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(115:0) {:else}",
+    		source: "(136:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (107:0) {#if imageSlide}
+    // (128:0) {#if imageSlide}
     function create_if_block(ctx) {
     	let article;
     	let div1;
@@ -6463,17 +6463,17 @@ var app = (function () {
     			img = element("img");
     			if (img.src !== (img_src_value = /*imgSrc*/ ctx[6])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "draggable", "false");
-    			attr_dev(img, "class", "svelte-l0xiah");
-    			add_location(img, file$1, 110, 49, 2707);
-    			attr_dev(figure, "class", "js-transition-img__inner svelte-l0xiah");
-    			add_location(figure, file$1, 110, 8, 2666);
-    			attr_dev(div0, "class", "slide__img js-transition-img svelte-l0xiah");
-    			add_location(div0, file$1, 109, 6, 2615);
-    			attr_dev(div1, "class", "slide__inner svelte-l0xiah");
-    			add_location(div1, file$1, 108, 4, 2582);
-    			attr_dev(article, "class", "slide slide--image svelte-l0xiah");
+    			attr_dev(img, "class", "svelte-17btk4f");
+    			add_location(img, file$1, 131, 49, 3319);
+    			attr_dev(figure, "class", "js-transition-img__inner svelte-17btk4f");
+    			add_location(figure, file$1, 131, 8, 3278);
+    			attr_dev(div0, "class", "slide__img js-transition-img svelte-17btk4f");
+    			add_location(div0, file$1, 130, 6, 3227);
+    			attr_dev(div1, "class", "slide__inner svelte-17btk4f");
+    			add_location(div1, file$1, 129, 4, 3194);
+    			attr_dev(article, "class", "slide slide--image svelte-17btk4f");
     			set_style(article, "--alignment", /*alignment*/ ctx[1]);
-    			add_location(article, file$1, 107, 2, 2464);
+    			add_location(article, file$1, 128, 2, 3076);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, article, anchor);
@@ -6509,7 +6509,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(107:0) {#if imageSlide}",
+    		source: "(128:0) {#if imageSlide}",
     		ctx
     	});
 
@@ -6873,7 +6873,7 @@ var app = (function () {
 
     /* src/App.svelte generated by Svelte v3.24.1 */
 
-    const { console: console_1$1, setTimeout: setTimeout_1, window: window_1 } = globals;
+    const { setTimeout: setTimeout_1, window: window_1 } = globals;
     const file$2 = "src/App.svelte";
 
     function get_each_context$1(ctx, list, i) {
@@ -6890,7 +6890,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (657:4) {#each filteredTemplates as template, i}
+    // (630:4) {#each filteredTemplates as template, i}
     function create_each_block_1(ctx) {
     	let slide;
     	let current;
@@ -6898,7 +6898,7 @@ var app = (function () {
     	const slide_spread_levels = [
     		{ imageSlide: true },
     		{
-    			alignment: /*getSlideAlignment*/ ctx[16](/*i*/ ctx[76] + 1)
+    			alignment: /*getSlideAlignment*/ ctx[17](/*i*/ ctx[76] + 1)
     		},
     		{ projectNr: /*i*/ ctx[76] + 1 },
     		/*template*/ ctx[74]
@@ -6911,7 +6911,7 @@ var app = (function () {
     	}
 
     	slide = new Slide({ props: slide_props, $$inline: true });
-    	slide.$on("slideCreate", /*slideCreate_handler*/ ctx[34]);
+    	slide.$on("slideCreate", /*slideCreate_handler*/ ctx[30]);
 
     	const block = {
     		c: function create() {
@@ -6922,14 +6922,14 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			const slide_changes = (dirty[0] & /*getSlideAlignment, filteredTemplates*/ 66048)
+    			const slide_changes = (dirty[0] & /*getSlideAlignment, filteredTemplates*/ 132096)
     			? get_spread_update(slide_spread_levels, [
     					slide_spread_levels[0],
-    					dirty[0] & /*getSlideAlignment*/ 65536 && {
-    						alignment: /*getSlideAlignment*/ ctx[16](/*i*/ ctx[76] + 1)
+    					dirty[0] & /*getSlideAlignment*/ 131072 && {
+    						alignment: /*getSlideAlignment*/ ctx[17](/*i*/ ctx[76] + 1)
     					},
     					slide_spread_levels[2],
-    					dirty[0] & /*filteredTemplates*/ 512 && get_spread_object(/*template*/ ctx[74])
+    					dirty[0] & /*filteredTemplates*/ 1024 && get_spread_object(/*template*/ ctx[74])
     				])
     			: {};
 
@@ -6953,14 +6953,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(657:4) {#each filteredTemplates as template, i}",
+    		source: "(630:4) {#each filteredTemplates as template, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (670:4) {#each filteredTemplates as template, i}
+    // (643:4) {#each filteredTemplates as template, i}
     function create_each_block$1(ctx) {
     	let slide;
     	let current;
@@ -6968,7 +6968,7 @@ var app = (function () {
     	const slide_spread_levels = [
     		/*template*/ ctx[74],
     		{
-    			alignment: /*getSlideAlignment*/ ctx[16](/*i*/ ctx[76] + 1)
+    			alignment: /*getSlideAlignment*/ ctx[17](/*i*/ ctx[76] + 1)
     		},
     		{ projectNr: /*i*/ ctx[76] + 1 }
     	];
@@ -6980,7 +6980,7 @@ var app = (function () {
     	}
 
     	slide = new Slide({ props: slide_props, $$inline: true });
-    	slide.$on("slideCreate", /*slideCreate_handler_1*/ ctx[36]);
+    	slide.$on("slideCreate", /*slideCreate_handler_1*/ ctx[32]);
 
     	const block = {
     		c: function create() {
@@ -6991,11 +6991,11 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			const slide_changes = (dirty[0] & /*filteredTemplates, getSlideAlignment*/ 66048)
+    			const slide_changes = (dirty[0] & /*filteredTemplates, getSlideAlignment*/ 132096)
     			? get_spread_update(slide_spread_levels, [
-    					dirty[0] & /*filteredTemplates*/ 512 && get_spread_object(/*template*/ ctx[74]),
-    					dirty[0] & /*getSlideAlignment*/ 65536 && {
-    						alignment: /*getSlideAlignment*/ ctx[16](/*i*/ ctx[76] + 1)
+    					dirty[0] & /*filteredTemplates*/ 1024 && get_spread_object(/*template*/ ctx[74]),
+    					dirty[0] & /*getSlideAlignment*/ 131072 && {
+    						alignment: /*getSlideAlignment*/ ctx[17](/*i*/ ctx[76] + 1)
     					},
     					slide_spread_levels[2]
     				])
@@ -7021,7 +7021,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(670:4) {#each filteredTemplates as template, i}",
+    		source: "(643:4) {#each filteredTemplates as template, i}",
     		ctx
     	});
 
@@ -7062,11 +7062,11 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	add_render_callback(/*onwindowresize*/ ctx[31]);
-    	add_render_callback(/*onwindowscroll*/ ctx[32]);
+    	add_render_callback(/*onwindowresize*/ ctx[27]);
+    	add_render_callback(/*onwindowscroll*/ ctx[28]);
     	navigation = new Navigation({ $$inline: true });
-    	navigation.$on("handleItemClick", /*handleItemClick_handler*/ ctx[33]);
-    	let each_value_1 = /*filteredTemplates*/ ctx[9];
+    	navigation.$on("handleItemClick", /*handleItemClick_handler*/ ctx[29]);
+    	let each_value_1 = /*filteredTemplates*/ ctx[10];
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -7078,7 +7078,7 @@ var app = (function () {
     		each_blocks_1[i] = null;
     	});
 
-    	let each_value = /*filteredTemplates*/ ctx[9];
+    	let each_value = /*filteredTemplates*/ ctx[10];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -7126,40 +7126,40 @@ var app = (function () {
     			t8 = space();
     			div11 = element("div");
     			div10 = element("div");
-    			attr_dev(div0, "class", "scroll-content svelte-1m22sgu");
-    			set_style(div0, "transform", "translate3d(-" + /*data*/ ctx[10].last.one.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[6] + ") skewX(" + /*skew*/ ctx[7] + "deg)");
+    			attr_dev(div0, "class", "scroll-content svelte-dvbhoc");
+    			set_style(div0, "transform", "translate3d(-" + /*data*/ ctx[11].last.one.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[7] + ") skewX(" + /*skew*/ ctx[8] + "deg)");
     			set_style(div0, "width", /*scrollContentWidth*/ ctx[1] + "px");
-    			add_location(div0, file$2, 652, 2, 14072);
-    			attr_dev(div1, "class", "scroll-content scroll-content--last svelte-1m22sgu");
-    			set_style(div1, "transform", "translate3d(-" + /*data*/ ctx[10].last.two.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[6] + ")");
+    			add_location(div0, file$2, 625, 2, 13656);
+    			attr_dev(div1, "class", "scroll-content scroll-content--last svelte-dvbhoc");
+    			set_style(div1, "transform", "translate3d(-" + /*data*/ ctx[11].last.two.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[7] + ")");
     			set_style(div1, "width", /*scrollContentWidth*/ ctx[1] + "px");
-    			add_location(div1, file$2, 665, 2, 14531);
-    			attr_dev(div2, "class", "scrollbar__handle svelte-1m22sgu");
-    			set_style(div2, "transform", "scaleX(" + /*scale*/ ctx[8] + ")");
-    			add_location(div2, file$2, 679, 4, 15012);
-    			attr_dev(div3, "class", "scrollbar svelte-1m22sgu");
+    			add_location(div1, file$2, 638, 2, 14115);
+    			attr_dev(div2, "class", "scrollbar__handle svelte-dvbhoc");
+    			set_style(div2, "transform", "scaleX(" + /*scale*/ ctx[9] + ")");
+    			add_location(div2, file$2, 652, 4, 14596);
+    			attr_dev(div3, "class", "scrollbar svelte-dvbhoc");
     			attr_dev(div3, "data-scrollbar", "");
-    			add_location(div3, file$2, 678, 2, 14969);
-    			attr_dev(div4, "class", "scroll svelte-1m22sgu");
-    			add_location(div4, file$2, 650, 0, 13985);
-    			attr_dev(div5, "class", "mask__slice svelte-1m22sgu");
-    			add_location(div5, file$2, 684, 2, 15161);
-    			attr_dev(div6, "class", "mask__slice svelte-1m22sgu");
-    			add_location(div6, file$2, 685, 2, 15217);
-    			attr_dev(div7, "class", "mask__slice svelte-1m22sgu");
-    			add_location(div7, file$2, 686, 2, 15273);
-    			attr_dev(div8, "class", "logo--font svelte-1m22sgu");
-    			add_location(div8, file$2, 689, 6, 15395);
-    			attr_dev(div9, "class", "logo logo--mask svelte-1m22sgu");
-    			add_location(div9, file$2, 688, 4, 15359);
-    			attr_dev(div10, "class", "mask-line__inner svelte-1m22sgu");
-    			add_location(div10, file$2, 692, 6, 15527);
-    			attr_dev(div11, "class", "mask-line svelte-1m22sgu");
-    			add_location(div11, file$2, 691, 4, 15472);
-    			attr_dev(div12, "class", "mask__inner svelte-1m22sgu");
-    			add_location(div12, file$2, 687, 2, 15329);
-    			attr_dev(div13, "class", "mask svelte-1m22sgu");
-    			add_location(div13, file$2, 683, 0, 15123);
+    			add_location(div3, file$2, 651, 2, 14553);
+    			attr_dev(div4, "class", "scroll svelte-dvbhoc");
+    			add_location(div4, file$2, 623, 0, 13547);
+    			attr_dev(div5, "class", "mask__slice svelte-dvbhoc");
+    			add_location(div5, file$2, 657, 2, 14745);
+    			attr_dev(div6, "class", "mask__slice svelte-dvbhoc");
+    			add_location(div6, file$2, 658, 2, 14801);
+    			attr_dev(div7, "class", "mask__slice svelte-dvbhoc");
+    			add_location(div7, file$2, 659, 2, 14857);
+    			attr_dev(div8, "class", "logo--font svelte-dvbhoc");
+    			add_location(div8, file$2, 662, 6, 14979);
+    			attr_dev(div9, "class", "logo logo--mask svelte-dvbhoc");
+    			add_location(div9, file$2, 661, 4, 14943);
+    			attr_dev(div10, "class", "mask-line__inner svelte-dvbhoc");
+    			add_location(div10, file$2, 665, 6, 15111);
+    			attr_dev(div11, "class", "mask-line svelte-dvbhoc");
+    			add_location(div11, file$2, 664, 4, 15056);
+    			attr_dev(div12, "class", "mask__inner svelte-dvbhoc");
+    			add_location(div12, file$2, 660, 2, 14913);
+    			attr_dev(div13, "class", "mask svelte-dvbhoc");
+    			add_location(div13, file$2, 656, 0, 14707);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7174,7 +7174,7 @@ var app = (function () {
     				each_blocks_1[i].m(div0, null);
     			}
 
-    			/*div0_binding*/ ctx[35](div0);
+    			/*div0_binding*/ ctx[31](div0);
     			append_dev(div4, t1);
     			append_dev(div4, div1);
 
@@ -7182,50 +7182,48 @@ var app = (function () {
     				each_blocks[i].m(div1, null);
     			}
 
-    			/*div1_binding*/ ctx[37](div1);
+    			/*div1_binding*/ ctx[33](div1);
     			append_dev(div4, t2);
     			append_dev(div4, div3);
     			append_dev(div3, div2);
-    			/*div2_binding*/ ctx[38](div2);
+    			/*div2_binding*/ ctx[34](div2);
+    			/*div4_binding*/ ctx[35](div4);
     			insert_dev(target, t3, anchor);
     			insert_dev(target, div13, anchor);
     			append_dev(div13, div5);
-    			/*div5_binding*/ ctx[39](div5);
+    			/*div5_binding*/ ctx[36](div5);
     			append_dev(div13, t4);
     			append_dev(div13, div6);
-    			/*div6_binding*/ ctx[40](div6);
+    			/*div6_binding*/ ctx[37](div6);
     			append_dev(div13, t5);
     			append_dev(div13, div7);
-    			/*div7_binding*/ ctx[41](div7);
+    			/*div7_binding*/ ctx[38](div7);
     			append_dev(div13, t6);
     			append_dev(div13, div12);
     			append_dev(div12, div9);
     			append_dev(div9, div8);
-    			/*div8_binding*/ ctx[42](div8);
+    			/*div8_binding*/ ctx[39](div8);
     			append_dev(div12, t8);
     			append_dev(div12, div11);
     			append_dev(div11, div10);
-    			/*div10_binding*/ ctx[43](div10);
-    			/*div11_binding*/ ctx[44](div11);
-    			/*div13_binding*/ ctx[45](div13);
+    			/*div10_binding*/ ctx[40](div10);
+    			/*div11_binding*/ ctx[41](div11);
+    			/*div13_binding*/ ctx[42](div13);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(window_1, "resize", /*resize*/ ctx[24], false, false, false),
-    					listen_dev(window_1, "scroll", /*handleScroll*/ ctx[18], false, false, false),
-    					listen_dev(window_1, "touchstart", /*touchstart_handler*/ ctx[25], false, false, false),
-    					listen_dev(window_1, "touchmove", /*touchmove_handler*/ ctx[26], false, false, false),
-    					listen_dev(window_1, "touchend", /*touchend_handler*/ ctx[27], false, false, false),
-    					listen_dev(window_1, "mousemove", /*mousemove_handler*/ ctx[28], false, false, false),
-    					listen_dev(window_1, "mousedown", /*mousedown_handler*/ ctx[29], false, false, false),
-    					listen_dev(window_1, "mouseup", /*mouseup_handler*/ ctx[30], false, false, false),
-    					listen_dev(window_1, "resize", /*onwindowresize*/ ctx[31]),
+    					listen_dev(window_1, "resize", /*resize*/ ctx[23], false, false, false),
+    					listen_dev(window_1, "scroll", /*handleScroll*/ ctx[19], false, false, false),
+    					listen_dev(window_1, "mousemove", /*mousemove_handler*/ ctx[24], false, false, false),
+    					listen_dev(window_1, "mousedown", /*mousedown_handler*/ ctx[25], false, false, false),
+    					listen_dev(window_1, "mouseup", /*mouseup_handler*/ ctx[26], false, false, false),
+    					listen_dev(window_1, "resize", /*onwindowresize*/ ctx[27]),
     					listen_dev(window_1, "scroll", () => {
     						scrolling = true;
     						clearTimeout(scrolling_timeout);
     						scrolling_timeout = setTimeout_1(clear_scrolling, 100);
-    						/*onwindowscroll*/ ctx[32]();
+    						/*onwindowscroll*/ ctx[28]();
     					})
     				];
 
@@ -7240,8 +7238,8 @@ var app = (function () {
     				scrolling_timeout = setTimeout_1(clear_scrolling, 100);
     			}
 
-    			if (dirty[0] & /*getSlideAlignment, filteredTemplates, handleSlideCreate*/ 197120) {
-    				each_value_1 = /*filteredTemplates*/ ctx[9];
+    			if (dirty[0] & /*getSlideAlignment, filteredTemplates, handleSlideCreate*/ 394240) {
+    				each_value_1 = /*filteredTemplates*/ ctx[10];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -7268,16 +7266,16 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty[0] & /*data, bounce, skew*/ 1216) {
-    				set_style(div0, "transform", "translate3d(-" + /*data*/ ctx[10].last.one.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[6] + ") skewX(" + /*skew*/ ctx[7] + "deg)");
+    			if (!current || dirty[0] & /*data, bounce, skew*/ 2432) {
+    				set_style(div0, "transform", "translate3d(-" + /*data*/ ctx[11].last.one.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[7] + ") skewX(" + /*skew*/ ctx[8] + "deg)");
     			}
 
     			if (!current || dirty[0] & /*scrollContentWidth*/ 2) {
     				set_style(div0, "width", /*scrollContentWidth*/ ctx[1] + "px");
     			}
 
-    			if (dirty[0] & /*filteredTemplates, getSlideAlignment, handleSlideCreate*/ 197120) {
-    				each_value = /*filteredTemplates*/ ctx[9];
+    			if (dirty[0] & /*filteredTemplates, getSlideAlignment, handleSlideCreate*/ 394240) {
+    				each_value = /*filteredTemplates*/ ctx[10];
     				validate_each_argument(each_value);
     				let i;
 
@@ -7304,16 +7302,16 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty[0] & /*data, bounce*/ 1088) {
-    				set_style(div1, "transform", "translate3d(-" + /*data*/ ctx[10].last.two.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[6] + ")");
+    			if (!current || dirty[0] & /*data, bounce*/ 2176) {
+    				set_style(div1, "transform", "translate3d(-" + /*data*/ ctx[11].last.two.toFixed(2) + "px, 0, 0) scaleY(" + /*bounce*/ ctx[7] + ")");
     			}
 
     			if (!current || dirty[0] & /*scrollContentWidth*/ 2) {
     				set_style(div1, "width", /*scrollContentWidth*/ ctx[1] + "px");
     			}
 
-    			if (!current || dirty[0] & /*scale*/ 256) {
-    				set_style(div2, "transform", "scaleX(" + /*scale*/ ctx[8] + ")");
+    			if (!current || dirty[0] & /*scale*/ 512) {
+    				set_style(div2, "transform", "scaleX(" + /*scale*/ ctx[9] + ")");
     			}
     		},
     		i: function intro(local) {
@@ -7350,19 +7348,20 @@ var app = (function () {
     			if (detaching) detach_dev(div4);
     			destroy_component(navigation);
     			destroy_each(each_blocks_1, detaching);
-    			/*div0_binding*/ ctx[35](null);
+    			/*div0_binding*/ ctx[31](null);
     			destroy_each(each_blocks, detaching);
-    			/*div1_binding*/ ctx[37](null);
-    			/*div2_binding*/ ctx[38](null);
+    			/*div1_binding*/ ctx[33](null);
+    			/*div2_binding*/ ctx[34](null);
+    			/*div4_binding*/ ctx[35](null);
     			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(div13);
-    			/*div5_binding*/ ctx[39](null);
-    			/*div6_binding*/ ctx[40](null);
-    			/*div7_binding*/ ctx[41](null);
-    			/*div8_binding*/ ctx[42](null);
-    			/*div10_binding*/ ctx[43](null);
-    			/*div11_binding*/ ctx[44](null);
-    			/*div13_binding*/ ctx[45](null);
+    			/*div5_binding*/ ctx[36](null);
+    			/*div6_binding*/ ctx[37](null);
+    			/*div7_binding*/ ctx[38](null);
+    			/*div8_binding*/ ctx[39](null);
+    			/*div10_binding*/ ctx[40](null);
+    			/*div11_binding*/ ctx[41](null);
+    			/*div13_binding*/ ctx[42](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -7470,6 +7469,7 @@ var app = (function () {
     	let scrollY = 0;
     	let scrollContent = [];
     	let scrollHandle;
+    	let scrollEle;
     	let bounce = 0;
     	let skew = 0;
     	let scale = 0;
@@ -7545,10 +7545,10 @@ var app = (function () {
 
     		setTimeout(
     			() => {
-    				$$invalidate(47, slideArrays = [[], []]);
+    				$$invalidate(44, slideArrays = [[], []]);
     				const filter = e.detail.filter;
 
-    				$$invalidate(9, filteredTemplates = slideTemplates.reduce(
+    				$$invalidate(10, filteredTemplates = slideTemplates.reduce(
     					(accu, curr) => {
     						if (curr.filter === filter || filter === "all") {
     							curr.uuid = Date.now();
@@ -7559,8 +7559,6 @@ var app = (function () {
     					},
     					[]
     				));
-
-    				console.log("filtertemplates", filteredTemplates);
     			},
     			1500
     		);
@@ -7577,8 +7575,8 @@ var app = (function () {
     	};
 
     	const resetScroll = () => {
-    		$$invalidate(7, skew = 0);
-    		$$invalidate(10, data.current = 0, data);
+    		$$invalidate(8, skew = 0);
+    		$$invalidate(11, data.current = 0, data);
     		$$invalidate(3, scrollY = 0);
     	};
 
@@ -7608,9 +7606,7 @@ var app = (function () {
 
     		if (i % 2 === 0) {
     			alignment = "center";
-    		}
-
-    		if (i % 3 === 0) {
+    		} else if (i % 3 === 0) {
     			alignment = "flex-end";
     		}
 
@@ -7618,7 +7614,7 @@ var app = (function () {
     	};
 
     	const initScroll = () => {
-    		$$invalidate(10, data = {
+    		$$invalidate(11, data = {
     			total: slideArrays[0].length - 1,
     			current: 0,
     			last: { one: 0, two: 0 },
@@ -7633,9 +7629,9 @@ var app = (function () {
 
     	const handleSlideCreate = e => {
     		if (e.detail.cluster === 1 && e.detail.slide) {
-    			$$invalidate(47, slideArrays = [[...slideArrays[0], e.detail.slide], [...slideArrays[1]]]);
+    			$$invalidate(44, slideArrays = [[...slideArrays[0], e.detail.slide], [...slideArrays[1]]]);
     		} else if (e.detail.cluster === 2 && e.detail.slide) {
-    			$$invalidate(47, slideArrays = [[...slideArrays[0]], [...slideArrays[1], e.detail.slide]]);
+    			$$invalidate(44, slideArrays = [[...slideArrays[0]], [...slideArrays[1], e.detail.slide]]);
     		}
 
     		resize();
@@ -7644,23 +7640,24 @@ var app = (function () {
     	const on = () => {
     		setBounds(slideArrays[0]);
     		setBounds(slideArrays[1]);
+    		setStyles();
     		customRequestAnimationFrame();
     	};
 
     	const handleScroll = () => {
     		if (dragging) return;
-    		$$invalidate(10, data.current = scrollY, data);
+    		$$invalidate(11, data.current = scrollY, data);
     		clamp();
     	};
 
     	const handleMouseDown = e => {
     		dragging = true;
-    		$$invalidate(10, data.on = e.clientX, data);
+    		$$invalidate(11, data.on = e.clientX, data);
     	};
 
     	const handleTouchDown = e => {
     		dragging = true;
-    		$$invalidate(10, data.on = e.touches[0].clientX, data);
+    		$$invalidate(11, data.on = e.touches[0].clientX, data);
     	};
 
     	const handleTouchMove = e => {
@@ -7679,12 +7676,12 @@ var app = (function () {
     	};
 
     	const drag = e => {
-    		$$invalidate(10, data.current = scrollY - (e.clientX - data.on), data);
+    		$$invalidate(11, data.current = scrollY - (e.clientX - data.on), data);
     		clamp();
     	};
 
     	const touch = e => {
-    		$$invalidate(10, data.current = scrollY - (e.touches[0].clientX - data.on), data);
+    		$$invalidate(11, data.current = scrollY - (e.touches[0].clientX - data.on), data);
     		clamp();
     	};
 
@@ -7692,6 +7689,16 @@ var app = (function () {
     		setBounds(slideArrays[0]);
     		setBounds(slideArrays[1]);
     		resetScroll();
+    		setStyles();
+    	};
+
+    	const setStyles = () => {
+    		$$invalidate(6, scrollEle.style.position = "fixed", scrollEle);
+    		$$invalidate(6, scrollEle.style.top = 0, scrollEle);
+    		$$invalidate(6, scrollEle.style.left = 0, scrollEle);
+    		$$invalidate(6, scrollEle.style.height = "100%", scrollEle);
+    		$$invalidate(6, scrollEle.style.width = "100%", scrollEle);
+    		$$invalidate(6, scrollEle.style.overflow = "hidden", scrollEle);
     	};
 
     	const preload = () => {
@@ -7702,18 +7709,17 @@ var app = (function () {
     	};
 
     	const run = () => {
-    		$$invalidate(7, skew = 0);
-    		console.log(data.current);
-    		$$invalidate(10, data.last.one = math.lerp(data.last.one, data.current, 0.085), data);
-    		$$invalidate(10, data.last.one = Math.floor(data.last.one * 100) / 100, data);
-    		$$invalidate(10, data.last.two = math.lerp(data.last.two, data.current, 0.07), data);
-    		$$invalidate(10, data.last.two = Math.floor(data.last.two * 100) / 100, data);
+    		$$invalidate(8, skew = 0);
+    		$$invalidate(11, data.last.one = math.lerp(data.last.one, data.current, 0.085), data);
+    		$$invalidate(11, data.last.one = Math.floor(data.last.one * 100) / 100, data);
+    		$$invalidate(11, data.last.two = math.lerp(data.last.two, data.current, 0.07), data);
+    		$$invalidate(11, data.last.two = Math.floor(data.last.two * 100) / 100, data);
     		const diff = data.current - data.last.one;
     		const acc = diff / windowWidth;
     		const velo = +acc;
-    		$$invalidate(6, bounce = 1 - Math.abs(velo * 0.25));
-    		$$invalidate(7, skew = velo * 35);
-    		$$invalidate(8, scale = math.norm(data.last.two, 0, bounds.max));
+    		$$invalidate(7, bounce = 1 - Math.abs(velo * 0.25));
+    		$$invalidate(8, skew = velo * 35);
+    		$$invalidate(9, scale = math.norm(data.last.two, 0, bounds.max));
     		customRequestAnimationFrame();
     	};
 
@@ -7733,7 +7739,7 @@ var app = (function () {
     			bounds.width = w;
     			bounds.max = bounds.width - windowWidth;
 
-    			if (data.total === index && elems === slideArrays[0]) {
+    			if (slideArrays[0].length - 1 === index && elems === slideArrays[0]) {
     				$$invalidate(1, scrollContentWidth = w);
     				document.body.style.height = `${w}px`;
     			}
@@ -7741,20 +7747,17 @@ var app = (function () {
     	};
 
     	const clamp = () => {
-    		$$invalidate(10, data.current = Math.min(Math.max(data.current, 0), bounds.max), data);
+    		$$invalidate(11, data.current = Math.min(Math.max(data.current, 0), bounds.max), data);
     	};
 
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<App> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("App", $$slots, []);
-    	const touchstart_handler = e => handleTouchDown(e);
-    	const touchmove_handler = e => handleTouchMove(e);
-    	const touchend_handler = e => handleMouseUp();
     	const mousemove_handler = e => handleMouseMove(e);
     	const mousedown_handler = e => handleMouseDown(e);
     	const mouseup_handler = e => handleMouseUp();
@@ -7794,52 +7797,59 @@ var app = (function () {
     		});
     	}
 
+    	function div4_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			scrollEle = $$value;
+    			$$invalidate(6, scrollEle);
+    		});
+    	}
+
     	function div5_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			maskSlices[0] = $$value;
-    			$$invalidate(12, maskSlices);
+    			$$invalidate(13, maskSlices);
     		});
     	}
 
     	function div6_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			maskSlices[1] = $$value;
-    			$$invalidate(12, maskSlices);
+    			$$invalidate(13, maskSlices);
     		});
     	}
 
     	function div7_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			maskSlices[2] = $$value;
-    			$$invalidate(12, maskSlices);
+    			$$invalidate(13, maskSlices);
     		});
     	}
 
     	function div8_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			logo = $$value;
-    			$$invalidate(14, logo);
+    			$$invalidate(15, logo);
     		});
     	}
 
     	function div10_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			maskLines[1] = $$value;
-    			$$invalidate(13, maskLines);
+    			$$invalidate(14, maskLines);
     		});
     	}
 
     	function div11_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			maskLines[0] = $$value;
-    			$$invalidate(13, maskLines);
+    			$$invalidate(14, maskLines);
     		});
     	}
 
     	function div13_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			mask = $$value;
-    			$$invalidate(11, mask);
+    			$$invalidate(12, mask);
     		});
     	}
 
@@ -7859,6 +7869,7 @@ var app = (function () {
     		scrollY,
     		scrollContent,
     		scrollHandle,
+    		scrollEle,
     		bounce,
     		skew,
     		scale,
@@ -7899,6 +7910,7 @@ var app = (function () {
     		drag,
     		touch,
     		resize,
+    		setStyles,
     		preload,
     		run,
     		customRequestAnimationFrame,
@@ -7908,26 +7920,27 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("windowHeight" in $$props) $$invalidate(0, windowHeight = $$props.windowHeight);
-    		if ("scrollInit" in $$props) $$invalidate(46, scrollInit = $$props.scrollInit);
+    		if ("scrollInit" in $$props) $$invalidate(43, scrollInit = $$props.scrollInit);
     		if ("scrollContentWidth" in $$props) $$invalidate(1, scrollContentWidth = $$props.scrollContentWidth);
     		if ("windowWidth" in $$props) $$invalidate(2, windowWidth = $$props.windowWidth);
     		if ("scrollY" in $$props) $$invalidate(3, scrollY = $$props.scrollY);
     		if ("scrollContent" in $$props) $$invalidate(4, scrollContent = $$props.scrollContent);
     		if ("scrollHandle" in $$props) $$invalidate(5, scrollHandle = $$props.scrollHandle);
-    		if ("bounce" in $$props) $$invalidate(6, bounce = $$props.bounce);
-    		if ("skew" in $$props) $$invalidate(7, skew = $$props.skew);
-    		if ("scale" in $$props) $$invalidate(8, scale = $$props.scale);
-    		if ("filteredTemplates" in $$props) $$invalidate(9, filteredTemplates = $$props.filteredTemplates);
-    		if ("data" in $$props) $$invalidate(10, data = $$props.data);
-    		if ("slideArrays" in $$props) $$invalidate(47, slideArrays = $$props.slideArrays);
+    		if ("scrollEle" in $$props) $$invalidate(6, scrollEle = $$props.scrollEle);
+    		if ("bounce" in $$props) $$invalidate(7, bounce = $$props.bounce);
+    		if ("skew" in $$props) $$invalidate(8, skew = $$props.skew);
+    		if ("scale" in $$props) $$invalidate(9, scale = $$props.scale);
+    		if ("filteredTemplates" in $$props) $$invalidate(10, filteredTemplates = $$props.filteredTemplates);
+    		if ("data" in $$props) $$invalidate(11, data = $$props.data);
+    		if ("slideArrays" in $$props) $$invalidate(44, slideArrays = $$props.slideArrays);
     		if ("bounds" in $$props) bounds = $$props.bounds;
     		if ("isTouch" in $$props) isTouch = $$props.isTouch;
-    		if ("mask" in $$props) $$invalidate(11, mask = $$props.mask);
-    		if ("maskSlices" in $$props) $$invalidate(12, maskSlices = $$props.maskSlices);
-    		if ("maskLines" in $$props) $$invalidate(13, maskLines = $$props.maskLines);
+    		if ("mask" in $$props) $$invalidate(12, mask = $$props.mask);
+    		if ("maskSlices" in $$props) $$invalidate(13, maskSlices = $$props.maskSlices);
+    		if ("maskLines" in $$props) $$invalidate(14, maskLines = $$props.maskLines);
     		if ("tl" in $$props) tl = $$props.tl;
     		if ("transitionState" in $$props) transitionState = $$props.transitionState;
-    		if ("logo" in $$props) $$invalidate(14, logo = $$props.logo);
+    		if ("logo" in $$props) $$invalidate(15, logo = $$props.logo);
     		if ("dom" in $$props) dom = $$props.dom;
     		if ("dragging" in $$props) dragging = $$props.dragging;
     		if ("rAF" in $$props) rAF = $$props.rAF;
@@ -7939,9 +7952,9 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*filteredTemplates*/ 512 | $$self.$$.dirty[1] & /*slideArrays, scrollInit*/ 98304) {
+    		if ($$self.$$.dirty[0] & /*filteredTemplates*/ 1024 | $$self.$$.dirty[1] & /*slideArrays, scrollInit*/ 12288) {
     			 if (slideArrays[0].length === filteredTemplates.length && slideArrays[1].length === filteredTemplates.length && !scrollInit) {
-    				$$invalidate(46, scrollInit = true);
+    				$$invalidate(43, scrollInit = true);
     				initScroll();
     			}
     		}
@@ -7954,6 +7967,7 @@ var app = (function () {
     		scrollY,
     		scrollContent,
     		scrollHandle,
+    		scrollEle,
     		bounce,
     		skew,
     		scale,
@@ -7968,14 +7982,9 @@ var app = (function () {
     		handleSlideCreate,
     		handleScroll,
     		handleMouseDown,
-    		handleTouchDown,
-    		handleTouchMove,
     		handleMouseMove,
     		handleMouseUp,
     		resize,
-    		touchstart_handler,
-    		touchmove_handler,
-    		touchend_handler,
     		mousemove_handler,
     		mousedown_handler,
     		mouseup_handler,
@@ -7987,6 +7996,7 @@ var app = (function () {
     		slideCreate_handler_1,
     		div1_binding,
     		div2_binding,
+    		div4_binding,
     		div5_binding,
     		div6_binding,
     		div7_binding,

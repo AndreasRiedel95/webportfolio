@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public"
+    "dev": "rollup -c -w --host 0.0.0.0",
+    "start": "sirv public --host 0.0.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
@@ -16,6 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "gsap": "^3.5.1",
     "imagesloaded": "^4.1.4",
     "node-sass": "^4.14.1",
     "sirv-cli": "^1.0.0",

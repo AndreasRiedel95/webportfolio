@@ -1,9 +1,10 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onDestroy } from 'svelte';
   const dispatch = createEventDispatcher();
   export let imageSlide = false;
   export let alignment = 'flex-start';
   export let id;
+  export let uuid;
   export let title;
   export let filter;
   export let type;
@@ -14,8 +15,19 @@
 
   let slideOne;
   let slideTwo;
-  $: dispatch('slideCreate', { cluster: 2, slide: slideTwo });
-  $: dispatch('slideCreate', { cluster: 1, slide: slideOne });
+  //We give in a uuid , to force svelte to rebind the slides
+  //This is necessary to filter them
+  $: dispatch('slideCreate', { cluster: 2, slide: slideTwo, uuid });
+  $: dispatch('slideCreate', { cluster: 1, slide: slideOne, uuid });
+
+  onDestroy(() => {
+    slideOne = null;
+    slideTwo = null;
+  });
+
+  const handleClick = () => {
+    console.log('CLICK ON IMAGE SLIDE');
+  };
 </script>
 
 <style lang="scss">
@@ -24,7 +36,11 @@
     width: 50vw;
     height: 100%;
     padding: 20vh 0;
+    pointer-events: none;
     align-items: var(--alignment);
+    &--image {
+      pointer-events: inherit;
+    }
     &:last-child {
       width: 65vw;
       padding-right: 10vw;
@@ -85,10 +101,15 @@
         img {
           position: absolute;
           top: 0;
+          transform: scale(1);
+          transition: transform 0.5s ease-out;
           left: 0;
           height: 100%;
           width: 100%;
           object-fit: cover;
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
     }
@@ -96,7 +117,7 @@
 </style>
 
 {#if imageSlide}
-  <article bind:this={slideOne} class="slide" style="--alignment: {alignment}">
+  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}" on:click={handleClick}>
     <div class="slide__inner">
       <div class="slide__img js-transition-img">
         <figure class="js-transition-img__inner"><img src={imgSrc} draggable="false" /></figure>

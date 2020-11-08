@@ -1,4 +1,18 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+  let isActive = 0;
+  const linkItems = [
+    { title: 'All projects', filter: 'all' },
+    { title: 'Digital', filter: 'digital' },
+    { title: 'Print', filter: 'print' },
+    { title: 'Multimedia', filter: 'multimedia' },
+  ];
+
+  const handleItemClick = (item, i) => {
+    isActive = i;
+    dispatch('handleItemClick', { filter: item.filter });
+  };
 </script>
 
 <style lang="scss">
@@ -66,27 +80,13 @@
 
 <nav class="filter">
   <ul class="filter__list">
-    <li class="filter__item">
-      <a href="#" class="filter__link js-trigger is-active">
-        <div class="filter__link-mask" area-hidden><span>All projects</span></div>
-        All projects
-      </a>
-      <a href="#" class="filter__link js-trigger">
-        <div class="filter__link-mask" area-hidden><span>Digital</span></div>
-        Digital
-      </a>
-    </li>
-    <li class="filter__item">
-      <a href="#" class="filter__link js-trigger">
-        <div class="filter__link-mask" area-hidden><span>Print</span></div>
-        Print
-      </a>
-    </li>
-    <li class="filter__item">
-      <a href="#" class="filter__link js-trigger">
-        <div class="filter__link-mask" area-hidden><span>Multimedia</span></div>
-        Multimedia
-      </a>
-    </li>
+    {#each linkItems as item, i}
+      <li class="filter__item">
+        <a href="#" class="filter__link" on:click={() => handleItemClick(item, i)} class:is-active={i === isActive}>
+          <div class="filter__link-mask" area-hidden><span>{item.title}</span></div>
+          {item.title}
+        </a>
+      </li>
+    {/each}
   </ul>
 </nav>

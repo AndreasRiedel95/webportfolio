@@ -33,7 +33,7 @@
 <style lang="scss">
   .slide {
     display: flex;
-    width: 50vw;
+    width: 55vw;
     height: 100%;
     padding: 20vh 0;
     pointer-events: none;
@@ -74,7 +74,7 @@
     &__type {
       position: absolute;
       color: rgba(#fff, 0.5);
-      top: 4%;
+      top: 8%;
       font-size: 12px;
       left: 7.5vw;
       @media screen and (max-width: 800px) {
@@ -84,7 +84,7 @@
     &__title {
       position: absolute;
       font-weight: 600;
-      top: 7.5%;
+      top: 12%;
       left: 7.5vw;
       color: #fff;
       font-size: 3.5vw;
@@ -138,13 +138,18 @@
 </style>
 
 {#if imageSlide}
-  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}" on:click={handleClick}>
+  <a
+    href="/project"
+    bind:this={slideOne}
+    class="slide slide--image"
+    style="--alignment: {alignment}"
+    on:click={handleClick}>
     <div class="slide__inner">
       <div class="slide__img js-transition-img">
         <figure class="js-transition-img__inner"><img src={imgSrc} draggable="false" /></figure>
       </div>
     </div>
-  </article>
+  </a>
 {:else}
   <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
     <div class="slide__inner">

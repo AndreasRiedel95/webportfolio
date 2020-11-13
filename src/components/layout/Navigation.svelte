@@ -16,11 +16,30 @@
 </script>
 
 <style lang="scss">
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .link {
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .logo {
+    font-family: 'Domine';
+  }
+
   .filter {
     display: flex;
-    position: absolute;
-    padding-top: 70px;
-    padding-bottom: 70px;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -80,15 +99,19 @@
   }
 </style>
 
-<nav class="filter">
-  <ul class="filter__list">
-    {#each linkItems as item, i}
-      <li class="filter__item">
-        <a href="#" class="filter__link" on:click={() => handleItemClick(item, i)} class:is-active={i === isActive}>
-          <div class="filter__link-mask" area-hidden><span>{item.title}</span></div>
-          {item.title}
-        </a>
-      </li>
-    {/each}
-  </ul>
+<nav>
+  <a class="logo link" href="/">AR</a>
+  <div class="filter">
+    <ul class="filter__list">
+      {#each linkItems as item, i}
+        <li class="filter__item">
+          <a href="#" class="filter__link" on:click={() => handleItemClick(item, i)} class:is-active={i === isActive}>
+            <div class="filter__link-mask" area-hidden><span>{item.title}</span></div>
+            {item.title}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+  <a class="link" href="/profile">PROFIL</a>
 </nav>

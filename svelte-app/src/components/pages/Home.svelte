@@ -1,12 +1,10 @@
 <script>
-  import { onMount } from 'svelte';
-  // import gsap from 'gsap';
-  // import { TimelineMax, Expo } from 'gsap/all';
-  import { TimelineMax, Expo, CSSPlugin } from 'gsap';
+  import { onMount, createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
   import Navigation from 'components/layout/Navigation.svelte';
   import imagesLoaded from 'imagesloaded';
   import Slide from 'components/containers/Slide.svelte';
-  // gsap.registerPlugin(TimelineMax);
+  import { filterClick } from 'util/store.js';
   const slideTemplates = [
     {
       id: 0,
@@ -154,7 +152,7 @@
   }
 
   onMount(() => {
-    transition();
+    // transition();
     isTouch = is_touch_device();
   });
 
@@ -166,17 +164,8 @@
     return window.matchMedia(queries.join(',')).matches;
   };
 
-  const transition = () => {
-    dom = {
-      images: [...document.querySelectorAll('.js-transition-img')],
-      imagesInner: [...document.querySelectorAll('.js-transition-img__inner')],
-      titles: [...document.querySelectorAll('.js-transition-title')],
-    };
-    initTransition();
-  };
-
   const filterTemplates = (e) => {
-    triggerAnimation();
+    filterClick.set(true);
     setTimeout(() => {
       slideArrays = [[], []];
       const filter = e.detail.filter;
@@ -187,183 +176,13 @@
         }
         return accu;
       }, []);
-    }, 1500);
-  };
-
-  const initTransition = () => {
-    createTimeline();
-    transitionLoader();
-  };
-
-  const transitionLoader = () => {
-    resetScroll();
-    tl.tweenFromTo('loaderStart', 'loaderEnd');
+    }, 1600);
   };
 
   const resetScroll = () => {
     skew = 0;
     data.current = 0;
     scrollY = 0;
-  };
-
-  const triggerAnimation = () => {
-    if (transitionState) return;
-    transitionState = true;
-    tl.restart();
-  };
-
-  const createTimeline = () => {
-    tl = new TimelineMax({
-      paused: true,
-      onComplete: () => {
-        transitionState = false;
-      },
-    });
-
-    tl.set([dom.images, dom.imagesInner], {
-      xPercent: 0,
-      scale: 1,
-    })
-      .set(dom.titles, {
-        yPercent: 0,
-      })
-      .set(mask, {
-        autoAlpha: 1,
-      })
-      .staggerFromTo(
-        maskSlices,
-        1.5,
-        {
-          xPercent: 100,
-        },
-        {
-          xPercent: 0,
-          ease: Expo.easeInOut,
-        },
-        -0.075
-      )
-      .add(resetScroll)
-      .addLabel('loaderStart')
-      .set(dom.images, {
-        xPercent: -100,
-      })
-      .set(dom.imagesInner, {
-        xPercent: 100,
-      })
-      .set(dom.titles, {
-        yPercent: -100,
-      })
-      .set([maskLines[0], logo], {
-        autoAlpha: 1,
-      })
-      .fromTo(
-        logo,
-        1,
-        {
-          yPercent: -100,
-          rotation: 0,
-        },
-        {
-          yPercent: 0,
-          rotation: 0,
-          ease: Expo.easeOut,
-        }
-      )
-      .staggerFromTo(
-        maskLines,
-        1,
-        {
-          scaleX: 0,
-        },
-        {
-          scaleX: 1,
-          ease: Expo.easeInOut,
-        },
-        0.75,
-        '-=1'
-      )
-      .set(maskLines, {
-        transformOrigin: 'right',
-      })
-      .fromTo(
-        maskLines[0],
-        1,
-        {
-          scaleX: 1,
-        },
-        {
-          scaleX: 0,
-          ease: Expo.easeInOut,
-        }
-      )
-      .fromTo(
-        logo,
-        1,
-        {
-          yPercent: 0,
-        },
-        {
-          yPercent: 105,
-          ease: Expo.easeOut,
-        },
-        '-=1'
-      )
-      .staggerFromTo(
-        maskSlices,
-        1.5,
-        {
-          xPercent: 0,
-        },
-        {
-          xPercent: 100,
-          ease: Expo.easeInOut,
-        },
-        0.075
-      )
-      .set(mask, {
-        autoAlpha: 0,
-      })
-      .addLabel('imagesStart', '-=0.85')
-      .staggerFromTo(
-        dom.titles,
-        1.5,
-        {
-          yPercent: 100,
-        },
-        {
-          yPercent: 0,
-          ease: Expo.easeInOut,
-        },
-        0.05,
-        'imagesStart'
-      )
-      .staggerFromTo(
-        dom.images,
-        1.25,
-        {
-          xPercent: -100,
-        },
-        {
-          xPercent: 0,
-          ease: Expo.easeInOut,
-        },
-        0.05,
-        'imagesStart'
-      )
-      .staggerFromTo(
-        dom.imagesInner,
-        1.25,
-        {
-          xPercent: 100,
-        },
-        {
-          xPercent: 0,
-          ease: Expo.easeInOut,
-        },
-        0.05,
-        'imagesStart'
-      )
-      .addLabel('loaderEnd');
   };
 
   const getSlideAlignment = (i) => {
@@ -409,9 +228,10 @@
     customRequestAnimationFrame();
   };
 
-  const handleScroll = () => {
+  const handleScroll = (e) => {
     if (dragging) return;
-    data.current = scrollY;
+    let scrollY = e.deltaY;
+    data.current += scrollY;
     clamp();
   };
 
@@ -453,7 +273,7 @@
     setBounds(slideArrays[0]);
     setBounds(slideArrays[1]);
     resetScroll();
-    handleScroll();
+    // handleScroll()
     setStyles();
   };
 
@@ -505,7 +325,7 @@
       bounds.max = bounds.width - windowWidth;
       if (slideArrays[0].length - 1 === index && elems === slideArrays[0]) {
         scrollContentWidth = w;
-        main.style.height = `${w}px`;
+        // main.style.height = `${w}px`;
       }
     });
   };
@@ -524,6 +344,7 @@
   .main {
     overflow: auto;
     width: 100%;
+    height: 100vh;
   }
 
   .scroll {
@@ -551,27 +372,6 @@
     }
   }
 
-  .logo {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &--mask {
-      overflow: hidden;
-      height: 18px;
-      margin-bottom: 20px;
-    }
-    &--font {
-      font-size: 1.2vw;
-      font-family: 'Domine', serif;
-      color: #fff;
-      letter-spacing: 1.1;
-      @media screen and (max-width: 800px) {
-        font-size: 20px;
-      }
-    }
-  }
-
   .scrollbar {
     position: absolute;
     bottom: 7.5%;
@@ -590,48 +390,6 @@
       background-color: #fff;
     }
   }
-
-  .mask {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    &__slice {
-      flex: 1;
-      background-color: #000;
-    }
-    &__inner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-    }
-    &-line {
-      position: relative;
-      transform-origin: left;
-      width: 20rem;
-      height: 2px;
-      overflow: hidden;
-      background-color: rgba(#fff, 0.25);
-      visibility: hidden;
-      opacity: 0;
-      &__inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        transform-origin: left;
-      }
-    }
-  }
 </style>
 
 <svelte:window
@@ -639,7 +397,7 @@
   bind:innerWidth={windowWidth}
   bind:scrollY
   on:resize={resize}
-  on:scroll={handleScroll}
+  on:wheel={(e) => handleScroll(e)}
   on:mousemove={(e) => handleMouseMove(e)}
   on:mousedown={(e) => handleMouseDown(e)}
   on:mouseup={(e) => handleMouseUp(e)} />
@@ -674,20 +432,6 @@
 
     <div class="scrollbar" data-scrollbar>
       <div class="scrollbar__handle" style="transform: scaleX({scale})" bind:this={scrollHandle} />
-    </div>
-  </div>
-</div>
-
-<div class="mask" bind:this={mask}>
-  <div class="mask__slice" bind:this={maskSlices[0]} />
-  <div class="mask__slice" bind:this={maskSlices[1]} />
-  <div class="mask__slice" bind:this={maskSlices[2]} />
-  <div class="mask__inner">
-    <div class="logo logo--mask">
-      <div class="logo--font" bind:this={logo}>ANDREAS RIEDEL</div>
-    </div>
-    <div class="mask-line" bind:this={maskLines[0]}>
-      <div class="mask-line__inner" bind:this={maskLines[1]} />
     </div>
   </div>
 </div>

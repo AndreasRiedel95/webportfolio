@@ -24,7 +24,7 @@ const packageJSON = JSON.parse(fs.readFileSync(path.join(projectRoot, "package.j
 packageJSON.devDependencies = Object.assign(packageJSON.devDependencies, {
   "svelte-check": "^1.0.0",
   "svelte-preprocess": "^4.0.0",
-  "@rollup/plugin-typescript": "^4.0.0",
+  "@rollup/plugin-typescript": "^6.0.0",
   "typescript": "^3.9.3",
   "tslib": "^2.0.0",
   "@tsconfig/svelte": "^1.0.0"
@@ -80,7 +80,10 @@ while (( match = configEditor.exec(rollupConfig)) != null) {
 
 
 // Add TypeScript
-rollupConfig = rollupConfig.replace("commonjs(),", 'commonjs(),\n\t\ttypescript({ sourceMap: !production }),')
+rollupConfig = rollupConfig.replace(
+  'commonjs(),',
+  'commonjs(),\n\t\ttypescript({\n\t\t\tsourceMap: !production,\n\t\t\tinlineSources: !production\n\t\t}),'
+);
 fs.writeFileSync(rollupConfigPath, rollupConfig)
 
 // Add TSConfig
@@ -88,7 +91,7 @@ const tsconfig = `{
   "extends": "@tsconfig/svelte/tsconfig.json",
 
   "include": ["src/**/*"],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
 }`
 const tsconfigPath =  path.join(projectRoot, "tsconfig.json")
 fs.writeFileSync(tsconfigPath, tsconfig)

@@ -1,5 +1,6 @@
 <script context="module">
   import { writable } from 'svelte/store';
+  import { lastActiveRoute } from 'util/store.js';
   export const activeRoute = writable({});
   let routes = {};
   export function register(route) {
@@ -14,8 +15,9 @@
   // this is where we set the active componentc
   const setActiveRoute = (route) => {
     return function (ctx) {
-      console.log(ctx);
+      console.log($lastActiveRoute);
       $activeRoute = { ...route, params: ctx.params };
+      lastActiveRoute.set($activeRoute);
     };
   };
 

@@ -1,5 +1,6 @@
 <script>
-  import { createEventDispatcher, onDestroy } from 'svelte';
+  import { createEventDispatcher, onDestroy, onMount } from 'svelte';
+  import { expoOut } from 'svelte/easing';
   const dispatch = createEventDispatcher();
   export let imageSlide = false;
   export let alignment = 'flex-start';
@@ -12,6 +13,7 @@
   export let projectNr;
   export let imgSrc;
   export let url;
+  let counter = 0;
 
   let slideOne;
   let slideTwo;
@@ -20,6 +22,12 @@
   $: dispatch('slideCreate', { cluster: 2, slide: slideTwo, uuid });
   $: dispatch('slideCreate', { cluster: 1, slide: slideOne, uuid });
 
+  $: restartTransition(uuid);
+
+  const restartTransition = (_) => {
+    counter++;
+  };
+
   onDestroy(() => {
     slideOne = null;
     slideTwo = null;
@@ -27,6 +35,19 @@
 
   const handleClick = () => {
     console.log('CLICK ON IMAGE SLIDE');
+  };
+
+  const fadeWidth = (node, { duration, delay }) => {
+    return {
+      duration,
+      delay,
+      css: (t) => {
+        const eased = expoOut(t);
+        return `
+        width: ${eased * 100}%;
+        `;
+      },
+    };
   };
 </script>
 
@@ -37,12 +58,20 @@
     height: 100%;
     padding: 20vh 0;
     pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     align-items: var(--alignment);
     @media screen and (max-width: 800px) {
       width: 80vw;
       padding: 35vw 0;
     }
     &--image {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       pointer-events: inherit;
     }
     &:last-child {
@@ -60,6 +89,12 @@
       @media screen and (max-width: 800px) {
         padding-left: 15vw;
       }
+    }
+    &__link {
+      position: relative;
+      width: 100%;
+      user-select: none;
+      -webkit-user-drag: none;
     }
     &__projectnr {
       z-index: -1;
@@ -126,6 +161,8 @@
           transition: transform 0.5s ease-out;
           left: 0;
           height: 100%;
+          user-select: none;
+          -webkit-user-drag: none;
           width: 100%;
           object-fit: cover;
           &:hover {
@@ -138,18 +175,17 @@
 </style>
 
 {#if imageSlide}
-  <a
-    href="/project"
-    bind:this={slideOne}
-    class="slide slide--image"
-    style="--alignment: {alignment}"
-    on:click={handleClick}>
-    <div class="slide__inner">
-      <div class="slide__img js-transition-img">
-        <figure class="js-transition-img__inner"><img src={imgSrc} draggable="false" /></figure>
+  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}" on:click={handleClick}>
+    <a class="slide__link" href="/project">
+      <div class="slide__inner">
+        {#each [counter] as count (count)}
+          <div in:fadeWidth={{ duration: 2000, delay: 1500 }} class="slide__img ">
+            <figure class=""><img src={imgSrc} draggable="false" /></figure>
+          </div>
+        {/each}
       </div>
-    </div>
-  </a>
+    </a>
+  </article>
 {:else}
   <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
     <div class="slide__inner">

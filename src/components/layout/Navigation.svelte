@@ -71,7 +71,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        background-color: #111;
+        background-color: #212121;
         transform: translate3d(-100%, 0, 0);
         transition: transform 0.75s ease;
         z-index: 2;

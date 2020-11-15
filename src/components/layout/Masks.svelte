@@ -5,8 +5,8 @@
   export let transitionLength = 6000;
   export let animate;
 
-  $: console.log('Animate', animate, mask);
   $: if (!animate) {
+    console.log('ANIMATE OUT START');
     mask = 0;
   }
 
@@ -36,16 +36,31 @@
       },
     };
   };
+
+  const slideOutVertical = (node, { duration, delay }) => {
+    return {
+      duration,
+      delay,
+      css: (t) => {
+        const eased = expoOut(t);
+        return `
+                transform: translateY(${100 - eased * 100}%);
+                transform-origin: top
+              `;
+      },
+    };
+  };
 </script>
 
 <style lang="scss">
   .mask-wrapper {
     position: absolute;
     top: 0;
+    pointer-events: none;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 200;
   }
 
   .mask {
@@ -80,16 +95,15 @@
     &__black {
       position: relative;
       transform: translateX(0);
-      background-color: red;
+      background-color: #000;
       width: 100%;
-      height: 33%;
+      height: 33.333%;
     }
     &__white {
       position: relative;
-      transform: translateY(0);
       background-color: #fff;
       height: 100%;
-      width: 33%;
+      width: 33.333%;
     }
   }
 
@@ -125,7 +139,7 @@
       <div out:slideOutHorizontal={{ duration: 1000, delay: 600 }} class="mask-slice__black" />
       <div class="mask__inner">
         <div class="logo logo--mask">
-          <div out:fly={{ y: 100, duration: 1000 }} in:fly={{ y: -100, duration: 1000 }} class="logo--font">
+          <div out:fly={{ y: 100, duration: 1200 }} in:fly={{ y: -100, duration: 1200 }} class="logo--font">
             ANDREAS RIEDEL
           </div>
         </div>
@@ -156,6 +170,19 @@
 
   <!-- Third Mask for project/profile: 3 Mask Tiles in white slide in and out starting from bottom to top -->
   {#if mask === 3}
-    <div class="mask" />
+    <div class="mask" style="display: flex">
+      <div
+        in:slideOutVertical={{ duration: 1000, delay: 0 }}
+        out:slideOutVertical={{ duration: 1000, delay: 0 }}
+        class="mask-slice__white" />
+      <div
+        in:slideOutVertical={{ duration: 1000, delay: 300 }}
+        out:slideOutVertical={{ duration: 1000, delay: 300 }}
+        class="mask-slice__white" />
+      <div
+        in:slideOutVertical={{ duration: 1000, delay: 600 }}
+        out:slideOutVertical={{ duration: 1000, delay: 600 }}
+        class="mask-slice__white" />
+    </div>
   {/if}
 </main>

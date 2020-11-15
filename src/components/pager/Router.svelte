@@ -15,7 +15,6 @@
   // this is where we set the active componentc
   const setActiveRoute = (route) => {
     return function (ctx) {
-      console.log($lastActiveRoute);
       $activeRoute = { ...route, params: ctx.params };
       lastActiveRoute.set($activeRoute);
     };

@@ -17,9 +17,23 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .link {
+    color: #fff;
+    display: block;
+    margin-top: 10px;
   }
 </style>
 
 {#if $activeRoute.path === path}
-  <div class="not-found-wrapper">404. <br /> Sorry page not found.</div>
+  <div class="not-found-wrapper">
+    404.
+    <br />
+    Sorry page not found.
+    <br />
+    <a class="link" href="/">Go back to Home</a>
+  </div>
 {/if}

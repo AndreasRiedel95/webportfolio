@@ -14,6 +14,9 @@
   export let imgSrc;
   export let url;
   let counter = 0;
+  //When Page Transition starts to fade out and takes 1600ms
+  //This Page gets called -> We need a delay, to see the animation here
+  const animationDelay = 1400;
 
   let slideOne;
   let slideTwo;
@@ -175,27 +178,29 @@
 </style>
 
 {#if imageSlide}
-  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}" on:click={handleClick}>
-    <a class="slide__link" href="/project">
-      <div class="slide__inner">
-        {#each [counter] as count (count)}
-          <div in:fadeWidth={{ duration: 2000, delay: 1500 }} class="slide__img ">
+  {#each [counter] as count (count)}
+    <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}" on:click={handleClick}>
+      <a class="slide__link" href={url}>
+        <div class="slide__inner">
+          <div in:fadeWidth={{ duration: 2000, delay: animationDelay }} class="slide__img ">
             <figure class=""><img src={imgSrc} draggable="false" /></figure>
           </div>
-        {/each}
-      </div>
-    </a>
-  </article>
+        </div>
+      </a>
+    </article>
+  {/each}
 {:else}
-  <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
-    <div class="slide__inner">
-      <div class="slide__type">{type}</div>
-      <h1 class="slide__title">
-        <div class="js-transition-title">{title}</div>
-      </h1>
-      <div class="slide__projectnr">0{projectNr}</div>
-      <div class="slide__img slide__img--proxy" />
-      <div class="slide__project">{subTitle}</div>
-    </div>
-  </article>
+  {#each [counter] as count (count)}
+    <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
+      <div class="slide__inner">
+        <div class="slide__type">{type}</div>
+        <h1 class="slide__title">
+          <div class="js-transition-title">{title}</div>
+        </h1>
+        <div class="slide__projectnr">0{projectNr}</div>
+        <div class="slide__img slide__img--proxy" />
+        <div class="slide__project">{subTitle}</div>
+      </div>
+    </article>
+  {/each}
 {/if}

@@ -7,7 +7,7 @@
   import Masks from 'components/layout/Masks.svelte';
   let mask = 0;
   let destroyMask;
-  let animate = false;
+  let animate = true;
   let transitionLength = 6000;
   let displayNewSiteTime = 3400;
 
@@ -19,23 +19,25 @@
       animate = true;
       displayNewSiteTime = 3400;
       transitionLength = 6000;
+      //Filter Click Animation
     } else if ($lastActiveRoute.path === '/' && $filterClick) {
-      console.log('IM IN 2');
       mask = 2;
       animate = true;
-      filterClick.set(true);
-      displayNewSiteTime = 2100;
-    } else if ($lastActiveRoute.path === '/' && !$filterClick) {
-      mask = 3;
-      animate = true;
+      filterClick.set(false);
+      displayNewSiteTime = 1800;
+      transitionLength = 3400;
+      // Animation for Projects and Profile
     } else {
       mask = 3;
+      displayNewSiteTime = 1800;
+      transitionLength = 3400;
       animate = true;
     }
 
     //Update new site
     setTimeout(() => {
       animate = false;
+      console.log('NEXT');
       next();
     }, displayNewSiteTime);
 
@@ -50,8 +52,8 @@
   <Masks {mask} {animate} />
 {/if}
 <Router>
-  <Route path="/" component={Home} middleware={[maskTransition]} />
+  <Route path="/" component={Home} />
   <Route path="/profile" component={Profile} middleware={[maskTransition]} />
-  <Route path="/project" component={Project} middleware={[maskTransition]} />
+  <Route path="/project/:projectId" component={Project} />
   <NotFound />
 </Router>

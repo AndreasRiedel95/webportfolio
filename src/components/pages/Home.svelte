@@ -14,7 +14,7 @@
       filter: 'digital',
       subTitle: 'University',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-one.png',
-      url: '',
+      url: '/project/turn-over-app',
     },
     {
       id: 1,
@@ -24,7 +24,7 @@
       filter: 'digital',
       subTitle: 'University',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-two.png',
-      url: '',
+      url: '/project/rijksmuseum',
     },
     {
       id: 2,
@@ -34,7 +34,7 @@
       filter: 'digital',
       subTitle: 'University',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
-      url: '',
+      url: 'project/man-incar',
     },
     {
       id: 4,
@@ -44,7 +44,7 @@
       type: 'Website',
       subTitle: 'Work',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-one.png',
-      url: '',
+      url: 'project/ecographis',
     },
     {
       id: 5,
@@ -54,7 +54,7 @@
       filter: 'print',
       subTitle: 'University',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-two.png',
-      url: '',
+      url: 'project/mueslibar',
     },
     {
       id: 6,
@@ -64,7 +64,7 @@
       filter: 'multimedia',
       subTitle: 'University',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
-      url: '',
+      url: 'project/human-projection',
     },
     {
       id: 7,
@@ -74,7 +74,7 @@
       filter: 'digital',
       subTitle: 'University - Bachelorthesis',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
-      url: '',
+      url: '/project/learn-plattform',
     },
     {
       id: 8,
@@ -84,7 +84,7 @@
       filter: 'print',
       subTitle: 'University - Bachelorthesis',
       imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
-      url: '',
+      url: '/project/poster-gallery',
     },
   ];
 
@@ -176,7 +176,8 @@
         }
         return accu;
       }, []);
-    }, 1600);
+      console.log(filteredTemplates);
+    }, 1500);
   };
 
   const resetScroll = () => {

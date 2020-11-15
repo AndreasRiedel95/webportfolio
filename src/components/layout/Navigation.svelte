@@ -25,6 +25,9 @@
     position: absolute;
     width: 100%;
     z-index: 10;
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+    }
   }
 
   .link {
@@ -46,6 +49,7 @@
     z-index: 10;
     &__list {
       display: flex;
+      padding: 15px 0;
     }
     &__item {
       display: flex;

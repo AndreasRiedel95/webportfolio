@@ -225,19 +225,18 @@
 
   const handleScroll = (e) => {
     if (dragging) return;
-    let scrollY = e.deltaY;
-    data.current += scrollY;
+    data.current += e.deltaY;
     clamp();
   };
 
   const handleMouseDown = (e) => {
     dragging = true;
-    data.on = e.clientX;
+    data.on = e.clientX * 1.5;
   };
 
   const handleTouchDown = (e) => {
     dragging = true;
-    data.on = e.touches[0].clientX;
+    data.on = e.touches[0].clientX * 1.2;
   };
 
   const handleTouchMove = (e) => {
@@ -258,6 +257,17 @@
       isDragging.set(false);
     }, 100);
   };
+
+  const handleTouchUp = (e) => {
+    dragging = false;
+    console.log('touchUp', data.current);
+    scrollY = data.current;
+
+    setTimeout(() => {
+      isDragging.set(false);
+    }, 100);
+  };
+
   const drag = (e) => {
     data.current = scrollY - (e.clientX - data.on);
     clamp();
@@ -330,6 +340,7 @@
 
   const clamp = () => {
     data.current = Math.min(Math.max(data.current, 0), bounds.max);
+    console.log('clamp', data.current);
   };
 </script>
 
@@ -393,10 +404,12 @@
 <svelte:window
   bind:innerHeight={windowHeight}
   bind:innerWidth={windowWidth}
-  bind:scrollY
   on:resize={resize}
   on:wheel={(e) => handleScroll(e)}
   on:mousemove={(e) => handleMouseMove(e)}
+  on:touchstart={(e) => handleTouchDown(e)}
+  on:touchmove={(e) => handleTouchMove(e)}
+  on:touchend={(e) => handleTouchUp(e)}
   on:mousedown={(e) => handleMouseDown(e)}
   on:mouseup={(e) => handleMouseUp(e)} />
 <div class="main" bind:this={main}>

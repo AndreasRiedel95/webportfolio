@@ -1,11 +1,15 @@
 <script>
   import TurnOver from 'pages/projects/TurnOver.svelte';
   import Projection from 'pages/projects/Projection.svelte';
+  import Rijksmuseum from 'pages/projects/Rijksmuseum.svelte';
+  import Ecographis from 'pages/projects/Ecographis.svelte';
   export let projectId;
 
   let templates = [
     { cp: TurnOver, id: 'turn-over-app' },
     { cp: Projection, id: 'human-projection' },
+    { cp: Rijksmuseum, id: 'rijksmuseum' },
+    { cp: Ecographis, id: 'ecographis' },
   ];
   let template;
   $: if (projectId) {
@@ -30,6 +34,7 @@
     left: 0;
     width: 100%;
     padding: 40px;
+    z-index: 20;
   }
 </style>
 

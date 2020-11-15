@@ -1,6 +1,6 @@
 <script>
-  import { onMount, createEventDispatcher } from 'svelte';
-  const dispatch = createEventDispatcher();
+  import { onMount } from 'svelte';
+  import { isDragging } from 'util/store.js';
   import Navigation from 'components/layout/Navigation.svelte';
   import imagesLoaded from 'imagesloaded';
   import Slide from 'components/containers/Slide.svelte';
@@ -9,21 +9,21 @@
     {
       id: 0,
       uuid: Date.now(),
-      title: 'TurnOver',
+      title: 'Turn-Over-App',
       type: 'iOS App for iPad',
       filter: 'digital',
       subTitle: 'University',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-one.png',
+      imgSrc: '/images/toa_hero.jpg',
       url: '/project/turn-over-app',
     },
     {
       id: 1,
       uuid: Date.now(),
-      title: 'Rijksmuseums',
+      title: 'Rijksmuseum',
       type: 'App Conception',
       filter: 'digital',
       subTitle: 'University',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-two.png',
+      imgSrc: '/images/rijksmuseum_hero.jpg',
       url: '/project/rijksmuseum',
     },
     {
@@ -33,7 +33,7 @@
       type: 'Conception & App',
       filter: 'digital',
       subTitle: 'University',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
+      imgSrc: '/images/manincar_hero.jpg',
       url: 'project/man-incar',
     },
     {
@@ -43,7 +43,7 @@
       filter: 'digital',
       type: 'Website',
       subTitle: 'Work',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-one.png',
+      imgSrc: '/images/ecographis_hero.jpg',
       url: 'project/ecographis',
     },
     {
@@ -53,17 +53,17 @@
       type: 'Conception / Magazine',
       filter: 'print',
       subTitle: 'University',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-two.png',
+      imgSrc: '/images/mueslibar_hero.jpg',
       url: 'project/mueslibar',
     },
     {
       id: 6,
       uuid: Date.now(),
-      title: 'Human Projection',
+      title: 'Human </br> Projection',
       type: 'Photography',
       filter: 'multimedia',
       subTitle: 'University',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
+      imgSrc: '/images/projection_main.jpg',
       url: 'project/human-projection',
     },
     {
@@ -73,17 +73,17 @@
       type: 'Conception / Webapp',
       filter: 'digital',
       subTitle: 'University - Bachelorthesis',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
+      imgSrc: '/images/learnplatform_hero.jpg',
       url: '/project/learn-plattform',
     },
     {
       id: 8,
       uuid: Date.now(),
-      title: 'Poster Gallery',
+      title: 'Poster </br> Gallery',
       type: 'Conception / Design',
       filter: 'print',
       subTitle: 'University - Bachelorthesis',
-      imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/project-three.png',
+      imgSrc: '/images/poster_gallery_hero.jpg',
       url: '/project/poster-gallery',
     },
   ];
@@ -100,6 +100,8 @@
   let skew = 0;
   let scale = 0;
   let main;
+  let dragging = false;
+  let filtering = false;
   let filteredTemplates = slideTemplates;
   let data = {
     total: 0,
@@ -120,19 +122,7 @@
     min: 0,
   };
   let isTouch = false;
-
-  //Transition
-  let mask;
-  let maskSlices = [];
-  let maskLines = [];
-  let tl = null;
-  let transitionState = false;
-  let logo;
-  let dom = {};
-
-  let dragging = false;
   let rAF = null;
-  let parallax = null;
   const math = {
     lerp: (a, b, n) => {
       return (1 - n) * a + n * b;
@@ -152,7 +142,6 @@
   }
 
   onMount(() => {
-    // transition();
     isTouch = is_touch_device();
   });
 
@@ -166,17 +155,22 @@
 
   const filterTemplates = (e) => {
     filterClick.set(true);
+    //We have to set the filtering to retrigger animation of slides
+    setTimeout(() => {
+      filtering = true;
+    }, 1000);
     setTimeout(() => {
       slideArrays = [[], []];
       const filter = e.detail.filter;
-      filteredTemplates = slideTemplates.reduce((accu, curr) => {
+      let temps = slideTemplates.reduce((accu, curr) => {
         if (curr.filter === filter || filter === 'all') {
           curr.uuid = Date.now();
           accu.push(curr);
         }
         return accu;
       }, []);
-      console.log(filteredTemplates);
+      filteredTemplates = [...temps];
+      filtering = false;
     }, 1500);
   };
 
@@ -253,12 +247,16 @@
 
   const handleMouseMove = (e) => {
     if (!dragging) return;
+    isDragging.set(true);
     drag(e);
   };
 
   const handleMouseUp = (e) => {
     dragging = false;
     scrollY = data.current;
+    setTimeout(() => {
+      isDragging.set(false);
+    }, 100);
   };
   const drag = (e) => {
     data.current = scrollY - (e.clientX - data.on);
@@ -274,7 +272,6 @@
     setBounds(slideArrays[0]);
     setBounds(slideArrays[1]);
     resetScroll();
-    // handleScroll()
     setStyles();
   };
 
@@ -405,32 +402,33 @@
 <div class="main" bind:this={main}>
   <div class="scroll" bind:this={scrollEle}>
     <Navigation on:handleItemClick={(e) => filterTemplates(e)} />
-    <div
-      class="scroll-content"
-      bind:this={scrollContent[0]}
-      style="transform: translate3d(-{data.last.one.toFixed(2)}px, 0, 0) scaleY({bounce}) skewX({skew}deg); width: {scrollContentWidth}px">
-      {#each filteredTemplates as template, i}
-        <Slide
-          on:slideCreate={(e) => handleSlideCreate(e)}
-          imageSlide={true}
-          alignment={getSlideAlignment(i + 1)}
-          projectNr={i + 1}
-          {...template} />
-      {/each}
-    </div>
-    <div
-      class="scroll-content scroll-content--last"
-      bind:this={scrollContent[1]}
-      style="transform: translate3d(-{data.last.two.toFixed(2)}px, 0, 0) scaleY({bounce}); width: {scrollContentWidth}px">
-      {#each filteredTemplates as template, i}
-        <Slide
-          on:slideCreate={(e) => handleSlideCreate(e)}
-          {...template}
-          alignment={getSlideAlignment(i + 1)}
-          projectNr={i + 1} />
-      {/each}
-    </div>
-
+    {#if !filtering}
+      <div
+        class="scroll-content"
+        bind:this={scrollContent[0]}
+        style="transform: translate3d(-{data.last.one.toFixed(2)}px, 0, 0) scaleY({bounce}) skewX({skew}deg); width: {scrollContentWidth}px">
+        {#each filteredTemplates as template, i}
+          <Slide
+            on:slideCreate={(e) => handleSlideCreate(e)}
+            imageSlide={true}
+            alignment={getSlideAlignment(i + 1)}
+            projectNr={i + 1}
+            {...template} />
+        {/each}
+      </div>
+      <div
+        class="scroll-content scroll-content--last"
+        bind:this={scrollContent[1]}
+        style="transform: translate3d(-{data.last.two.toFixed(2)}px, 0, 0) scaleY({bounce}); width: {scrollContentWidth}px">
+        {#each filteredTemplates as template, i}
+          <Slide
+            on:slideCreate={(e) => handleSlideCreate(e)}
+            {...template}
+            alignment={getSlideAlignment(i + 1)}
+            projectNr={i + 1} />
+        {/each}
+      </div>
+    {/if}
     <div class="scrollbar" data-scrollbar>
       <div class="scrollbar__handle" style="transform: scaleX({scale})" bind:this={scrollHandle} />
     </div>

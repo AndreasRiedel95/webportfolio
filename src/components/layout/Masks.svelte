@@ -1,6 +1,6 @@
 <script>
   import { fly, fade } from 'svelte/transition';
-  import { expoOut } from 'svelte/easing';
+  import { expoOut, quadIn } from 'svelte/easing';
   export let mask = 0;
   export let transitionLength = 6000;
   export let animate;
@@ -15,7 +15,7 @@
       duration,
       delay,
       css: (t) => {
-        const eased = expoOut(t);
+        const eased = quadIn(t);
         return `
         width: ${eased * 100}%;
         `;
@@ -72,19 +72,24 @@
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
     }
-    &-line {
+    &-line-wrapper {
       position: relative;
-      transform-origin: left;
       width: 20rem;
       height: 2px;
       overflow: hidden;
-      background-color: rgba(#fff, 0.25);
-      opacity: 1;
+      &__line {
+        transform-origin: left;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(#fff, 0.25);
+        opacity: 1;
+      }
       &__inner {
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
+        width: 100%;
         background-color: #fff;
         transform-origin: left;
       }
@@ -139,12 +144,14 @@
       <div out:slideOutHorizontal={{ duration: 1000, delay: 600 }} class="mask-slice__black" />
       <div class="mask__inner">
         <div class="logo logo--mask">
-          <div out:fly={{ y: 100, duration: 1200 }} in:fly={{ y: -100, duration: 1200 }} class="logo--font">
+          <div out:fly={{ y: 20, duration: 800 }} in:fly={{ y: -20, duration: 800 }} class="logo--font">
             ANDREAS RIEDEL
           </div>
         </div>
-        <div class="mask-line" out:fade={{ duration: 1000 }}>
-          <div in:fadeWidth={{ duration: 4000 }} class="mask-line__inner" />
+        <div class="mask-line-wrapper">
+          <div class="mask-line-wrapper__line" in:fadeWidth={{ duration: 1000 }} out:fade={{ duration: 500 }}>
+            <div in:fadeWidth={{ duration: 1900, delay: 500 }} class="mask-line-wrapper__inner" />
+          </div>
         </div>
       </div>
     </div>

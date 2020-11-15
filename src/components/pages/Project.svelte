@@ -1,8 +1,12 @@
 <script>
   import TurnOver from 'pages/projects/TurnOver.svelte';
+  import Projection from 'pages/projects/Projection.svelte';
   export let projectId;
 
-  let templates = [{ cp: TurnOver, id: 'turn-over-app' }];
+  let templates = [
+    { cp: TurnOver, id: 'turn-over-app' },
+    { cp: Projection, id: 'human-projection' },
+  ];
   let template;
   $: if (projectId) {
     template = templates.find((t) => t.id === projectId);
@@ -17,6 +21,7 @@
   main {
     width: 100%;
     height: 100%;
+    overflow-y: auto;
   }
 
   .header {

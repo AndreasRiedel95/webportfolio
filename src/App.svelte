@@ -17,8 +17,8 @@
     if (Object.keys($lastActiveRoute).length === 0 && $lastActiveRoute.constructor === Object) {
       mask = 1;
       animate = true;
-      displayNewSiteTime = 3400;
-      transitionLength = 6000;
+      displayNewSiteTime = 2400;
+      transitionLength = 4000;
       //Filter Click Animation
     } else if ($lastActiveRoute.path === '/' && $filterClick) {
       mask = 2;
@@ -52,8 +52,8 @@
   <Masks {mask} {animate} />
 {/if}
 <Router>
-  <Route path="/" component={Home} />
+  <Route path="/" component={Home} middleware={[maskTransition]} />
   <Route path="/profile" component={Profile} middleware={[maskTransition]} />
-  <Route path="/project/:projectId" component={Project} />
+  <Route path="/project/:projectId" component={Project} middleware={[maskTransition]} />
   <NotFound />
 </Router>

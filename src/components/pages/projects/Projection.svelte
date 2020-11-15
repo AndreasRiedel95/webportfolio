@@ -5,9 +5,8 @@
   main {
     background-color: #161616;
     color: #fff;
-    width: 100%;
     overflow-y: auto;
-    z-index: 10;
+    width: 100%;
   }
 
   .wrapper {
@@ -17,17 +16,14 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    z-index: 10;
   }
 
   .header {
     height: 100vh;
-    background-color: #161616;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
     &__wrapper {
       position: relative;
     }
@@ -54,21 +50,21 @@
     }
   }
 
-  .parallax-video {
-    max-width: 100vh;
-    height: 100vh;
-    & > video {
-      width: 100%;
-      object-fit: cover;
-      position: fixed;
-      top: 0;
-      z-index: 0;
-    }
+  .parralax {
+    width: 100%;
+    background-image: url('/images/hero_projection.jpg');
+    padding-bottom: 65%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parralax-video {
   }
 
   .content {
     background-color: #161616;
-    z-index: 10;
   }
 
   .content-header {
@@ -95,16 +91,12 @@
   <div class="wrapper">
     <div class="header">
       <div class="header__wrapper">
-        <div class="header__project-title">TURN- <br /> OVER APP</div>
+        <div class="header__project-title">Human <br /> Projection</div>
         <div class="header__year">18'</div>
-        <div class="header__skills">University <br /> iOS iPad App</div>
+        <div class="header__skills">University <br />Conception, Photography</div>
       </div>
     </div>
-    <div class="parallax-video">
-      <video autoplay muted loop>
-        <source src="/videos/toa.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <div class="parralax" />
     <div class="content">
       <div class="content-header mt-100 mb-100">
         <div class="divider mt-100 mb-50" />

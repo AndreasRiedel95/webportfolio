@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher, onDestroy, onMount } from 'svelte';
+  import { isDragging } from 'util/store.js';
   import { expoOut } from 'svelte/easing';
   const dispatch = createEventDispatcher();
   export let imageSlide = false;
@@ -13,7 +14,7 @@
   export let projectNr;
   export let imgSrc;
   export let url;
-  let counter = 0;
+  let value = {};
   //When Page Transition starts to fade out and takes 1600ms
   //This Page gets called -> We need a delay, to see the animation here
   const animationDelay = 1400;
@@ -28,17 +29,13 @@
   $: restartTransition(uuid);
 
   const restartTransition = (_) => {
-    counter++;
+    value = {};
   };
 
   onDestroy(() => {
     slideOne = null;
     slideTwo = null;
   });
-
-  const handleClick = () => {
-    console.log('CLICK ON IMAGE SLIDE');
-  };
 
   const fadeWidth = (node, { duration, delay }) => {
     return {
@@ -175,32 +172,34 @@
       }
     }
   }
+
+  .transition-title {
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+  }
 </style>
 
 {#if imageSlide}
-  {#each [counter] as count (count)}
-    <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}" on:click={handleClick}>
-      <a class="slide__link" href={url}>
-        <div class="slide__inner">
-          <div in:fadeWidth={{ duration: 2000, delay: animationDelay }} class="slide__img ">
-            <figure class=""><img src={imgSrc} draggable="false" /></figure>
-          </div>
-        </div>
-      </a>
-    </article>
-  {/each}
-{:else}
-  {#each [counter] as count (count)}
-    <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
+  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}">
+    <a class="slide__link" href={$isDragging ? 'javascript:;' : url} draggable="false">
       <div class="slide__inner">
-        <div class="slide__type">{type}</div>
-        <h1 class="slide__title">
-          <div class="js-transition-title">{title}</div>
-        </h1>
-        <div class="slide__projectnr">0{projectNr}</div>
-        <div class="slide__img slide__img--proxy" />
-        <div class="slide__project">{subTitle}</div>
+        <div in:fadeWidth={{ duration: 2000, delay: animationDelay }} class="slide__img ">
+          <figure class=""><img src={imgSrc} draggable="false" /></figure>
+        </div>
       </div>
-    </article>
-  {/each}
+    </a>
+  </article>
+{:else}
+  <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
+    <div class="slide__inner">
+      <div class="slide__type">{type}</div>
+      <h1 class="slide__title">
+        {@html title}
+      </h1>
+      <div class="slide__projectnr">0{projectNr}</div>
+      <div class="slide__img slide__img--proxy" />
+      <div class="slide__project">{subTitle}</div>
+    </div>
+  </article>
 {/if}

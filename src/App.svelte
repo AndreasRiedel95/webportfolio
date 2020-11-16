@@ -54,6 +54,6 @@
 <Router>
   <Route path="/" component={Home} middleware={[maskTransition]} />
   <Route path="/profile" component={Profile} middleware={[maskTransition]} />
-  <Route path="/project/:projectId" component={Project} />
+  <Route path="/project/:projectId" component={Project} middleware={[maskTransition]} />
   <NotFound />
 </Router>

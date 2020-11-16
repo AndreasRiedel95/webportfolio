@@ -58,9 +58,11 @@
     height: 100%;
     padding: 20vh 0;
     pointer-events: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
     user-select: none;
     align-items: var(--alignment);
     @media screen and (max-width: 800px) {
@@ -94,8 +96,11 @@
     &__link {
       position: relative;
       width: 100%;
-      user-select: none;
       -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
     }
     &__projectnr {
       z-index: -1;
@@ -156,6 +161,11 @@
         left: 0;
         width: 100%;
         height: 100%;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
         img {
           position: absolute;
           top: 0;
@@ -163,8 +173,11 @@
           transition: transform 0.5s ease-out;
           left: 0;
           height: 100%;
-          user-select: none;
           -webkit-user-drag: none;
+          -khtml-user-drag: none;
+          -moz-user-drag: none;
+          -o-user-drag: none;
+          user-drag: none;
           width: 100%;
           object-fit: cover;
           &:hover {

@@ -225,18 +225,18 @@
 
   const handleScroll = (e) => {
     if (dragging) return;
-    data.current += e.deltaY;
+    data.current += e.deltaY * 1.5;
     clamp();
   };
 
   const handleMouseDown = (e) => {
     dragging = true;
-    data.on = e.clientX * 1.5;
+    data.on = e.clientX;
   };
 
   const handleTouchDown = (e) => {
     dragging = true;
-    data.on = e.touches[0].clientX * 1.2;
+    data.on = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e) => {
@@ -260,7 +260,6 @@
 
   const handleTouchUp = (e) => {
     dragging = false;
-    console.log('touchUp', data.current);
     scrollY = data.current;
 
     setTimeout(() => {
@@ -268,13 +267,26 @@
     }, 100);
   };
 
+  const handleKeyDown = (e) => {
+    console.log('IN KEYDOWN');
+    switch (e.keyCode) {
+      case 37:
+      case 38:
+        (data.current -= 175), clamp();
+        break;
+      case 39:
+      case 40:
+        (data.current += 175), clamp();
+    }
+  };
+
   const drag = (e) => {
-    data.current = scrollY - (e.clientX - data.on);
+    data.current = scrollY - (e.clientX - data.on) * 3.5;
     clamp();
   };
 
   const touch = (e) => {
-    data.current = scrollY - (e.touches[0].clientX - data.on);
+    data.current = scrollY - (e.touches[0].clientX - data.on) * 3.5;
     clamp();
   };
 
@@ -303,17 +315,17 @@
 
   const run = () => {
     skew = 0;
-    data.last.one = math.lerp(data.last.one, data.current, 0.085);
+    data.last.one = math.lerp(data.last.one, data.current, 0.035);
     data.last.one = Math.floor(data.last.one * 100) / 100;
 
-    data.last.two = math.lerp(data.last.two, data.current, 0.07);
+    data.last.two = math.lerp(data.last.two, data.current, 0.03);
     data.last.two = Math.floor(data.last.two * 100) / 100;
 
     const diff = data.current - data.last.one;
     const acc = diff / windowWidth;
     const velo = +acc;
     bounce = 1 - Math.abs(velo * 0.25);
-    skew = velo * 35;
+    skew = velo * 10;
     scale = math.norm(data.last.two, 0, bounds.max);
     customRequestAnimationFrame();
   };
@@ -340,7 +352,6 @@
 
   const clamp = () => {
     data.current = Math.min(Math.max(data.current, 0), bounds.max);
-    console.log('clamp', data.current);
   };
 </script>
 
@@ -354,6 +365,7 @@
     overflow: auto;
     width: 100%;
     height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .scroll {
@@ -361,6 +373,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    -webkit-overflow-scrolling: touch;
     width: 100%;
     height: 100%;
     pointer-events: inherit;
@@ -406,6 +419,7 @@
   bind:innerWidth={windowWidth}
   on:resize={resize}
   on:wheel={(e) => handleScroll(e)}
+  on:keydown={(e) => handleKeyDown(e)}
   on:mousemove={(e) => handleMouseMove(e)}
   on:touchstart={(e) => handleTouchDown(e)}
   on:touchmove={(e) => handleTouchMove(e)}

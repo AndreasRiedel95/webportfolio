@@ -225,7 +225,13 @@
 
   const handleScroll = (e) => {
     if (dragging) return;
-    data.current += e.deltaY * 1.5;
+
+    if (navigator.userAgent.includes('Firefox')) {
+      console.log('IN FIREFOX');
+      data.current += e.deltaY * 2.5;
+    } else {
+      data.current += e.deltaY;
+    }
     clamp();
   };
 
@@ -268,7 +274,6 @@
   };
 
   const handleKeyDown = (e) => {
-    console.log('IN KEYDOWN');
     switch (e.keyCode) {
       case 37:
       case 38:

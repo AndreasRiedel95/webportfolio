@@ -1,5 +1,6 @@
 <script>
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte';
+  import { createEventDispatcher, onDestroy } from 'svelte';
+  import { fly, fade } from 'svelte/transition';
   import { isDragging } from 'util/store.js';
   import { expoOut } from 'svelte/easing';
   const dispatch = createEventDispatcher();
@@ -138,6 +139,9 @@
         top: -50px;
         white-space: nowrap;
       }
+      &__inner {
+        overflow: hidden;
+      }
     }
     &__project {
       color: #fff;
@@ -208,11 +212,15 @@
 {:else}
   <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
     <div class="slide__inner">
-      <div class="slide__type">{type}</div>
+      <div in:fly={{ x: -100, duration: 1500, delay: animationDelay, easing: expoOut }} class="slide__type">{type}</div>
       <h1 class="slide__title">
-        {@html title}
+        <div in:fly={{ y: 100, duration: 1500, delay: animationDelay, easing: expoOut }} class="slide__title__inner">
+          {@html title}
+        </div>
       </h1>
-      <div class="slide__projectnr">0{projectNr}</div>
+      <div in:fly={{ y: 100, duration: 1500, delay: animationDelay, easing: expoOut }} class="slide__projectnr">
+        0{projectNr}
+      </div>
       <div class="slide__img slide__img--proxy" />
       <div class="slide__project">{subTitle}</div>
     </div>

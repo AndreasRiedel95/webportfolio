@@ -37,7 +37,6 @@
     //Update new site
     setTimeout(() => {
       animate = false;
-      console.log('NEXT');
       next();
     }, displayNewSiteTime);
 

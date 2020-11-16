@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import preprocess from 'svelte-preprocess';
 import alias from '@rollup/plugin-alias';
+import babel from 'rollup-plugin-babel';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -60,6 +61,10 @@ export default {
       },
     }),
     aliases,
+    babel({
+      extensions: ['.js', '.mjs', '.html', '.svelte'],
+      include: ['src/**', 'node_modules/svelte/**'],
+    }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In

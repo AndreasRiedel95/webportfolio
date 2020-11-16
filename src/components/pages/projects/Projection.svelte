@@ -2,6 +2,7 @@
   import ProjectHeader from 'components/layout/ProjectHeader.svelte';
   import Parralax from 'components/layout/Parralax.svelte';
   import ProjectIntro from 'components/layout/ProjectIntro.svelte';
+  import Slideshow from 'components/containers/Slideshow.svelte';
 
   let template = {
     header: {
@@ -49,6 +50,7 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
+      <Slideshow />
     </div>
   </div>
 </main>

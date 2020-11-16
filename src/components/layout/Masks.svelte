@@ -6,7 +6,6 @@
   export let animate;
 
   $: if (!animate) {
-    console.log('ANIMATE OUT START');
     mask = 0;
   }
 

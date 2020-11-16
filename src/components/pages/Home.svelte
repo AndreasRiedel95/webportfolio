@@ -14,7 +14,7 @@
       filter: 'digital',
       subTitle: 'University',
       imgSrc: '/images/toa_hero.jpg',
-      url: '/project/turn-over-app',
+      url: '/project/turnOverApp',
     },
     {
       id: 1,
@@ -74,7 +74,7 @@
       filter: 'digital',
       subTitle: 'University - Bachelorthesis',
       imgSrc: '/images/learnplatform_hero.jpg',
-      url: '/project/learn-plattform',
+      url: '/project/learnplattform',
     },
     {
       id: 8,
@@ -84,7 +84,7 @@
       filter: 'print',
       subTitle: 'University - Bachelorthesis',
       imgSrc: '/images/poster_gallery_hero.jpg',
-      url: '/project/poster-gallery',
+      url: '/project/postergallery',
     },
   ];
 

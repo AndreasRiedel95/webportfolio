@@ -29,7 +29,7 @@
 {#if video}
   <div class="parallax-video">
     <video autoplay muted loop>
-      <source src="/videos/toa.mp4" type="video/mp4" />
+      <source src={url} type="video/mp4" />
     </video>
   </div>
 {:else}

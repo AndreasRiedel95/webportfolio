@@ -3,13 +3,17 @@
   import Projection from 'pages/projects/Projection.svelte';
   import Rijksmuseum from 'pages/projects/Rijksmuseum.svelte';
   import Ecographis from 'pages/projects/Ecographis.svelte';
+  import PosterGallery from 'pages/projects/PosterGallery.svelte';
+  import Learnplatform from 'pages/projects/Learnplatform.svelte';
   export let projectId;
 
   let templates = [
-    { cp: TurnOver, id: 'turn-over-app' },
+    { cp: TurnOver, id: 'turnOverApp' },
     { cp: Projection, id: 'human-projection' },
     { cp: Rijksmuseum, id: 'rijksmuseum' },
     { cp: Ecographis, id: 'ecographis' },
+    { cp: PosterGallery, id: 'postergallery' },
+    { cp: Learnplatform, id: 'learnplattform' },
   ];
   let template;
   $: if (projectId) {

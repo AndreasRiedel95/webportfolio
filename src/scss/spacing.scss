@@ -1,0 +1,31 @@
+//SPACING
+$index: 10;
+@while $index <= 250 {
+  .mt-#{$index} {
+    margin-top: #{$index}px;
+  }
+  .mb-#{$index} {
+    margin-bottom: #{$index}px;
+  }
+  .pt-#{$index} {
+    padding-top: #{$index}px;
+  }
+  .pb-#{$index} {
+    padding-bottom: #{$index}px;
+  }
+  @media screen and (max-width: 1000px) {
+    .mt-#{$index} {
+      margin-top: #{$index / 2}px;
+    }
+    .mb-#{$index} {
+      margin-bottom: #{$index / 2}px;
+    }
+    .pt-#{$index} {
+      padding-top: #{$index / 2}px;
+    }
+    .pb-#{$index} {
+      padding-bottom: #{$index / 2}px;
+    }
+  }
+  $index: $index + 10;
+}

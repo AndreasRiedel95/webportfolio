@@ -48,6 +48,44 @@
   };
 </script>
 
+<style lang="scss" global>
+  @use './scss/spacing';
+
+  body {
+    height: 100vh;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #212121;
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* Hide scrollbar */
+  html,
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+</style>
+
 {#if !destroyMask}
   <Masks {mask} {animate} />
 {/if}

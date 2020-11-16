@@ -3,11 +3,14 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import preprocess from 'svelte-preprocess';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import sveltePreprocess from 'svelte-preprocess';
 import alias from '@rollup/plugin-alias';
 import babel from 'rollup-plugin-babel';
 
 const production = !process.env.ROLLUP_WATCH;
+console.log('Production', production);
 
 const aliases = alias({
   resolve: ['.svelte', '.js'], //optional, by default this will just look for .js files or folders
@@ -53,7 +56,15 @@ export default {
       // enable run-time checks when not in production
       dev: !production,
       // Add sass support
-      preprocess: preprocess(),
+      preprocess: sveltePreprocess({
+        sourceMap: !production,
+        defaults: {
+          style: 'scss',
+        },
+        postcss: {
+          plugins: [autoprefixer(), production && cssnano()].filter((plugin) => plugin),
+        },
+      }),
       // we'll extract any component CSS out into
       // a separate file - better for performance
       css: (css) => {

@@ -11,7 +11,7 @@
     },
     parralax: {
       video: false,
-      url: '/images/rijksmuseum_hero2.jpg',
+      url: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero2_0QvExjcQDRQNQ.jpg',
     },
     intro: {
       introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
@@ -46,26 +46,76 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-areas: 'text image';
+    &--right {
+      grid-template-areas: 'image text';
+    }
+    @media screen and (max-width: 950px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'text' 'image';
+    }
+
     &__user-stories {
       text-align: right;
+      grid-area: text;
       max-width: 500px;
       margin-left: auto;
       position: relative;
+      padding-left: 40px;
+      @media screen and (max-width: 950px) {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: left;
+        max-width: 100%;
+      }
+      @media screen and (max-width: 650px) {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      &--right {
+        text-align: left;
+        margin-right: auto;
+        padding-right: 40px;
+        @media screen and (max-width: 950px) {
+          padding-right: 0px;
+        }
+      }
       &__text {
         position: sticky;
-        margin-top: 200px;
         top: 200px;
+        margin-top: 200px;
+        @media screen and (max-width: 950px) {
+          position: relative;
+          top: 0;
+          margin-top: 20px;
+        }
       }
     }
     &__container {
       width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
+      grid-area: image;
     }
   }
 
   .wireframe-img {
     width: 100%;
+  }
+
+  .subheadline {
+    font-family: 'Domine', serif;
+    font-style: italic;
+    font-size: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    @media screen and (max-width: 650px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    &__inner {
+      display: inline-block;
+    }
   }
 </style>
 
@@ -75,10 +125,16 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
+      <div class="subheadline mb-20">
+        <div class="subheadline__inner">
+          <div class="divider ml-10 mb-10" />
+          User Stories
+        </div>
+      </div>
       <div class="wireframe mb-100">
         <div class="wireframe__user-stories">
           <div class="wireframe__user-stories__text">
-            <div class="content-header__title mb-20">TO GET MORE INFORMATION ABOUT AN ARTWORK</div>
+            <div class="headline3 mb-20">TO GET MORE INFORMATION ABOUT AN ARTWORK</div>
             When I’m in Amsterdam with my family for only two days, we are visiting the Rijksmuseum and my son is
             annoyed by long and boring guided tours or reading long art descriptions, I want to have an easy, fast and
             entertaining way to get compact and interesting background information about the artworks we are passing by,
@@ -87,8 +143,22 @@
           </div>
         </div>
         <div class="wireframe__container">
-          <!-- <img class="wireframe-img" src="/svg/wireframe_1_a.svg" alt="" /> -->
+          <img class="wireframe-img" src="/svg/wireframe_1_a.svg" alt="" />
           <img class="wireframe-img mt-50" src="/svg/wireframe_1_b.svg" alt="" />
+        </div>
+      </div>
+      <div class="wireframe wireframe--right mb-100">
+        <div class="wireframe__container">
+          <img class="wireframe-img" src="/svg/wireframe_2_a.svg" alt="" />
+          <img class="wireframe-img mt-50" src="/svg/wireframe_2_b.svg" alt="" />
+        </div>
+        <div class="wireframe__user-stories--right">
+          <div class="wireframe__user-stories__text">
+            <div class="headline3 mb-20">TO GET MORE INFORMATION ABOUT WHAT‘S GOING ON TODAY</div>
+            When I wake up at our hotel room and recognize the bad wheater we were not prepared for and we decide to go
+            to the museum, I want to have an opportunity to plan our day spontaneously and get easily more information
+            about what‘s going on, so we can keep our feet dry and seize the day.
+          </div>
         </div>
       </div>
     </div>

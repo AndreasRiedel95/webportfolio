@@ -5,14 +5,20 @@
 
 <style lang="scss">
   .parallax-video {
-    max-width: 100vh;
-    height: 100vh;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
     & > video {
       width: 100%;
       object-fit: cover;
       position: fixed;
       top: 0;
       z-index: 0;
+      @media (hover: none) and (pointer: coarse) {
+        position: relative;
+      }
     }
   }
   .parralax {
@@ -23,12 +29,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @media (hover: none) and (pointer: coarse) {
+      background-attachment: scroll;
+    }
   }
 </style>
 
 {#if video}
   <div class="parallax-video">
-    <video autoplay muted loop>
+    <video autoplay muted loop playsinline>
       <source src={url} type="video/mp4" />
     </video>
   </div>

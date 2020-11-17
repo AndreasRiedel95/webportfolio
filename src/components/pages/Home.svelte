@@ -53,7 +53,7 @@
       type: 'Conception / Magazine',
       filter: 'print',
       subTitle: 'University',
-      imgSrc: '/images/mueslibar_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg',
       url: 'project/mueslibar',
     },
     {

@@ -48,15 +48,19 @@
 </script>
 
 <style lang="scss" global>
+  @use './scss/typography';
   @use './scss/spacing';
+  @use './scss/general';
 
   body {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     padding: 0;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     margin: 0;
     overflow: hidden;
     background-color: #212121;

@@ -5,13 +5,13 @@
 
   let template = {
     header: {
-      title: ['Poster Gallery'],
-      year: "11-14'",
-      skills: 'Privat </br> Design, Conception ',
+      title: ['mueslibar'],
+      year: "16'",
+      skills: 'University <br /> Conception, Design',
     },
     parralax: {
       video: false,
-      url: 'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
+      url: 'https://ik.imagekit.io/andreasriedel/mueslibar_hero_tYISgUQzHiNq.jpg',
     },
     intro: {
       introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
@@ -28,6 +28,7 @@
     background-color: #161616;
     color: #fff;
     width: 100%;
+    z-index: 10;
   }
 
   .wrapper {
@@ -36,23 +37,12 @@
     margin-right: auto;
     display: flex;
     flex-direction: column;
+    z-index: 10;
   }
 
   .content {
     background-color: #161616;
-  }
-
-  .content-header {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    &__title {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 40px;
-    }
+    z-index: 10;
   }
 </style>
 

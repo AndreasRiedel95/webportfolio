@@ -13,6 +13,18 @@ $index: 10;
   .pb-#{$index} {
     padding-bottom: #{$index}px;
   }
+  .ml-#{$index} {
+    margin-left: #{$index}px;
+  }
+  .mr-#{$index} {
+    margin-right: #{$index}px;
+  }
+  .pl-#{$index} {
+    padding-left: #{$index}px;
+  }
+  .pr-#{$index} {
+    padding-right: #{$index}px;
+  }
   @media screen and (max-width: 1000px) {
     .mt-#{$index} {
       margin-top: #{$index / 2}px;
@@ -25,6 +37,18 @@ $index: 10;
     }
     .pb-#{$index} {
       padding-bottom: #{$index / 2}px;
+    }
+    .ml-#{$index} {
+      margin-left: #{$index / 2}px;
+    }
+    .mr-#{$index} {
+      margin-right: #{$index / 2}px;
+    }
+    .pl-#{$index} {
+      padding-left: #{$index / 2}px;
+    }
+    .pr-#{$index} {
+      padding-right: #{$index / 2}px;
     }
   }
   $index: $index + 10;

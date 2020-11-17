@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Flickity from 'flickity';
+  export let slides = [];
   let flickity;
   let flickityNode;
   let options = { imagesLoaded: true, percentPosition: false, wrapAround: true };
@@ -9,7 +10,7 @@
     flickity = new Flickity(flickityNode, options || {});
     setTimeout(() => {
       refreshFlickity();
-    }, 200);
+    }, 500);
   });
 
   const refreshFlickity = () => {
@@ -22,12 +23,12 @@
 
 <style>
   .carousel {
-    background: #eee;
+    background: transparent;
   }
 
   .carousel img {
     display: block;
-    height: 400px;
+    height: 600px;
   }
 </style>
 
@@ -37,11 +38,6 @@
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
 </svelte:head>
 
-<div class="carousel mb-200" bind:this={flickityNode}>
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" alt="submerged" />
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" alt="look-out" />
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" alt="One World Trade" />
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="drizzle" />
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose" />
+<div class="carousel mb-100" bind:this={flickityNode}>
+  {#each slides as slide, i}<img src={slide} alt="slide{i}" />{/each}
 </div>

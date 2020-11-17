@@ -5,6 +5,8 @@
   import Ecographis from 'pages/projects/Ecographis.svelte';
   import PosterGallery from 'pages/projects/PosterGallery.svelte';
   import Learnplatform from 'pages/projects/Learnplatform.svelte';
+  import Mueslibar from 'pages/projects/Mueslibar.svelte';
+  import CloseButton from 'components/atoms/CloseButton.svelte';
   export let projectId;
 
   let templates = [
@@ -14,6 +16,7 @@
     { cp: Ecographis, id: 'ecographis' },
     { cp: PosterGallery, id: 'postergallery' },
     { cp: Learnplatform, id: 'learnplattform' },
+    { cp: Mueslibar, id: 'mueslibar' },
   ];
   let template;
   $: if (projectId) {
@@ -29,6 +32,7 @@
   main {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     overflow-y: auto;
   }
 
@@ -37,12 +41,16 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 40px;
+    padding: 15px;
     z-index: 20;
+    display: flex;
+    justify-content: flex-end;
   }
 </style>
 
 <main>
-  <div class="header"><a href="/">Close</a></div>
+  <div class="header">
+    <CloseButton link="/" />
+  </div>
   <svelte:component this={template.cp} />
 </main>

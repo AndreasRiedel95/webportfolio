@@ -338,7 +338,7 @@
     const acc = diff / windowWidth;
     const velo = +acc;
     bounce = 1 - Math.abs(velo * 0.25);
-    skew = velo * 10;
+    skew = velo * 5;
     scale = math.norm(data.last.two, 0, bounds.max);
     customRequestAnimationFrame();
   };

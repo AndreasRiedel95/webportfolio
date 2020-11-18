@@ -98,7 +98,7 @@
     &__award {
       position: absolute;
       right: -7%;
-      top: -12%;
+      top: -10%;
       width: 12vw;
       max-width: 95px;
       z-index: 20;

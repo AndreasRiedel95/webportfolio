@@ -2,9 +2,10 @@
   import { onMount } from 'svelte';
   import Flickity from 'flickity';
   export let slides = [];
+  export let options;
+  export let height = 600;
   let flickity;
   let flickityNode;
-  let options = { imagesLoaded: true, percentPosition: false, wrapAround: true };
 
   onMount(() => {
     flickity = new Flickity(flickityNode, options || {});
@@ -28,7 +29,7 @@
 
   .carousel img {
     display: block;
-    height: 600px;
+    height: var(--height);
   }
 </style>
 
@@ -38,6 +39,6 @@
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
 </svelte:head>
 
-<div class="carousel mb-100" bind:this={flickityNode}>
+<div class="carousel" bind:this={flickityNode} style="--height: {height}px">
   {#each slides as slide, i}<img src={slide} alt="slide{i}" />{/each}
 </div>

@@ -11,11 +11,6 @@
     padding-left: 30px;
     padding-right: 30px;
     z-index: 10;
-    &__title {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 40px;
-    }
     &__paragraph {
       margin-top: 20px;
       &:first-child {
@@ -27,7 +22,7 @@
 
 <div class="intro-header mt-150 mb-150">
   <div class="divider mt-100 mb-50" />
-  <div class="intro-header__title mb-30">
+  <div class="intro-header__title headline2 mb-30">
     {@html introTitle}
   </div>
   {#each introText as text}

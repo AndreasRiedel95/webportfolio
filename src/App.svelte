@@ -69,6 +69,9 @@
     font-size: 1rem;
     line-height: 1.7;
     font-weight: 300;
+    @media screen and (max-width: 600px) {
+      font-size: 14px;
+    }
   }
 
   /* Hide scrollbar */

@@ -16,8 +16,8 @@
   .header {
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,6 +74,7 @@
       right: 100px;
       @media screen and (max-width: 950px) {
         right: 0;
+        text-align: right;
         transform: translate(0%, 110%);
       }
     }

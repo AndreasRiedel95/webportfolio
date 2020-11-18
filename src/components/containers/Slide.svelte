@@ -15,6 +15,7 @@
   export let projectNr;
   export let imgSrc;
   export let url;
+  export let award;
   let value = {};
   //When Page Transition starts to fade out and takes 1600ms
   //This Page gets called -> We need a delay, to see the animation here
@@ -94,6 +95,15 @@
         padding-left: 15vw;
       }
     }
+    &__award {
+      position: absolute;
+      right: -7%;
+      top: -12%;
+      width: 12vw;
+      max-width: 95px;
+      z-index: 20;
+      transform: translate3d(0, 0, 0) rotate(27deg);
+    }
     &__link {
       position: relative;
       width: 100%;
@@ -101,7 +111,6 @@
       -khtml-user-drag: none;
       -moz-user-drag: none;
       -o-user-drag: none;
-      user-drag: none;
     }
     &__projectnr {
       z-index: -1;
@@ -139,9 +148,6 @@
         top: -50px;
         white-space: nowrap;
       }
-      &__inner {
-        overflow: hidden;
-      }
     }
     &__project {
       color: #fff;
@@ -151,9 +157,8 @@
       font-size: 1vw;
       padding-top: 1.5vw;
     }
-    &__img {
+    &__imgwrapper {
       position: relative;
-      overflow: hidden;
       padding-top: 65%;
       width: 100%;
       @media screen and (max-width: 500px) {
@@ -169,8 +174,19 @@
         -khtml-user-drag: none;
         -moz-user-drag: none;
         -o-user-drag: none;
-        user-drag: none;
-        img {
+        & > div {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          transform: scale(1);
+        }
+        &:hover > div > .slide__image {
+          transform: scale(1.2);
+        }
+        &:hover .slide__award {
+          animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+        .slide__image {
           position: absolute;
           top: 0;
           transform: scale(1);
@@ -181,12 +197,8 @@
           -khtml-user-drag: none;
           -moz-user-drag: none;
           -o-user-drag: none;
-          user-drag: none;
           width: 100%;
           object-fit: cover;
-          &:hover {
-            transform: scale(1.2);
-          }
         }
       }
     }
@@ -197,14 +209,46 @@
     height: 100%;
     width: 100%;
   }
+
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0) rotate(27deg);
+    }
+
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0) rotate(27deg);
+    }
+
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0) rotate(27deg);
+    }
+
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0) rotate(27deg);
+    }
+  }
 </style>
 
 {#if imageSlide}
   <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}">
     <a class="slide__link" href={$isDragging ? 'javascript:;' : url} draggable="false">
       <div class="slide__inner">
-        <div in:fadeWidth={{ duration: 2000, delay: animationDelay }} class="slide__img ">
-          <figure class=""><img src={imgSrc} draggable="false" /></figure>
+        <div in:fadeWidth={{ duration: 2000, delay: animationDelay }} class="slide__imgwrapper">
+          <figure>
+            {#if award}
+              <img
+                in:fly={{ y: 100, duration: 1500, delay: animationDelay, easing: expoOut }}
+                class="slide__award"
+                src="/svg/award.svg"
+                alt="award" />
+            {/if}
+            <div><img class="slide__image" slide src={imgSrc} draggable="false" /></div>
+          </figure>
         </div>
       </div>
     </a>
@@ -221,7 +265,7 @@
       <div in:fly={{ y: 100, duration: 1500, delay: animationDelay, easing: expoOut }} class="slide__projectnr">
         0{projectNr}
       </div>
-      <div class="slide__img slide__img--proxy" />
+      <div class="slide__imgwrapper slide__imgwrapper--proxy" />
       <div class="slide__project">{subTitle}</div>
     </div>
   </article>

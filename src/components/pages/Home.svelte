@@ -15,6 +15,7 @@
       subTitle: 'University',
       imgSrc: '/images/toa_hero.jpg',
       url: '/project/turnOverApp',
+      award: false,
     },
     {
       id: 1,
@@ -25,6 +26,7 @@
       subTitle: 'University',
       imgSrc: '/images/rijksmuseum_hero.jpg',
       url: '/project/rijksmuseum',
+      award: false,
     },
     {
       id: 2,
@@ -35,6 +37,7 @@
       subTitle: 'University',
       imgSrc: '/images/manincar_hero.jpg',
       url: 'project/man-incar',
+      award: false,
     },
     {
       id: 4,
@@ -45,6 +48,7 @@
       subTitle: 'Work',
       imgSrc: '/images/ecographis_hero.jpg',
       url: 'project/ecographis',
+      award: false,
     },
     {
       id: 5,
@@ -55,6 +59,7 @@
       subTitle: 'University',
       imgSrc: 'https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg',
       url: 'project/mueslibar',
+      award: false,
     },
     {
       id: 6,
@@ -65,6 +70,7 @@
       subTitle: 'University',
       imgSrc: '/images/projection_main.jpg',
       url: 'project/human-projection',
+      award: false,
     },
     {
       id: 7,
@@ -75,6 +81,7 @@
       subTitle: 'University - Bachelorthesis',
       imgSrc: '/images/learnplatform_hero.jpg',
       url: '/project/learnplattform',
+      award: true,
     },
     {
       id: 8,
@@ -85,6 +92,7 @@
       subTitle: 'University - Bachelorthesis',
       imgSrc: '/images/poster_gallery_hero.jpg',
       url: '/project/postergallery',
+      award: false,
     },
   ];
 

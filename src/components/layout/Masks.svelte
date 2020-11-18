@@ -67,19 +67,23 @@
     width: 100%;
     &__inner {
       position: absolute;
+      max-width: 300px;
+      width: 100%;
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
     }
     &-line-wrapper {
       position: relative;
-      width: 20rem;
+      width: 100%;
       height: 2px;
+      border-radius: 4px;
       overflow: hidden;
       &__line {
         transform-origin: left;
         height: 100%;
         width: 100%;
+        border-radius: 4px;
         background-color: rgba(#fff, 0.25);
         opacity: 1;
       }

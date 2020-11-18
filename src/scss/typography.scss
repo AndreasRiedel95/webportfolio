@@ -6,14 +6,26 @@
   font-weight: bolder;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .headline2 {
   font-size: 32px;
   font-weight: 500;
   line-height: 40px;
+  @media screen and (max-width: 600px) {
+    font-size: 26px;
+    line-height: 34px;
+  }
 }
 
 .headline3 {
   font-size: 20px;
   font-weight: 600;
   line-height: 27px;
+  @media screen and (max-width: 600px) {
+    font-size: 17px;
+    line-height: 25px;
+  }
 }

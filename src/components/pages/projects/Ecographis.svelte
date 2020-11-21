@@ -117,8 +117,8 @@
     height: 15vw;
     max-height: 400px;
     max-width: 400px;
-    min-height: 200px;
-    min-width: 200px;
+    min-height: 50px;
+    min-width: 50px;
     align-self: center;
     justify-self: center;
     transform: rotate(-45deg);
@@ -152,7 +152,7 @@
     }
     &:hover {
       &:before {
-        content: 'Visit page!';
+        content: 'See live!';
         color: #000;
         transform: scale(1) rotate(45deg);
       }
@@ -173,15 +173,13 @@
           alt="ecographis"
           bind:this={images.image1.ele}
           style="transform: translate3d(0, -{yvalue1}px, 0)" />
-        <div class="content__text-wrapper" style="max-width: 500px; margin-right: auto">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat eveniet, repellat eos saepe doloribus
-          corporis nobis doloremque facere non commodi nulla voluptates nemo maiores maxime aliquid? Molestias
-          voluptatem temporibus voluptates!
+        <div class="content__text-wrapper headline3" style="max-width: 500px; margin-right: auto">
+          ECOGRAPHIS DESIGN
+          <br />
+          AGENCY WEBSITE.
         </div>
       </div>
-      <div class="content__parralax-wrapper">
-        <Parralax {...template.parralax} />
-      </div>
+      <div class="content__parralax-wrapper"><img src="/images/test.jpg" alt="" style="width: 100%; " /></div>
       <div class="content__image-wrapper c_1_2">
         <div class="content__text-wrapper">
           <a target="_blank" class="link" href="https://ecographis.de/">

@@ -56,7 +56,6 @@
 
   onMount(() => {
     images.forEach((image) => {
-      console.log(image, observer);
       observer.observe(image);
     });
   });

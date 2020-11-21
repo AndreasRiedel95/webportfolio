@@ -40,18 +40,21 @@
 
   .content {
     background-color: #161616;
-  }
-
-  .content-header {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    &__title {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 40px;
+    &__parralax-wrapper {
+      max-width: 80vw;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__image-wrapper {
+      display: grid;
+      width: 100%;
+      &.c_2_1 {
+        grid-template-columns: 2fr 1fr;
+      }
+      &.c_1_2 {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 </style>
@@ -62,6 +65,15 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
+      <div class="content__image-wrapper c_2_1" />
+      <div class="content__parralax-wrapper">
+        <Parralax {...template.parralax} />
+      </div>
+      <div class="content__image-wrapper c_1_2">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat eveniet, repellat eos saepe doloribus corporis
+        nobis doloremque facere non commodi nulla voluptates nemo maiores maxime aliquid? Molestias voluptatem
+        temporibus voluptates!
+      </div>
     </div>
   </div>
 </main>

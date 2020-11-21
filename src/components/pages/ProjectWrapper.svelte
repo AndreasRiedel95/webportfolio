@@ -7,6 +7,7 @@
   import Learnplatform from 'pages/projects/Learnplatform.svelte';
   import Mueslibar from 'pages/projects/Mueslibar.svelte';
   import CloseButton from 'components/atoms/CloseButton.svelte';
+  import { projectContainerScrollTop } from 'util/store.js';
   export let projectId;
 
   let templates = [
@@ -48,7 +49,7 @@
   }
 </style>
 
-<main>
+<main on:scroll={(e) => projectContainerScrollTop.set(e.target.scrollTop)}>
   <div class="header">
     <CloseButton link="/" />
   </div>

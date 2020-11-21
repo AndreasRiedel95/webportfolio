@@ -174,17 +174,11 @@
         -khtml-user-drag: none;
         -moz-user-drag: none;
         -o-user-drag: none;
-        & > div {
+        & > .slide__img_wrapper {
           width: 100%;
           height: 100%;
           overflow: hidden;
-          transform: scale(1);
-        }
-        &:hover > div > .slide__image {
-          transform: scale(1.2);
-        }
-        &:hover .slide__award {
-          animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          transform: scale(1) !important;
         }
         .slide__image {
           position: absolute;
@@ -199,6 +193,14 @@
           -o-user-drag: none;
           width: 100%;
           object-fit: cover;
+        }
+        @media (hover: hover) and (pointer: fine) {
+          &:hover .slide__image {
+            transform: scale(1.2);
+          }
+          &:hover .slide__award {
+            animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          }
         }
       }
     }
@@ -247,7 +249,9 @@
                 src="/svg/award.svg"
                 alt="award" />
             {/if}
-            <div><img class="slide__image" slide src={imgSrc} draggable="false" /></div>
+            <div class="slide__img_wrapper">
+              <img class="slide__image" slide src={imgSrc} draggable="false" alt="slide" />
+            </div>
           </figure>
         </div>
       </div>

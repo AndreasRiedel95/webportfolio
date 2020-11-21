@@ -1,6 +1,20 @@
 <script>
   export let video;
   export let url;
+  import { projectContainerScrollTop } from 'util/store.js';
+  const xvalue = 'center';
+  const factor = 0.1;
+  let yvalue = 0;
+  let lastVal = 0;
+
+  $: {
+    lastVal = lerp(lastVal, $projectContainerScrollTop, 0.08);
+    yvalue = lastVal * factor;
+  }
+
+  const lerp = (a, b, n) => {
+    return (1 - n) * a + n * b;
+  };
 </script>
 
 <style lang="scss">
@@ -23,14 +37,19 @@
   }
   .parralax {
     width: 100%;
-    background-image: var(--url);
     padding-bottom: 65%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     @media (hover: none) and (pointer: coarse) {
       background-attachment: scroll;
+      background-position: center !important;
     }
   }
 </style>
@@ -42,5 +61,5 @@
     </video>
   </div>
 {:else}
-  <div style="--url: url({url})" class="parralax" />
+  <div style="background-position: {xvalue + ' ' + -yvalue + 'px'}; background-image: url({url});" class="parralax" />
 {/if}

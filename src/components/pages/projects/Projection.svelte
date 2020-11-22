@@ -12,7 +12,7 @@
     },
     parralax: {
       video: false,
-      url: '/images/hero_projection.jpg',
+      url: 'https://ik.imagekit.io/andreasriedel/hero_projection_I8Ldon9x7QSD0.jpg',
     },
     intro: {
       introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',

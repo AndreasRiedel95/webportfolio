@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import 'intersection-observer';
   import ProjectHeader from 'components/layout/ProjectHeader.svelte';
   import Parralax from 'components/layout/Parralax.svelte';
   import ProjectIntro from 'components/layout/ProjectIntro.svelte';

@@ -13,7 +13,7 @@
       type: 'iOS App for iPad',
       filter: 'digital',
       subTitle: 'University',
-      imgSrc: '/images/toa_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/toa_hero_yg104WGGAibv_.jpg',
       url: '/project/turnOverApp',
       award: false,
     },
@@ -24,7 +24,7 @@
       type: 'App Conception',
       filter: 'digital',
       subTitle: 'University',
-      imgSrc: '/images/rijksmuseum_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero_pwbx7z66hpfB.jpg',
       url: '/project/rijksmuseum',
       award: false,
     },
@@ -35,7 +35,7 @@
       type: 'Conception & App',
       filter: 'digital',
       subTitle: 'University',
-      imgSrc: '/images/manincar_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg',
       url: 'project/man-incar',
       award: false,
     },
@@ -46,7 +46,7 @@
       filter: 'digital',
       type: 'Website',
       subTitle: 'Work',
-      imgSrc: '/images/ecographis_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg',
       url: 'project/ecographis',
       award: false,
     },
@@ -68,7 +68,7 @@
       type: 'Photography',
       filter: 'multimedia',
       subTitle: 'University',
-      imgSrc: '/images/projection_main.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/projection_main_xo4imChmsDlT.jpg',
       url: 'project/human-projection',
       award: false,
     },
@@ -79,7 +79,7 @@
       type: 'Conception / Webapp',
       filter: 'digital',
       subTitle: 'University - Bachelorthesis',
-      imgSrc: '/images/learnplatform_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/learnplatform_hero_K54PmTBtfmp0X.jpg',
       url: '/project/learnplattform',
       award: true,
     },
@@ -90,7 +90,7 @@
       type: 'Conception / Design',
       filter: 'print',
       subTitle: 'University - Bachelorthesis',
-      imgSrc: '/images/poster_gallery_hero.jpg',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
       url: '/project/postergallery',
       award: false,
     },
@@ -179,7 +179,7 @@
       }, []);
       filteredTemplates = [...temps];
       filtering = false;
-    }, 1500);
+    }, 1100);
   };
 
   const resetScroll = () => {

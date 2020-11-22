@@ -142,9 +142,9 @@
     -> Loading Andreas Riedel and 3 Mask Tiles slide out -->
   {#if mask === 1}
     <div class="mask">
-      <div out:slideOutHorizontal={{ duration: 1000, delay: 0 }} class="mask-slice__black" />
-      <div out:slideOutHorizontal={{ duration: 1000, delay: 300 }} class="mask-slice__black" />
-      <div out:slideOutHorizontal={{ duration: 1000, delay: 600 }} class="mask-slice__black" />
+      <div out:slideOutHorizontal={{ duration: 800, delay: 0 }} class="mask-slice__black" />
+      <div out:slideOutHorizontal={{ duration: 800, delay: 200 }} class="mask-slice__black" />
+      <div out:slideOutHorizontal={{ duration: 800, delay: 400 }} class="mask-slice__black" />
       <div class="mask__inner">
         <div class="logo logo--mask">
           <div out:fly={{ y: 20, duration: 800 }} in:fly={{ y: -20, duration: 800 }} class="logo--font">
@@ -152,8 +152,8 @@
           </div>
         </div>
         <div class="mask-line-wrapper">
-          <div class="mask-line-wrapper__line" in:fadeWidth={{ duration: 1000 }} out:fade={{ duration: 500 }}>
-            <div in:fadeWidth={{ duration: 1900, delay: 500 }} class="mask-line-wrapper__inner" />
+          <div class="mask-line-wrapper__line" in:fadeWidth={{ duration: 800 }} out:fade={{ duration: 500 }}>
+            <div in:fadeWidth={{ duration: 1600, delay: 500 }} class="mask-line-wrapper__inner" />
           </div>
         </div>
       </div>
@@ -164,16 +164,16 @@
   {#if mask === 2}
     <div class="mask">
       <div
-        in:slideOutHorizontal={{ duration: 1000, delay: 0 }}
-        out:slideOutHorizontal={{ duration: 1000, delay: 0 }}
+        in:slideOutHorizontal={{ duration: 800, delay: 0 }}
+        out:slideOutHorizontal={{ duration: 800, delay: 0 }}
         class="mask-slice__black" />
       <div
-        in:slideOutHorizontal={{ duration: 1000, delay: 300 }}
-        out:slideOutHorizontal={{ duration: 1000, delay: 300 }}
+        in:slideOutHorizontal={{ duration: 800, delay: 200 }}
+        out:slideOutHorizontal={{ duration: 800, delay: 200 }}
         class="mask-slice__black" />
       <div
-        in:slideOutHorizontal={{ duration: 1000, delay: 600 }}
-        out:slideOutHorizontal={{ duration: 1000, delay: 600 }}
+        in:slideOutHorizontal={{ duration: 800, delay: 400 }}
+        out:slideOutHorizontal={{ duration: 800, delay: 400 }}
         class="mask-slice__black" />
     </div>
   {/if}
@@ -182,16 +182,16 @@
   {#if mask === 3}
     <div class="mask" style="display: flex">
       <div
-        in:slideOutVertical={{ duration: 1000, delay: 0 }}
-        out:slideOutVertical={{ duration: 1000, delay: 0 }}
+        in:slideOutVertical={{ duration: 800, delay: 0 }}
+        out:slideOutVertical={{ duration: 800, delay: 0 }}
         class="mask-slice__white" />
       <div
-        in:slideOutVertical={{ duration: 1000, delay: 300 }}
-        out:slideOutVertical={{ duration: 1000, delay: 300 }}
+        in:slideOutVertical={{ duration: 800, delay: 200 }}
+        out:slideOutVertical={{ duration: 800, delay: 200 }}
         class="mask-slice__white" />
       <div
-        in:slideOutVertical={{ duration: 1000, delay: 600 }}
-        out:slideOutVertical={{ duration: 1000, delay: 600 }}
+        in:slideOutVertical={{ duration: 800, delay: 400 }}
+        out:slideOutVertical={{ duration: 800, delay: 400 }}
         class="mask-slice__white" />
     </div>
   {/if}

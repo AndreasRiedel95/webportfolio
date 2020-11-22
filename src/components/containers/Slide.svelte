@@ -19,7 +19,7 @@
   let value = {};
   //When Page Transition starts to fade out and takes 1600ms
   //This Page gets called -> We need a delay, to see the animation here
-  const animationDelay = 1400;
+  const animationDelay = 1100;
 
   let slideOne;
   let slideTwo;
@@ -170,6 +170,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
         -webkit-user-drag: none;
         -khtml-user-drag: none;
         -moz-user-drag: none;

@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
+  import 'intersection-observer';
   export let introTitle;
-  import { fly, fade } from 'svelte/transition';
   import { expoOut } from 'svelte/easing';
   export let introText;
   let wrapper;
@@ -29,9 +29,9 @@
 
   let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0.4 && entry.intersectionRatio < 0.5) {
+      if (entry.intersectionRatio > 0.4 && entry.intersectionRatio < 0.9) {
         visible = true;
-      } else if (entry.intersectionRatio > 0.5) {
+      } else if (entry.intersectionRatio > 1) {
         observer.unobserve(entry.target);
       }
     });

@@ -32,7 +32,7 @@
     },
     parralax: {
       video: false,
-      url: '/images/ecographis_hero2.jpg',
+      url: 'https://ik.imagekit.io/andreasriedel/ecographis_hero2_7Ii9E5onbVmqQ.jpg',
     },
     intro: {
       introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
@@ -168,7 +168,7 @@
       <ProjectIntro {...template.intro} />
       <div class="content__image-wrapper c_2_1">
         <img
-          src="/images/ecographis_hero.jpg"
+          src="https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg"
           class="content__image content__image--first "
           alt="ecographis"
           bind:this={images.image1.ele}
@@ -190,7 +190,7 @@
           </a>
         </div>
         <img
-          src="/images/ecographis_hero.jpg"
+          src="https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg"
           class="content__image content__image--second"
           bind:this={images.image2.ele}
           alt="ecographis"

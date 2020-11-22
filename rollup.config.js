@@ -72,11 +72,10 @@ export default {
       },
     }),
     aliases,
-    production &&
-      babel({
-        extensions: ['.js', '.mjs', '.html', '.svelte'],
-        include: ['src/**', 'node_modules/svelte/**'],
-      }),
+    babel({
+      extensions: ['.js', '.mjs', '.html', '.svelte'],
+      include: ['src/**', 'node_modules/svelte/**'],
+    }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In

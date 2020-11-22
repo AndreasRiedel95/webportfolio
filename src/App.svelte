@@ -17,20 +17,20 @@
     if (Object.keys($lastActiveRoute).length === 0 && $lastActiveRoute.constructor === Object) {
       mask = 1;
       animate = true;
-      displayNewSiteTime = 2400;
-      transitionLength = 4000;
+      displayNewSiteTime = 2200;
+      transitionLength = 3800;
       //Filter Click Animation
     } else if ($lastActiveRoute.path === '/' && $filterClick) {
       mask = 2;
       animate = true;
       filterClick.set(false);
-      displayNewSiteTime = 1800;
-      transitionLength = 3400;
+      displayNewSiteTime = 850;
+      transitionLength = 2500;
       // Animation for Projects and Profile
     } else {
       mask = 3;
-      displayNewSiteTime = 1800;
-      transitionLength = 3400;
+      displayNewSiteTime = 850;
+      transitionLength = 2500;
       animate = true;
     }
 

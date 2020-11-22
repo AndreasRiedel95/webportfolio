@@ -27,6 +27,7 @@
     "cssnano": "^4.1.10",
     "flickity": "^2.2.1",
     "imagesloaded": "^4.1.4",
+    "intersection-observer": "^0.11.0",
     "node-sass": "^5.0.0",
     "page": "^1.11.6",
     "sirv-cli": "^1.0.0",

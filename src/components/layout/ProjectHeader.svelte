@@ -8,7 +8,7 @@
 
   let vh;
 
-  const animationDelay = 1400;
+  const animationDelay = 1000;
   const animationDuration = 1500;
 </script>
 
@@ -19,6 +19,7 @@
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -79,6 +80,29 @@
       }
     }
   }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 22px;
+    overflow: hidden;
+    &__inner {
+      font-size: 14px;
+      animation: slideIndicator 1.5s ease-in infinite reverse forwards;
+    }
+  }
+
+  @keyframes slideIndicator {
+    0% {
+      transform: translate3d(0, 70%, 0);
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, -90%, 0);
+    }
+  }
 </style>
 
 <svelte:window bind:innerHeight={vh} />
@@ -102,5 +126,8 @@
       in:fly={{ y: 100, duration: animationDuration, delay: animationDelay, easing: expoOut }}>
       {@html skills}
     </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-indicator__inner">Scroll</div>
   </div>
 </div>

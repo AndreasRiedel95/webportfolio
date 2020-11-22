@@ -22,7 +22,7 @@
     },
     parralax: {
       video: false,
-      url: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero2_0QvExjcQDRQNQ.jpg',
+      url: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero2_1jSB2H8_6t6n.jpg',
     },
     intro: {
       introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',

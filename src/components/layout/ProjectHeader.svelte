@@ -5,6 +5,7 @@
   export let title;
   export let skills;
   export let year;
+  export let award = false;
 
   let vh;
 
@@ -93,6 +94,13 @@
     }
   }
 
+  .award {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -125px;
+  }
+
   @keyframes slideIndicator {
     0% {
       transform: translate3d(0, 70%, 0);
@@ -118,6 +126,14 @@
         </div>
       </h1>
     {/each}
+    {#if award}
+      <div
+        in:fade={{ duration: animationDuration, delay: animationDelay + 400, easing: expoOut }}
+        id="award"
+        class="award">
+        <img src="/svg/award.svg" alt="award" width="100" />
+      </div>
+    {/if}
     <div class="header__year" in:fade={{ duration: animationDuration, delay: animationDelay, easing: expoOut }}>
       {year}
     </div>

@@ -67,7 +67,8 @@
     user-select: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.9;
+    letter-spacing: 1.2;
     font-weight: 300;
     @media screen and (max-width: 600px) {
       font-size: 14px;

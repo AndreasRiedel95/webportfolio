@@ -64,20 +64,21 @@
   .wireframe {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 70px;
-    padding-left: 20px;
-    padding-right: 20px;
+    grid-gap: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
     grid-template-areas: 'text image';
     &--right {
       grid-template-areas: 'image text';
     }
     @media screen and (max-width: 950px) {
       grid-template-columns: 1fr;
+      padding-left: 20px;
+      padding-right: 20px;
       grid-template-areas: 'text' 'image';
     }
 
     &__user-stories {
-      text-align: right;
       grid-area: text;
       max-width: 500px;
       margin-left: auto;
@@ -86,7 +87,6 @@
       @media screen and (max-width: 950px) {
         padding-left: 30px;
         padding-right: 30px;
-        text-align: left;
         max-width: 100%;
       }
       @media screen and (max-width: 650px) {
@@ -195,12 +195,16 @@
       <div class="wireframe mb-100">
         <div class="wireframe__user-stories">
           <div class="wireframe__user-stories__text">
-            <div class="headline3 mb-20">TO GET MORE INFORMATION ABOUT AN ARTWORK</div>
-            When I’m in Amsterdam with my family for only two days, we are visiting the Rijksmuseum and my son is
-            annoyed by long and boring guided tours or reading long art descriptions, I want to have an easy, fast and
-            entertaining way to get compact and interesting background information about the artworks we are passing by,
-            so I can enjoy my visit at the museum, while my son is busy and entertained and we all can improve our
-            knowledge about arts.
+            <div class="headline2 headline2--thin mb-30" style="color: #bbb">
+              TO GET MORE INFORMATION ABOUT AN ARTWORK
+            </div>
+            <p>
+              When I’m in Amsterdam with my family for only two days, we are visiting the Rijksmuseum and my son is
+              annoyed by long and boring guided tours or reading long art descriptions, I want to have an easy, fast and
+              entertaining way to get compact and interesting background information about the artworks we are passing
+              by, so I can enjoy my visit at the museum, while my son is busy and entertained and we all can improve our
+              knowledge about arts.
+            </p>
           </div>
         </div>
         <div class="wireframe__container">
@@ -215,10 +219,14 @@
         </div>
         <div class="wireframe__user-stories--right">
           <div class="wireframe__user-stories__text">
-            <div class="headline3 mb-20">TO GET MORE INFORMATION ABOUT WHAT‘S GOING ON TODAY</div>
-            When I wake up at our hotel room and recognize the bad wheater we were not prepared for and we decide to go
-            to the museum, I want to have an opportunity to plan our day spontaneously and get easily more information
-            about what‘s going on, so we can keep our feet dry and seize the day.
+            <div class="headline2 headline2--thin mb-30" style="color: #bbb">
+              TO GET MORE INFORMATION ABOUT WHAT‘S GOING ON TODAY
+            </div>
+            <p>
+              When I wake up at our hotel room and recognize the bad wheater we were not prepared for and we decide to
+              go to the museum, I want to have an opportunity to plan our day spontaneously and get easily more
+              information about what‘s going on, so we can keep our feet dry and seize the day.
+            </p>
           </div>
         </div>
       </div>

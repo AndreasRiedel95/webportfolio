@@ -8,6 +8,7 @@
       title: ['HTML- & CSS-', 'eLearning'],
       year: "18'",
       skills: 'University <br /> Web, Application, Bachelorthesis',
+      award: true,
     },
     parralax: {
       video: true,
@@ -52,6 +53,7 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
+      <div class="headline3" id="award">Award winning Project</div>
     </div>
   </div>
 </main>

@@ -19,7 +19,7 @@
   let value = {};
   //When Page Transition starts to fade out and takes 1600ms
   //This Page gets called -> We need a delay, to see the animation here
-  const animationDelay = 1100;
+  const animationDelay = 900;
 
   let slideOne;
   let slideTwo;
@@ -97,12 +97,12 @@
     }
     &__award {
       position: absolute;
-      right: -7%;
+      right: -10%;
       top: -10%;
       width: 12vw;
       max-width: 95px;
       z-index: 20;
-      transform: translate3d(0, 0, 0) rotate(27deg);
+      transform: translate3d(0, 0, 0) rotate(14deg);
     }
     &__link {
       position: relative;
@@ -170,7 +170,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden;
         -webkit-user-drag: none;
         -khtml-user-drag: none;
         -moz-user-drag: none;
@@ -179,7 +178,7 @@
           width: 100%;
           height: 100%;
           overflow: hidden;
-          transform: scale(1) !important;
+          transform: translateZ(0);
         }
         .slide__image {
           position: absolute;
@@ -216,23 +215,23 @@
   @keyframes shake {
     10%,
     90% {
-      transform: translate3d(-1px, 0, 0) rotate(27deg);
+      transform: translate3d(-1px, 0, 0) rotate(14deg);
     }
 
     20%,
     80% {
-      transform: translate3d(2px, 0, 0) rotate(27deg);
+      transform: translate3d(2px, 0, 0) rotate(14deg);
     }
 
     30%,
     50%,
     70% {
-      transform: translate3d(-4px, 0, 0) rotate(27deg);
+      transform: translate3d(-4px, 0, 0) rotate(14deg);
     }
 
     40%,
     60% {
-      transform: translate3d(4px, 0, 0) rotate(27deg);
+      transform: translate3d(4px, 0, 0) rotate(14deg);
     }
   }
 </style>

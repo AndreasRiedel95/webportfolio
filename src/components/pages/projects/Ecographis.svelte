@@ -85,7 +85,18 @@
       margin-right: auto;
     }
     &__text-wrapper {
+      grid-area: text;
       display: flex;
+      &--first {
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: -120px;
+        z-index: 10;
+        @media screen and (max-width: 800px) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
     }
     &__image-wrapper {
       display: grid;
@@ -94,15 +105,32 @@
       padding-left: 50px;
       padding-right: 50px;
       position: relative;
+      @media screen and (max-width: 800px) {
+        width: 80%;
+        grid-gap: 90px;
+        margin-left: auto;
+        margin-right: auto;
+      }
       &.c_2_1 {
         grid-template-columns: 3fr 2fr;
+        grid-template-areas: 'image text';
+        @media screen and (max-width: 800px) {
+          grid-template-areas: 'text' 'image';
+          grid-template-columns: 1fr;
+        }
       }
       &.c_1_2 {
         grid-template-columns: 2fr 3fr;
+        grid-template-areas: 'text image';
+        @media screen and (max-width: 800px) {
+          grid-template-areas: 'image' 'text';
+          grid-template-columns: 1fr;
+        }
       }
     }
     &__image {
       width: 100%;
+      grid-area: image;
       &--first {
         margin-bottom: -20%;
       }
@@ -117,8 +145,8 @@
     height: 15vw;
     max-height: 400px;
     max-width: 400px;
-    min-height: 50px;
-    min-width: 50px;
+    min-height: 90px;
+    min-width: 90px;
     align-self: center;
     justify-self: center;
     transform: rotate(-45deg);
@@ -130,6 +158,10 @@
     border-radius: 50%;
     background-color: transparent;
     transition: background-color 0.5s ease-out;
+    @media screen and (max-width: 800px) {
+      margin-right: auto;
+      transform: rotate(-90deg);
+    }
     &:before {
       content: '';
       position: absolute;
@@ -168,18 +200,19 @@
       <ProjectIntro {...template.intro} />
       <div class="content__image-wrapper c_2_1">
         <img
-          src="https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg"
+          src="https://ik.imagekit.io/andreasriedel/ecographis_main_2_kanP0DUS7ZrHN.jpg"
           class="content__image content__image--first "
           alt="ecographis"
           bind:this={images.image1.ele}
           style="transform: translate3d(0, -{yvalue1}px, 0)" />
-        <div class="content__text-wrapper headline3" style="max-width: 500px; margin-right: auto">
-          ECOGRAPHIS DESIGN
-          <br />
-          AGENCY WEBSITE.
-        </div>
+        <div class="content__text-wrapper--first headline3">ecographis <br /> DESIGN AGENCY WEBSITE.</div>
       </div>
-      <div class="content__parralax-wrapper"><img src="/images/test.jpg" alt="" style="width: 100%; " /></div>
+      <div class="content__parralax-wrapper">
+        <img
+          src="https://ik.imagekit.io/andreasriedel/ecographis_main_VlDMTWdNoZCk.jpg"
+          alt="ecographis"
+          style="width: 100%; " />
+      </div>
       <div class="content__image-wrapper c_1_2">
         <div class="content__text-wrapper">
           <a target="_blank" class="link" href="https://ecographis.de/">
@@ -190,7 +223,7 @@
           </a>
         </div>
         <img
-          src="https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg"
+          src="https://ik.imagekit.io/andreasriedel/ecographis_main_1_DdctYtm2SwcRP.jpg"
           class="content__image content__image--second"
           bind:this={images.image2.ele}
           alt="ecographis"

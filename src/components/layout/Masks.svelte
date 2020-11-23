@@ -152,7 +152,7 @@
           </div>
         </div>
         <div class="mask-line-wrapper">
-          <div class="mask-line-wrapper__line" in:fadeWidth={{ duration: 800 }} out:fade={{ duration: 500 }}>
+          <div class="mask-line-wrapper__line" in:fadeWidth={{ duration: 600 }} out:fade={{ duration: 500 }}>
             <div in:fadeWidth={{ duration: 1600, delay: 500 }} class="mask-line-wrapper__inner" />
           </div>
         </div>

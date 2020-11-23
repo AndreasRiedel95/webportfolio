@@ -35,6 +35,7 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    scroll-behavior: smooth;
   }
 
   .header {

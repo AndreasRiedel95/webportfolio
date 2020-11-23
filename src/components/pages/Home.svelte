@@ -233,15 +233,74 @@
 
   const handleScroll = (e) => {
     if (dragging) return;
-
-    if (navigator.userAgent.includes('Firefox')) {
-      console.log('IN FIREFOX');
-      data.current += e.deltaY * 2.5;
-    } else {
-      data.current += e.deltaY;
-    }
+    let { spinY } = normalizeWheel(e);
+    data.current += spinY * 10;
     clamp();
   };
+
+  // Reasonable defaults
+  var PIXEL_STEP = 10;
+  var LINE_HEIGHT = 40;
+  var PAGE_HEIGHT = 800;
+
+  function normalizeWheel(/*object*/ event) /*object*/ {
+    var sX = 0,
+      sY = 0, // spinX, spinY
+      pX = 0,
+      pY = 0; // pixelX, pixelY
+
+    // Legacy
+    if ('detail' in event) {
+      sY = event.detail;
+    }
+    if ('wheelDelta' in event) {
+      sY = -event.wheelDelta / 120;
+    }
+    if ('wheelDeltaY' in event) {
+      sY = -event.wheelDeltaY / 120;
+    }
+    if ('wheelDeltaX' in event) {
+      sX = -event.wheelDeltaX / 120;
+    }
+
+    // side scrolling on FF with DOMMouseScroll
+    if ('axis' in event && event.axis === event.HORIZONTAL_AXIS) {
+      sX = sY;
+      sY = 0;
+    }
+
+    pX = sX * PIXEL_STEP;
+    pY = sY * PIXEL_STEP;
+
+    if ('deltaY' in event) {
+      pY = event.deltaY;
+    }
+    if ('deltaX' in event) {
+      pX = event.deltaX;
+    }
+
+    if ((pX || pY) && event.deltaMode) {
+      if (event.deltaMode == 1) {
+        // delta in LINE units
+        pX *= LINE_HEIGHT;
+        pY *= LINE_HEIGHT;
+      } else {
+        // delta in PAGE units
+        pX *= PAGE_HEIGHT;
+        pY *= PAGE_HEIGHT;
+      }
+    }
+
+    // Fall-back if spin cannot be determined
+    if (pX && !sX) {
+      sX = pX < 1 ? -1 : 1;
+    }
+    if (pY && !sY) {
+      sY = pY < 1 ? -1 : 1;
+    }
+
+    return { spinX: sX, spinY: sY, pixelX: pX, pixelY: pY };
+  }
 
   const handleMouseDown = (e) => {
     dragging = true;
@@ -431,14 +490,14 @@
   bind:innerHeight={windowHeight}
   bind:innerWidth={windowWidth}
   on:resize={resize}
-  on:wheel={(e) => handleScroll(e)}
+  on:wheel|passive:true={(e) => handleScroll(e)}
   on:keydown={(e) => handleKeyDown(e)}
-  on:mousemove={(e) => handleMouseMove(e)}
-  on:touchstart={(e) => handleTouchDown(e)}
-  on:touchmove={(e) => handleTouchMove(e)}
-  on:touchend={(e) => handleTouchUp(e)}
-  on:mousedown={(e) => handleMouseDown(e)}
-  on:mouseup={(e) => handleMouseUp(e)} />
+  on:mousemove|passive:true={(e) => handleMouseMove(e)}
+  on:touchstart|passive:true={(e) => handleTouchDown(e)}
+  on:touchmove|passive:true={(e) => handleTouchMove(e)}
+  on:touchend|passive:true={(e) => handleTouchUp(e)}
+  on:mousedown|passive:true={(e) => handleMouseDown(e)}
+  on:mouseup|passive:true={(e) => handleMouseUp(e)} />
 <div class="main" bind:this={main}>
   <div class="scroll" bind:this={scrollEle}>
     <Navigation on:handleItemClick={(e) => filterTemplates(e)} />

@@ -237,8 +237,14 @@
 </style>
 
 {#if imageSlide}
-  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment}">
-    <a class="slide__link" href={$isDragging ? 'javascript:;' : url} draggable="false">
+  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment};">
+    <a
+      class="slide__link"
+      href={$isDragging ? 'javascript:;' : url}
+      draggable="false"
+      on:dragstart={() => {
+        return false;
+      }}>
       <div class="slide__inner">
         <div in:fadeWidth={{ duration: 2000, delay: animationDelay }} class="slide__imgwrapper">
           <figure>
@@ -250,7 +256,13 @@
                 alt="award" />
             {/if}
             <div class="slide__img_wrapper">
-              <img class="slide__image" slide src={imgSrc} draggable="false" alt="slide" />
+              <img
+                class="slide__image"
+                slide
+                src={imgSrc}
+                draggable="false"
+                on:mousedown={(e) => e.preventDefault()}
+                alt="slide" />
             </div>
           </figure>
         </div>

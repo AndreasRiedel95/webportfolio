@@ -38,7 +38,6 @@
   }, config);
 
   onMount(() => {
-    console.log(observer);
     observer.observe(wrapper);
   });
 

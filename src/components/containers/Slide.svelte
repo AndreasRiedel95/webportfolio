@@ -15,7 +15,7 @@
   export let projectNr;
   export let imgSrc;
   export let url;
-  export let award;
+  export let award = false;
   let value = {};
   //When Page Transition starts to fade out and takes 1600ms
   //This Page gets called -> We need a delay, to see the animation here
@@ -282,7 +282,9 @@
         0{projectNr}
       </div>
       <div class="slide__imgwrapper slide__imgwrapper--proxy" />
-      <div class="slide__project">{subTitle}</div>
+      <div class="slide__project" in:fly={{ y: 100, duration: 1500, delay: animationDelay, easing: expoOut }}>
+        {subTitle}
+      </div>
     </div>
   </article>
 {/if}

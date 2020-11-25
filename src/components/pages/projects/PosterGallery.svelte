@@ -95,8 +95,12 @@
   }
 
   .image-gallery {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+    @media screen and (max-width: 1000px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   .responsive_image {
@@ -114,7 +118,7 @@
     justify-content: center;
     align-items: center;
     &--big {
-      padding: 200px;
+      padding: 150px;
       @media screen and (max-width: 1000px) {
         padding: 100px;
       }
@@ -123,7 +127,7 @@
       }
     }
     &--small {
-      padding: 120px;
+      padding: 100px;
       @media screen and (max-width: 1000px) {
         padding: 60px;
       }
@@ -148,7 +152,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #000;
+        background-color: #161616;
         z-index: 10;
         transform: scaleX(1);
         transition: transform 0.7s ease-out;
@@ -186,7 +190,7 @@
 
   .responsive-grid {
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 100px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     &--no-gap {
       grid-gap: 0;
@@ -201,7 +205,7 @@
     <div class="content">
       <ProjectIntro {...template.intro} />
       <div class="image-gallery">
-        <div class="responsive-grid mb-80">
+        <div class="responsive-grid mb-100">
           <div
             class="white-wrapper white-wrapper--small animate-to-right"
             bind:this={images[0]}
@@ -226,7 +230,7 @@
           </div>
         </div>
         <div
-          class="white-wrapper white-wrapper--big mb-80 animate-from-center"
+          class="white-wrapper white-wrapper--big mb-100 animate-from-center"
           bind:this={images[3]}
           data-index={4}
           class:animate-to-outside={index > 3}>

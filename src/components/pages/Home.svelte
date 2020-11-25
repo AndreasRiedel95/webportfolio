@@ -76,7 +76,7 @@
     {
       id: 7,
       uuid: Date.now(),
-      title: 'Learn to code!',
+      title: 'eLearning </br> Platform',
       type: 'Conception / Webapp',
       filter: 'digital',
       subTitle: 'University - Bachelorthesis',
@@ -238,11 +238,6 @@
     data.current += spinY * 10;
     clamp();
   };
-
-  // Reasonable defaults
-  var PIXEL_STEP = 10;
-  var LINE_HEIGHT = 40;
-  var PAGE_HEIGHT = 800;
 
   const handleMouseDown = (e) => {
     dragging = true;

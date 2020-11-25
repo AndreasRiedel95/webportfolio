@@ -61,12 +61,19 @@
     background-color: #161616;
   }
 
+  .wireframe-outer-wrapper {
+    background-color: #fff;
+  }
+
   .wireframe {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 100px;
-    padding-left: 70px;
-    padding-right: 70px;
+    grid-gap: 150px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
     grid-template-areas: 'text image';
     &--right {
       grid-template-areas: 'image text';
@@ -77,7 +84,6 @@
       padding-right: 20px;
       grid-template-areas: 'text' 'image';
     }
-
     &__user-stories {
       grid-area: text;
       max-width: 500px;
@@ -104,8 +110,9 @@
       }
       &__text {
         position: sticky;
-        top: 200px;
-        margin-top: 200px;
+        top: 100px;
+        color: #000;
+        margin-top: 100px;
         @media screen and (max-width: 950px) {
           position: relative;
           top: 0;
@@ -151,7 +158,7 @@
       box-shadow: -2px 0px 7px 1px rgb(31 31 31 / 20%);
       @media screen and (max-width: 600px) {
         flex-direction: column;
-        padding: 15px 20px;
+        padding: 25px 20px;
         box-shadow: none;
         & > img {
           height: 250px;
@@ -173,8 +180,7 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
-      <ProjectSubheadline title="Persona" />
-      <div class="persona-grid mb-200">
+      <div class="persona-grid">
         <div class="persona-grid__slideshow-wrapper">
           <Slideshow slides={template.slideshow.slides} options={template.slideshow.options} height={slideshowHeight} />
         </div>
@@ -191,42 +197,44 @@
           </div>
         </div>
       </div>
-      <ProjectSubheadline title="User Stories" />
-      <div class="wireframe mb-100">
-        <div class="wireframe__user-stories">
-          <div class="wireframe__user-stories__text">
-            <div class="headline2 headline2--thin mb-30" style="color: #bbb">
-              TO GET MORE INFORMATION ABOUT AN ARTWORK
+      <div class="wireframe-outer-wrapper pt-150 pb-100">
+        <ProjectSubheadline color="#000" title="User Stories" />
+        <div class="wireframe mb-100">
+          <div class="wireframe__user-stories">
+            <div class="wireframe__user-stories__text">
+              <div class="headline2 headline2--thin mb-30" style="color: #bbb">
+                TO GET MORE INFORMATION ABOUT AN ARTWORK
+              </div>
+              <p>
+                When I’m in Amsterdam with my family for only two days, we are visiting the Rijksmuseum and my son is
+                annoyed by long and boring guided tours or reading long art descriptions, I want to have an easy, fast
+                and entertaining way to get compact and interesting background information about the artworks we are
+                passing by, so I can enjoy my visit at the museum, while my son is busy and entertained and we all can
+                improve our knowledge about arts.
+              </p>
             </div>
-            <p>
-              When I’m in Amsterdam with my family for only two days, we are visiting the Rijksmuseum and my son is
-              annoyed by long and boring guided tours or reading long art descriptions, I want to have an easy, fast and
-              entertaining way to get compact and interesting background information about the artworks we are passing
-              by, so I can enjoy my visit at the museum, while my son is busy and entertained and we all can improve our
-              knowledge about arts.
-            </p>
+          </div>
+          <div class="wireframe__container">
+            <img class="wireframe-img" src="/svg/wireframe_1_a.svg" alt="" />
+            <img class="wireframe-img mt-50" src="/svg/wireframe_1_b.svg" alt="" />
           </div>
         </div>
-        <div class="wireframe__container">
-          <img class="wireframe-img" src="/svg/wireframe_1_a.svg" alt="" />
-          <img class="wireframe-img mt-50" src="/svg/wireframe_1_b.svg" alt="" />
-        </div>
-      </div>
-      <div class="wireframe wireframe--right mb-100">
-        <div class="wireframe__container">
-          <img class="wireframe-img" src="/svg/wireframe_2_a.svg" alt="" />
-          <img class="wireframe-img mt-50" src="/svg/wireframe_2_b.svg" alt="" />
-        </div>
-        <div class="wireframe__user-stories--right">
-          <div class="wireframe__user-stories__text">
-            <div class="headline2 headline2--thin mb-30" style="color: #bbb">
-              TO GET MORE INFORMATION ABOUT WHAT‘S GOING ON TODAY
+        <div class="wireframe wireframe--right mb-100">
+          <div class="wireframe__container">
+            <img class="wireframe-img" src="/svg/wireframe_2_a.svg" alt="" />
+            <img class="wireframe-img mt-50" src="/svg/wireframe_2_b.svg" alt="" />
+          </div>
+          <div class="wireframe__user-stories--right">
+            <div class="wireframe__user-stories__text">
+              <div class="headline2 headline2--thin mb-30" style="color: #bbb">
+                TO GET MORE INFORMATION ABOUT WHAT‘S GOING ON TODAY
+              </div>
+              <p>
+                When I wake up at our hotel room and recognize the bad wheater we were not prepared for and we decide to
+                go to the museum, I want to have an opportunity to plan our day spontaneously and get easily more
+                information about what‘s going on, so we can keep our feet dry and seize the day.
+              </p>
             </div>
-            <p>
-              When I wake up at our hotel room and recognize the bad wheater we were not prepared for and we decide to
-              go to the museum, I want to have an opportunity to plan our day spontaneously and get easily more
-              information about what‘s going on, so we can keep our feet dry and seize the day.
-            </p>
           </div>
         </div>
       </div>

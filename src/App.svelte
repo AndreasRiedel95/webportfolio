@@ -99,6 +99,6 @@
 <Router>
   <Route path="/" component={Home} middleware={[maskTransition]} />
   <Route path="/profile" component={Profile} middleware={[maskTransition]} />
-  <Route path="/project/:projectId" component={ProjectWrapper} middleware={[maskTransition]} />
+  <Route path="/project/:projectId" component={ProjectWrapper} />
   <NotFound />
 </Router>

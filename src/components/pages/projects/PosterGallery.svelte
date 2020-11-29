@@ -5,9 +5,14 @@
   import Parralax from 'components/layout/Parralax.svelte';
   import ProjectIntro from 'components/layout/ProjectIntro.svelte';
 
+  onMount(() => {
+    images.forEach((image) => {
+      observer.observe(image);
+    });
+  });
   let images = [];
   let index;
-  let template = {
+  const template = {
     header: {
       title: ['Poster Gallery'],
       year: "11-15'",
@@ -26,6 +31,19 @@
     },
   };
 
+  const buildThresholdList = () => {
+    let thresholds = [];
+    let numSteps = 20;
+
+    for (let i = 1.0; i <= numSteps; i++) {
+      let ratio = i / numSteps;
+      thresholds.push(ratio);
+    }
+
+    thresholds.push(0);
+    return thresholds;
+  };
+
   const config = {
     root: null,
     rootMargin: '0px',
@@ -41,25 +59,6 @@
       }
     });
   }, config);
-
-  function buildThresholdList() {
-    let thresholds = [];
-    let numSteps = 20;
-
-    for (let i = 1.0; i <= numSteps; i++) {
-      let ratio = i / numSteps;
-      thresholds.push(ratio);
-    }
-
-    thresholds.push(0);
-    return thresholds;
-  }
-
-  onMount(() => {
-    images.forEach((image) => {
-      observer.observe(image);
-    });
-  });
 </script>
 
 <style lang="scss">
@@ -81,25 +80,12 @@
     background-color: #161616;
   }
 
-  .content-header {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    &__title {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 40px;
-    }
-  }
-
   .image-gallery {
     padding-left: 100px;
     padding-right: 100px;
     @media screen and (max-width: 1000px) {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 
@@ -192,6 +178,9 @@
     display: grid;
     grid-gap: 100px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @media screen and (max-width: 650px) {
+      grid-gap: 50px;
+    }
     &--no-gap {
       grid-gap: 0;
     }
@@ -215,7 +204,6 @@
               class="responsive_image"
               src="https://ik.imagekit.io/andreasriedel/after_show_party_alone_YB50q-g9Q8i8L.jpg"
               alt="aftershow party" />
-            <div class="description">DIN A2 Abiball Aftershow Plakat für Ellental-Gymnasien Jahrgang 2014</div>
           </div>
           <div
             class="white-wrapper white-wrapper--small animate-to-left"
@@ -226,7 +214,6 @@
               class="responsive_image animate-to-left"
               src="https://ik.imagekit.io/andreasriedel/schulfest_alone_FbVuOTbGNwART.jpg"
               alt="schulfest" />
-            <div class="description">DIN A2 Schulfest Ellental-Gymnasien, 2011</div>
           </div>
         </div>
         <div
@@ -238,7 +225,6 @@
             class="responsive_image"
             src="https://ik.imagekit.io/andreasriedel/spring_ball_both_ZXykUywth4jF.jpg"
             alt="springball" />
-          <div class="description">DIN A2 Springball Plakat für Ellental-Gymnasien 2015</div>
         </div>
         <div class="responsive-grid responsive-grid  mb-80">
           <div
@@ -250,7 +236,6 @@
               class="responsive_image"
               src="https://ik.imagekit.io/andreasriedel/wm_poster_alone_t8XH3jtoWNod.jpg"
               alt="wm poster" />
-            <div class="description">DIN A2 Plakat zum WM Sieg 2014 mit Mario Götze</div>
           </div>
           <div
             class="white-wrapper white-wrapper--small animate-to-left"
@@ -261,7 +246,6 @@
               class="responsive_image"
               src="https://ik.imagekit.io/andreasriedel/bandcontest_mR852Y02mtTC5.jpg"
               alt="bandcontest" />
-            <div class="description">DIN A2 Bandcontest Plakat zum WM Sieg für Ellental-Gymnasien 2014</div>
           </div>
         </div>
       </div>

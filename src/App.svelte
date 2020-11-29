@@ -51,6 +51,7 @@
   @use './scss/typography';
   @use './scss/spacing';
   @use './scss/general';
+  @use './scss/animation';
 
   body {
     min-height: 100vh;
@@ -99,6 +100,6 @@
 <Router>
   <Route path="/" component={Home} middleware={[maskTransition]} />
   <Route path="/profile" component={Profile} middleware={[maskTransition]} />
-  <Route path="/project/:projectId" component={ProjectWrapper} />
+  <Route path="/project/:projectId" component={ProjectWrapper} middleware={[maskTransition]} />
   <NotFound />
 </Router>

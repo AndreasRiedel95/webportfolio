@@ -1,6 +1,7 @@
 <script>
   import { fly, fade } from 'svelte/transition';
   import { expoOut } from 'svelte/easing';
+  import ScrollIndicator from 'components/atoms/ScrollIndicator.svelte';
 
   export let title;
   export let skills;
@@ -82,18 +83,6 @@
     }
   }
 
-  .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    height: 22px;
-    overflow: hidden;
-    &__inner {
-      font-size: 14px;
-      animation: slideIndicator 1.5s ease-in infinite reverse forwards;
-    }
-  }
-
   .award {
     position: absolute;
     left: 50%;
@@ -101,15 +90,10 @@
     top: -125px;
   }
 
-  @keyframes slideIndicator {
-    0% {
-      transform: translate3d(0, 70%, 0);
-      opacity: 0.8;
-    }
-    100% {
-      opacity: 1;
-      transform: translate3d(0, -90%, 0);
-    }
+  .scrollindicator-wrapper {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
   }
 </style>
 
@@ -143,7 +127,7 @@
       {@html skills}
     </div>
   </div>
-  <div class="scroll-indicator">
-    <div class="scroll-indicator__inner">Scroll</div>
+  <div class="scrollindicator-wrapper">
+    <ScrollIndicator />
   </div>
 </div>

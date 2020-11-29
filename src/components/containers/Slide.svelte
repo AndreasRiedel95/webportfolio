@@ -97,7 +97,7 @@
     }
     &__award {
       position: absolute;
-      right: -10%;
+      right: -8%;
       top: -10%;
       width: 12vw;
       max-width: 95px;
@@ -135,7 +135,7 @@
     &__title {
       position: absolute;
       font-weight: 600;
-      top: 12%;
+      top: 14%;
       left: 7.5vw;
       color: #fff;
       font-size: 3.5vw;

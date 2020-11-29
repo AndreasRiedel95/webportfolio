@@ -78,6 +78,10 @@
 
   .content {
     background-color: #161616;
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     &__parralax-wrapper {
       max-width: 80vw;
       width: 100%;

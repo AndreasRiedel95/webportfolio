@@ -6,6 +6,8 @@
   import imagesLoaded from 'imagesloaded';
   import Slide from 'components/containers/Slide.svelte';
   import { filterClick } from 'util/store.js';
+  import ScrollIndicator from 'components/atoms/ScrollIndicator.svelte';
+  import DragIndicator from 'components/atoms/DragIndicator.svelte';
   const slideTemplates = [
     {
       id: 0,
@@ -406,19 +408,43 @@
   .scrollbar {
     position: absolute;
     bottom: 7.5%;
-    left: 20%;
-    right: 20%;
-    height: 1px;
-    background-color: rgba(#fff, 0.25);
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
     &__handle {
+      width: 100%;
+      background-color: rgba(#fff, 0.25);
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background-color: #fff;
+    }
+  }
+
+  .scroll-indicator {
+    position: relative;
+    display: block;
+    color: rgba(#fff, 0.5);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow: hidden;
+    &-mask {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      transform: scaleX(0);
-      transform-origin: left;
-      background-color: #fff;
+      overflow: hidden;
+      background-color: #212121;
+      transform: translate3d(var(--translate), 0, 0); //-100%
+      z-index: 2;
+      span {
+        display: block;
+        font-size: 13px;
+        transform: translate3d(var(--translate), 0, 0); //100%
+        color: #fff;
+      }
     }
   }
 </style>
@@ -465,8 +491,16 @@
         {/each}
       </div>
     {/if}
-    <div class="scrollbar" data-scrollbar>
-      <div class="scrollbar__handle" style="transform: scaleX({scale})" bind:this={scrollHandle} />
+    <div class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center">
+      <div class="display-flex justify-content-center align-items-center">
+        <div class="scroll-indicator">
+          <div class="scroll-indicator-mask" style="--translate: {-100 + scale * 100}%">
+            <span style="--translate: {100 - scale * 100}%">Scroll Down / Drag</span>
+          </div>
+          Scroll Down / Drag
+        </div>
+      </div>
+      <div class="scrollbar__handle mt-10" style="transform: scaleX({scale})" bind:this={scrollHandle} />
     </div>
   </div>
 </div>

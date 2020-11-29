@@ -110,7 +110,7 @@
       {#each linkItems as item, i}
         <li class="filter__item">
           <a href="#0" class="filter__link" on:click={() => handleItemClick(item, i)} class:is-active={i === isActive}>
-            <div class="filter__link-mask" area-hidden><span>{item.title}</span></div>
+            <div class="filter__link-mask"><span>{item.title}</span></div>
             {item.title}
           </a>
         </li>

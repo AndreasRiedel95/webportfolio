@@ -1,0 +1,23 @@
+.activeFadeUp {
+  animation-name: fadeInUp;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+
+.activeFadeUpDelay300 {
+  animation-name: fadeInUp;
+  animation-duration: 1.5s;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 80px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

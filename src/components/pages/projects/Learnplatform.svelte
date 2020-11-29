@@ -2,6 +2,25 @@
   import ProjectHeader from 'components/layout/ProjectHeader.svelte';
   import Parralax from 'components/layout/Parralax.svelte';
   import ProjectIntro from 'components/layout/ProjectIntro.svelte';
+  import { onMount } from 'svelte';
+  let wrappers = [];
+  let active;
+
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        active = parseInt(entry.target.dataset.index);
+        observer.unobserve(entry.target);
+      } else {
+      }
+    });
+  });
+
+  onMount(() => {
+    wrappers.forEach((wrapper) => {
+      observer.observe(wrapper);
+    });
+  });
 
   let template = {
     header: {
@@ -48,6 +67,7 @@
 
   .award-grid {
     display: grid;
+    opacity: 0;
     grid-template-columns: 1fr 1fr;
     padding-left: 100px;
     grid-gap: 200px;
@@ -55,6 +75,15 @@
     color: #000;
     width: 100%;
     align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+      grid-gap: 70px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
     &__text-wrapper {
       align-self: center;
     }
@@ -67,10 +96,29 @@
     margin-right: auto;
     padding-left: 70px;
     padding-right: 70px;
+    @media screen and (max-width: 700px) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
     &__row {
       display: flex;
+      opacity: 0;
+      @media screen and (max-width: 700px) {
+        margin-bottom: 40px;
+      }
       &--image {
         width: 60vw;
+        opacity: 0;
+        @media screen and (max-width: 700px) {
+          margin-bottom: 100px;
+          display: inline-block;
+          width: 100%;
+          margin-left: 0;
+          & > img {
+            object-fit: contain;
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -83,7 +131,7 @@
     <div class="content">
       <ProjectIntro {...template.intro} />
       <div class="pt-200 pb-150 mb-150" style="background-color: #fff">
-        <div class="award-grid mb-100">
+        <div class="award-grid mb-100" data-index="0" bind:this={wrappers[0]} class:activeFadeUp={active >= 0}>
           <img
             src="https://ik.imagekit.io/andreasriedel/award_winning_qrMgxUUhtCnv.JPG"
             alt="award winning"
@@ -101,33 +149,35 @@
         </div>
       </div>
       <div class="content-grid">
-        <div class="content-grid__row">
-          <div style="margin-left: auto; max-width: 400px">
-            <div class="headline2 headline2--thin mb-10">Admin panel for easy data fill in.</div>
+        <div class="content-grid__row" bind:this={wrappers[1]} data-index="1" class:activeFadeUp={active >= 1}>
+          <div class="margin-left-auto max-width-400">
+            <div class="headline2 headline2--thin mb-10" style="color: #929292">Admin panel for easy data fill in.</div>
             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni.</div>
           </div>
         </div>
-        <div class="content-grid__row content-grid__row--image mb-150">
-          <img src="https://ik.imagekit.io/andreasriedel/learning_1_Ewj67eAneDuTA.png" style="width: 100%" alt="" />
+        <div class="content-grid__row content-grid__row--image mb-150" class:activeFadeUpDelay300={active >= 1}>
+          <img class="width-100" src="https://ik.imagekit.io/andreasriedel/learning_1_Ewj67eAneDuTA.png" alt="" />
         </div>
-        <div class="content-grid__row">
-          <div style="margin-right: auto; max-width: 400px">
-            <div class="headline2 headline2--thin mb-10">Easy UI to navigate through.</div>
+        <div class="content-grid__row" bind:this={wrappers[2]} data-index="2" class:activeFadeUp={active >= 2}>
+          <div class="margin-right-auto max-width-400">
+            <div class="headline2 headline2--thin mb-10" style="color: #929292">Easy UI to navigate through.</div>
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni mollitia, architecto labore.
             </div>
           </div>
         </div>
-        <div class="content-grid__row content-grid__row--image mb-150" style="margin-left: auto">
-          <img src="https://ik.imagekit.io/andreasriedel/learning_2_7RkDHKVolSk-.png" style="width: 100%" alt="" />
+        <div
+          class="content-grid__row content-grid__row--image mb-150 margin-left-auto"
+          class:activeFadeUpDelay300={active >= 2}>
+          <img class="width-100" src="https://ik.imagekit.io/andreasriedel/learning_2_7RkDHKVolSk-.png" alt="" />
         </div>
-        <div class="content-grid__row">
-          <div style="margin-left: auto; max-width: 400px">
-            <div class="headline2 headline2--thin mb-10">Read. Understand. <br /> Solve.</div>
+        <div class="content-grid__row" bind:this={wrappers[3]} data-index="3" class:activeFadeUp={active >= 3}>
+          <div class="margin-left-auto max-width-400">
+            <div class="headline2 headline2--thin mb-10" style="color: #929292">Read. Understand. <br /> Solve.</div>
             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni.</div>
           </div>
         </div>
-        <div class="content-grid__row content-grid__row--image mb-100">
+        <div class="content-grid__row content-grid__row--image mb-100" class:activeFadeUpDelay300={active >= 3}>
           <img src="https://ik.imagekit.io/andreasriedel/learning_3_SYYbjzvlK-0l.png" style="width: 100%" alt="" />
         </div>
       </div>

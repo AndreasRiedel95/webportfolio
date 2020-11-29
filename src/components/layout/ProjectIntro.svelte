@@ -65,7 +65,7 @@
     z-index: 10;
     &__title {
       opacity: 0;
-      transition: opacity 0.5s ease-out 100ms;
+      transition: opacity 1.5s ease-out 100ms;
       &.visible {
         opacity: 1;
       }
@@ -73,7 +73,7 @@
     &__paragraph {
       margin-top: 20px;
       opacity: 0;
-      transition: opacity 1s ease-out 100ms;
+      transition: opacity 1.5s ease-out 100ms;
       &.visible {
         opacity: 1;
       }
@@ -87,7 +87,7 @@
 <div class="intro-header mt-150 mb-150" bind:this={wrapper}>
   <div class="mt-100 mb-50" style="height: 1px">
     {#if visible}
-      <div in:fadeWidth={{ duration: 1000 }} class="divider" />
+      <div in:fadeWidth={{ duration: 1500 }} class="divider" />
     {/if}
   </div>
   <div class="intro-header__title headline2 mb-30" class:visible>

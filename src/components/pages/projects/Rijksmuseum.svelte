@@ -133,7 +133,9 @@
         top: 50px;
         color: #000;
         margin-top: 50px;
-        opacity: 0;
+        & > p {
+          opacity: 0;
+        }
         @media screen and (max-width: 950px) {
           position: relative;
           top: 0;
@@ -212,11 +214,14 @@
       <div class="wireframe-outer-wrapper pt-150 pb-100">
         <div class="wireframe mb-100">
           <div class="wireframe__user-stories" data-index="0" bind:this={wrappers[0]}>
-            <div class="wireframe__user-stories__text" class:activeFadeUp={active >= 0}>
-              <div class="headline2 headline2--thin mb-30" style="color: #bbb">
+            <div class="wireframe__user-stories__text">
+              <div
+                class="headline2 headline2--thin mb-30"
+                style="color: #bbb; opacity: 0"
+                class:activeFadeUp={active >= 0}>
                 TO GET MORE INFORMATION ABOUT AN ARTWORK
               </div>
-              <p>
+              <p class:activeFadeUpDelay400={active >= 0}>
                 When I’m in Amsterdam with my family for only two days, we are visiting the Rijksmuseum and my son is
                 annoyed by long and boring guided tours or reading long art descriptions, I want to have an easy, fast
                 and entertaining way to get compact and interesting background information about the artworks we are
@@ -235,15 +240,15 @@
             class="mb-100 pl-70 pr-70 max-width-500 margin-left-auto"
             data-index="2"
             bind:this={wrappers[1]}
-            class:activeFadeUp={active >= 1}>
+            class:activeFadeInLeft={active >= 1}>
             <div class="headline1 headline1--thin mb-30 color-black">All about the <br /> right persona.</div>
-            <div class="color-black">
+            <div class="color-black" style="opacity: 0" class:activeFadeInLeftDelay300={active >= 1}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sapiente distinctio eligendi et ullam,
               perspiciatis consequatur quod.
             </div>
           </div>
           <div class="persona-grid">
-            <div class="persona-grid__slideshow-wrapper" class:activeFadeUpDelay300={active >= 2}>
+            <div class="persona-grid__slideshow-wrapper" class:activeFadeUpDelay400={active >= 2}>
               <Slideshow
                 slides={template.slideshow.slides}
                 options={template.slideshow.options}
@@ -253,7 +258,7 @@
               class="persona-grid__iphone-wrapper pr-10 pl-10"
               data-index="2"
               bind:this={wrappers[2]}
-              class:activeFadeUpDelay300={active >= 2}>
+              class:activeFadeUpDelay400={active >= 2}>
               <img
                 class="persona-grid__iphone-img"
                 width="180"
@@ -268,16 +273,19 @@
           </div>
         </div>
         <div class="wireframe wireframe--right mt-100" data-index="4" bind:this={wrappers[3]}>
-          <div class="wireframe__container" class:activeFadeUpDelay300={active >= 3}>
+          <div class="wireframe__container" class:activeFadeUp={active >= 3}>
             <img class="wireframe-img" src="/svg/wireframe_2_a.svg" alt="" />
             <img class="wireframe-img mt-50" src="/svg/wireframe_2_b.svg" alt="" />
           </div>
           <div class="wireframe__user-stories--right">
-            <div class="wireframe__user-stories__text" class:activeFadeUp={active >= 3}>
-              <div class="headline2 headline2--thin mb-30" style="color: #bbb">
+            <div class="wireframe__user-stories__text">
+              <div
+                class="headline2 headline2--thin mb-30"
+                style="color: #bbb; opacity: 0"
+                class:activeFadeUp={active >= 3}>
                 TO GET MORE INFORMATION ABOUT WHAT‘S GOING ON TODAY
               </div>
-              <p>
+              <p class:activeFadeUpDelay400={active >= 3}>
                 When I wake up at our hotel room and recognize the bad wheater we were not prepared for and we decide to
                 go to the museum, I want to have an opportunity to plan our day spontaneously and get easily more
                 information about what‘s going on, so we can keep our feet dry and seize the day.

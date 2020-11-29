@@ -84,3 +84,34 @@
 .margin-bottom-auto {
   margin-bottom: auto;
 }
+
+.display-grid {
+  display: grid;
+}
+
+.grid-template-columns-1-1 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-gap-small {
+  grid-gap: 50px;
+}
+
+.grid-gap-medium {
+  grid-gap: 100px;
+}
+
+.grid-gap-big {
+  grid-gap: 140px;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.grid-template-columns-responsive-400 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

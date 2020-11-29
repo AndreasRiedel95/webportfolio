@@ -109,7 +109,7 @@
     }
     &__white {
       position: relative;
-      background-color: #fff;
+      background-color: #000;
       height: 100%;
       width: 33.333%;
     }

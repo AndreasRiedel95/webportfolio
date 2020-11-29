@@ -109,6 +109,7 @@
       &--image {
         width: 60vw;
         opacity: 0;
+        display: inline-block;
         @media screen and (max-width: 700px) {
           margin-bottom: 100px;
           display: inline-block;

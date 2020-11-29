@@ -66,17 +66,11 @@
     &__title {
       opacity: 0;
       transition: opacity 1.5s ease-out 100ms;
-      &.visible {
-        opacity: 1;
-      }
     }
     &__paragraph {
       margin-top: 20px;
       opacity: 0;
       transition: opacity 1.5s ease-out 100ms;
-      &.visible {
-        opacity: 1;
-      }
       &:first-child {
         margin-top: 0;
       }
@@ -90,11 +84,11 @@
       <div in:fadeWidth={{ duration: 1500 }} class="divider" />
     {/if}
   </div>
-  <div class="intro-header__title headline2 mb-30" class:visible>
+  <div class="intro-header__title headline2 mb-30" class:activeFadeUp={visible}>
     {@html introTitle}
   </div>
   {#each introText as text}
-    <p class="intro-header__paragraph" class:visible>
+    <p class="intro-header__paragraph" class:activeFadeUpDelay300={visible}>
       {@html text}
     </p>
   {/each}

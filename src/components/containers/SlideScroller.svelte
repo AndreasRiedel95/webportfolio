@@ -70,7 +70,7 @@
             <div class="slidescroller__content width-100" style="background: url('https://ik.imagekit.io/andreasriedel/amsterdam_wiHN1x0zJE7rE.jpg'); background-size: cover; min-height: 300px; max-height: 300px; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Amsterdam.</span>
-                During my studies I decided to spend a semester abroad. I completed my 4th semester at the Hogeschool van Amsterdam in Minor Mobile Development (Turn Over App, Rijksmuseum).
+                During my studies I decided to spend a semester abroad. I completed my 4th semester at the Hogeschool van Amsterdam in the Minor Mobile Development (Turn Over App, Rijksmuseum).
                 Because I liked it so much in Amsterdam, I also did a practical semester as a Front-end developer there.
             </div>
           </div>`,

@@ -314,7 +314,11 @@
         </p>
         <p class="mb-20 opacity-0" class:activeFadeUpDelay400={active >= 4}>
           For the final presentation, I prepared an interactive presentation that explains the whole process and the
-          reasons for choosing several techniques in detail. If you are interested, you can view it here.
+          reasons for choosing several techniques in detail. If you are interested, you can view it
+          <a
+            target="_blank"
+            class="link"
+            href="https://www.icloud.com/keynote/0RSnJMtpDNqSDogDX9rJcIsqA#DesignPrototyp">here</a>.
         </p>
       </div>
       <img

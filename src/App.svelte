@@ -64,7 +64,7 @@
     height: 100%;
     margin: 0;
     overflow: hidden;
-    background-color: #212121;
+    background: rgba(33, 33, 32, 1);
     user-select: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;

@@ -106,18 +106,17 @@
       @media screen and (max-width: 700px) {
         margin-bottom: 40px;
       }
-      &--image {
+      &__image-wrapper {
         width: 60vw;
         opacity: 0;
-        display: inline-block;
         @media screen and (max-width: 700px) {
           margin-bottom: 100px;
-          display: inline-block;
           width: 100%;
           margin-left: 0;
           & > img {
             object-fit: contain;
             width: 100%;
+            height: 100%;
           }
         }
       }
@@ -151,34 +150,32 @@
       </div>
       <div class="content-grid">
         <div class="content-grid__row" bind:this={wrappers[1]} data-index="1" class:activeFadeUp={active >= 1}>
-          <div class="margin-left-auto max-width-400">
+          <div class="margin-left-auto max-width-400 mb-40">
             <div class="headline2 headline2--thin mb-10" style="color: #929292">Admin panel for easy data fill in.</div>
             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni.</div>
           </div>
         </div>
-        <div class="content-grid__row content-grid__row--image mb-150" class:activeFadeUpDelay300={active >= 1}>
+        <div class="content-grid__row__image-wrapper mb-150" class:activeFadeUpDelay300={active >= 1}>
           <img class="width-100" src="https://ik.imagekit.io/andreasriedel/learning_1_Ewj67eAneDuTA.png" alt="" />
         </div>
         <div class="content-grid__row" bind:this={wrappers[2]} data-index="2" class:activeFadeUp={active >= 2}>
-          <div class="margin-right-auto max-width-400">
+          <div class="margin-right-auto max-width-400 mb-40">
             <div class="headline2 headline2--thin mb-10" style="color: #929292">Easy UI to navigate through.</div>
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni mollitia, architecto labore.
             </div>
           </div>
         </div>
-        <div
-          class="content-grid__row content-grid__row--image mb-150 margin-left-auto"
-          class:activeFadeUpDelay300={active >= 2}>
+        <div class="content-grid__row__image-wrapper mb-150 margin-left-auto" class:activeFadeUpDelay300={active >= 2}>
           <img class="width-100" src="https://ik.imagekit.io/andreasriedel/learning_2_7RkDHKVolSk-.png" alt="" />
         </div>
         <div class="content-grid__row" bind:this={wrappers[3]} data-index="3" class:activeFadeUp={active >= 3}>
-          <div class="margin-left-auto max-width-400">
+          <div class="margin-left-auto max-width-400 mb-40">
             <div class="headline2 headline2--thin mb-10" style="color: #929292">Read. Understand. <br /> Solve.</div>
             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni.</div>
           </div>
         </div>
-        <div class="content-grid__row content-grid__row--image mb-100" class:activeFadeUpDelay300={active >= 3}>
+        <div class="content-grid__row__image-wrapper mb-100" class:activeFadeUpDelay300={active >= 3}>
           <img src="https://ik.imagekit.io/andreasriedel/learning_3_SYYbjzvlK-0l.png" style="width: 100%" alt="" />
         </div>
       </div>

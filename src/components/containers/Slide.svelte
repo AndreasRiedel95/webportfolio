@@ -237,7 +237,11 @@
 </style>
 
 {#if imageSlide}
-  <article bind:this={slideOne} class="slide slide--image" style="--alignment: {alignment};">
+  <article
+    bind:this={slideOne}
+    on:mousedown={(e) => e.preventDefault()}
+    class="slide slide--image"
+    style="--alignment: {alignment};">
     <a
       class="slide__link"
       href={$isDragging ? 'javascript:;' : url}
@@ -270,7 +274,7 @@
     </a>
   </article>
 {:else}
-  <article bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
+  <article on:mousedown={(e) => e.preventDefault()} bind:this={slideTwo} class="slide" style="--alignment: {alignment}">
     <div class="slide__inner">
       <div in:fly={{ x: -100, duration: 1500, delay: animationDelay, easing: expoOut }} class="slide__type">{type}</div>
       <h1 class="slide__title">

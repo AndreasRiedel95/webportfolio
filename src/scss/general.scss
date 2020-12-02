@@ -109,6 +109,10 @@
   opacity: 0;
 }
 
+.position-relative {
+  position: relative;
+}
+
 .grid-template-columns-responsive-400 {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   @media screen and (max-width: 500px) {

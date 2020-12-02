@@ -377,6 +377,19 @@
     width: 100%;
     height: 100vh;
     -webkit-overflow-scrolling: touch;
+    background: linear-gradient(0deg, #040404 0%, rgba(33, 33, 32, 1) 50%, #040404 100%);
+    &:after {
+      animation: grain 8s steps(10) infinite;
+      background-image: url('/images/noise.png');
+      content: '';
+      pointer-events: none;
+      height: 300%;
+      left: -50%;
+      opacity: 0.3;
+      position: fixed;
+      top: -100%;
+      width: 300%;
+    }
   }
 
   .scroll {
@@ -436,7 +449,6 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #212121;
       transform: translate3d(var(--translate), 0, 0); //-100%
       z-index: 2;
       span {
@@ -445,6 +457,40 @@
         transform: translate3d(var(--translate), 0, 0); //100%
         color: #fff;
       }
+    }
+  }
+
+  @keyframes grain {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    10% {
+      transform: translate(-5%, -10%);
+    }
+    20% {
+      transform: translate(-15%, 5%);
+    }
+    30% {
+      transform: translate(7%, -25%);
+    }
+    40% {
+      transform: translate(-5%, 25%);
+    }
+    50% {
+      transform: translate(-15%, 10%);
+    }
+    60% {
+      transform: translate(15%, 0%);
+    }
+    70% {
+      transform: translate(0%, 15%);
+    }
+    80% {
+      transform: translate(3%, 35%);
+    }
+    90% {
+      transform: translate3d(-10%, 10%, 0);
     }
   }
 </style>

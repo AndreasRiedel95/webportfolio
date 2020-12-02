@@ -147,8 +147,8 @@
       <div out:slideOutHorizontal={{ duration: 800, delay: 400 }} class="mask-slice__black" />
       <div class="mask__inner">
         <div class="logo logo--mask">
-          <div out:fly={{ y: 20, duration: 800 }} in:fly={{ y: -20, duration: 800 }} class="logo--font">
-            ANDREAS RIEDEL
+          <div out:fly={{ y: 20, duration: 300 }} in:fly={{ y: -20, duration: 200 }} class="logo--font">
+            The curtain is about to open...
           </div>
         </div>
         <div class="mask-line-wrapper">

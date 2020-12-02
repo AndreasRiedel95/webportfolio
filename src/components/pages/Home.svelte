@@ -6,8 +6,21 @@
   import imagesLoaded from 'imagesloaded';
   import Slide from 'components/containers/Slide.svelte';
   import { filterClick } from 'util/store.js';
-  import ScrollIndicator from 'components/atoms/ScrollIndicator.svelte';
-  import DragIndicator from 'components/atoms/DragIndicator.svelte';
+  import { math } from 'util/helpers.js';
+  let isTouch = false;
+
+  onMount(() => {
+    (() => {
+      window.addEventListener(
+        'touchstart',
+        function onFirstTouch() {
+          isTouch = true;
+          window.removeEventListener('touchstart', onFirstTouch, false);
+        },
+        false
+      );
+    })();
+  });
   const slideTemplates = [
     {
       id: 0,
@@ -31,17 +44,17 @@
       url: '/project/rijksmuseum',
       award: false,
     },
-    {
-      id: 2,
-      uuid: Date.now(),
-      title: 'MAN InCar',
-      type: 'Conception & App',
-      filter: 'digital',
-      subTitle: 'University',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg',
-      url: 'project/man-incar',
-      award: false,
-    },
+    // {
+    //   id: 2,
+    //   uuid: Date.now(),
+    //   title: 'MAN InCar',
+    //   type: 'Conception & App',
+    //   filter: 'digital',
+    //   subTitle: 'University',
+    //   imgSrc: 'https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg',
+    //   url: 'project/man-incar',
+    //   award: false,
+    // },
     {
       id: 4,
       uuid: Date.now(),
@@ -132,16 +145,8 @@
     max: 0,
     min: 0,
   };
-  let isTouch = false;
+
   let rAF = null;
-  const math = {
-    lerp: (a, b, n) => {
-      return (1 - n) * a + n * b;
-    },
-    norm: (value, min, max) => {
-      return (value - min) / (max - min);
-    },
-  };
 
   $: if (
     slideArrays[0].length === filteredTemplates.length &&
@@ -151,18 +156,6 @@
     scrollInit = true;
     initScroll();
   }
-
-  onMount(() => {
-    isTouch = is_touch_device();
-  });
-
-  const is_touch_device = () => {
-    if ('ontouchstart' in window || window.TouchEvent) return true;
-    if (window.DocumentTouch && document instanceof DocumentTouch) return true;
-    const prefixes = ['', '-webkit-', '-moz-', '-o-', '-ms-'];
-    const queries = prefixes.map((prefix) => `(${prefix}touch-enabled)`);
-    return window.matchMedia(queries.join(',')).matches;
-  };
 
   const filterTemplates = (e) => {
     filterClick.set(true);
@@ -377,7 +370,7 @@
     width: 100%;
     height: 100vh;
     -webkit-overflow-scrolling: touch;
-    background: linear-gradient(0deg, #040404 0%, rgba(33, 33, 32, 1) 50%, #040404 100%);
+    background: linear-gradient(0deg, #0e0e0e 0%, rgba(33, 33, 32, 1) 50%, #0e0e0e 100%);
     &:after {
       animation: grain 8s steps(10) infinite;
       background-image: url('/images/noise.png');
@@ -538,14 +531,16 @@
       </div>
     {/if}
     <div class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center">
-      <div class="display-flex justify-content-center align-items-center">
-        <div class="scroll-indicator">
-          <div class="scroll-indicator-mask" style="--translate: {-100 + scale * 100}%">
-            <span style="--translate: {100 - scale * 100}%">Scroll Down / Drag</span>
+      {#if !isTouch}
+        <div class="display-flex justify-content-center align-items-center">
+          <div class="scroll-indicator">
+            <div class="scroll-indicator-mask" style="--translate: {-100 + scale * 100}%">
+              <span style="--translate: {100 - scale * 100}%">Scroll Down / Drag</span>
+            </div>
+            Scroll Down / Drag
           </div>
-          Scroll Down / Drag
         </div>
-      </div>
+      {/if}
       <div class="scrollbar__handle mt-10" style="transform: scaleX({scale})" bind:this={scrollHandle} />
     </div>
   </div>

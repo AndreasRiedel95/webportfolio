@@ -30,13 +30,6 @@
     }
   }
 
-  .link {
-    color: #fff;
-    display: block;
-    font-size: 13px;
-    text-decoration: none;
-  }
-
   .logo {
     font-family: 'Domine';
   }
@@ -49,7 +42,7 @@
     z-index: 10;
     &__list {
       display: flex;
-      padding: 15px 0;
+      padding: 10px 0;
     }
     &__item {
       display: flex;
@@ -103,7 +96,12 @@
 </style>
 
 <nav>
-  <a class="logo link" href="/">AR</a>
+  <div class="filter__item">
+    <a class="filter__link logo" href="/profile">
+      <div class="filter__link-mask"><span>Andreas Riedel</span></div>
+      Andreas Riedel
+    </a>
+  </div>
   <div class="filter">
     <ul class="filter__list">
       {#each linkItems as item, i}
@@ -116,5 +114,10 @@
       {/each}
     </ul>
   </div>
-  <a class="link" href="/profile">PROFIL</a>
+  <div class="filter__item">
+    <a class="filter__link" href="/profile">
+      <div class="filter__link-mask"><span>PROFIL</span></div>
+      PROFIL
+    </a>
+  </div>
 </nav>

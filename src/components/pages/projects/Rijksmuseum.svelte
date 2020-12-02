@@ -28,15 +28,18 @@
       url: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero2_1jSB2H8_6t6n.jpg',
     },
     intro: {
-      introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
+      introTitle:
+        'An app development to guide tourists in an intuitive and easy way through the highlights of the Rijksmuseum ',
       introText: [
-        'Obys agency is a fan of his photography and his vision, so our mission in creating this site was to remind the world of Lindbergh’s work and perhaps introduce someone to his art. Here in Ukraine, many people don’t know about him, unfortunately.',
-        'The site was created entirely on Readymag, so any extra development wasn’t needed. Before this, we had only used Readymag for internal tasks and meetings. The list of animation opportunities was very attractive to us.',
+        'The assignment was to develop a complete prototyping series - from a paper to an interactive prototype.',
+        'For this purpose I developed two use case scenarios that were tailored to a suitable persona.',
+        'This app is all about easy navigation and intuitive swipe gestures. The goal was that the user should concentrate on one thing only and be distracted as little as possible. With his camera the user has the possibility to look at details of paintings and to get additional information.',
       ],
     },
     slideshow: {
       slides: [
         'https://ik.imagekit.io/andreasriedel/persona_1_xcL-KdAUC6en.jpg',
+        '/svg/persona_4.svg',
         '/svg/persona_2.svg',
         '/svg/persona_3.svg',
       ],
@@ -243,8 +246,8 @@
             class:activeFadeInLeft={active >= 1}>
             <div class="headline1 headline1--thin mb-30 color-black">All about the <br /> right persona.</div>
             <div class="color-black" style="opacity: 0" class:activeFadeInLeftDelay300={active >= 1}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sapiente distinctio eligendi et ullam,
-              perspiciatis consequatur quod.
+              A good prototype is only as good as the persona. In this case I concentrated more on the digital knowledge
+              of a possible persona.
             </div>
           </div>
           <div class="persona-grid">
@@ -272,7 +275,7 @@
             </div>
           </div>
         </div>
-        <div class="wireframe wireframe--right mt-100" data-index="4" bind:this={wrappers[3]}>
+        <div class="wireframe wireframe--right mt-100" data-index="3" bind:this={wrappers[3]}>
           <div class="wireframe__container" class:activeFadeUp={active >= 3}>
             <img class="wireframe-img" src="/svg/wireframe_2_a.svg" alt="" />
             <img class="wireframe-img mt-50" src="/svg/wireframe_2_b.svg" alt="" />
@@ -294,6 +297,32 @@
           </div>
         </div>
       </div>
+    </div>
+    <div
+      bind:this={wrappers[4]}
+      data-index="4"
+      class="color-black display-grid grid-template-columns-responsive-400 pl-50 pr-50 pt-100 pb-100 grid-gap-medium background-white max-width-1200 width-100 margin-left-auto margin-right-auto">
+      <div>
+        <div class:activeFadeUp={active >= 4} class="opacity-0 headline1 headline1--thin mb-30 color-black">
+          It's your turn!
+          <br />
+          Test the prototype now!
+        </div>
+        <p class="mb-20 opacity-0" class:activeFadeUpDelay300={active >= 4}>
+          I developed an interactive prototype with axure . You can try it out
+          <a target="_blank" class="link" href="http://4t2tyj.axshare.com/#c=2">here</a>.
+        </p>
+        <p class="mb-20 opacity-0" class:activeFadeUpDelay400={active >= 4}>
+          For the final presentation, I prepared an interactive presentation that explains the whole process and the
+          reasons for choosing several techniques in detail. If you are interested, you can view it here.
+        </p>
+      </div>
+      <img
+        class:activeFadeUp={active >= 4}
+        class="opacity-0 justify-self-center width-100"
+        src="https://ik.imagekit.io/andreasriedel/rijksmuseum_phone_9zUXtR1htl3H.png"
+        alt="rijksmuseum"
+        style="max-width: 200px" />
     </div>
   </div>
 </main>

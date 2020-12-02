@@ -141,9 +141,9 @@
               Best graduate of the Faculty of Printing and Media Technology
             </div>
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni mollitia, architecto labore,
-              exercitationem praesentium nulla cupiditate voluptas illo maiores aspernatur accusamus dolor odit, nisi
-              cum tempore assumenda natus!
+              I successfully graduated in my bachelor's degree in Print and Media Technology – Digital Publishing and
+              have been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for
+              being the best graduate student in my faculty.
             </div>
           </div>
         </div>

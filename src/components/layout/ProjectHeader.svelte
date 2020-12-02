@@ -10,7 +10,7 @@
 
   let vh;
 
-  const animationDelay = 1000;
+  const animationDelay = 1200;
   const animationDuration = 1500;
 </script>
 

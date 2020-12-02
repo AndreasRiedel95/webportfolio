@@ -153,12 +153,7 @@
     background-color: #000;
   }
 
-  .small-link {
-    color: #000;
-    font-weight: 600;
-  }
-
-  .link {
+  .link-profile {
     text-decoration: none;
     background-color: #000;
     color: #fff;
@@ -207,17 +202,20 @@
       <div class="opacity-0" class:activeFadeUp={active >= 0}>
         <p>I know you are busy. Let me come straight to the point.</p>
         <p class="mt-20">
-          I grew up in the south of Germany and did my bachelor degree in Print and Media Technology - Digital
-          Publishing at the Stuttgart Media University. Two wonderful years I lived, studied and worked in Amsterdam. I
-          like to create special products and experiences with fancy machines and special tools. Currently I am
-          completing a PreMaster Program at Bosch Engineering GmbH in the area of IoT Cloud and create data
-          visualizations.
+          I grew up in Southern Germany and received my Bachelor's degree in Print and Media Technology - Digital
+          Publishing from the Stuttgart Media University. Two wonderful years I lived, studied and worked in Amsterdam.
+          I like to create special products and experience with fancy machines and special tools. Currently I am
+          completing a PreMaster Program at Bosch Engineering GmbH in the IoT-Cloud area and create data visualizations.
         </p>
-        <p class="mt-20">You can contact me <a href="mailto:andreas.riedel95@gmail.com" class="small-link">here</a>.</p>
+        <p class="mt-20">
+          You can
+          <span class="font-weight-medium">contact me</span>
+          <a href="mailto:andreas.riedel95@gmail.com" class="link">here</a>.
+        </p>
         <p class="mt-20">That's basically it. But if you’re still curious, keep scrolling.</p>
       </div>
     </div>
-    <SlideScroller {scrollEvent} />
+    <SlideScroller {scrollEvent} slideIdentifier="skill" />
     <div class="pt-200 pb-150 mb-150 position-relative" style="background-color: #fff">
       <img class="award-img" src="/svg/award.svg" alt="award" width="110" />
       <div class="award-grid mb-100" data-index="1" bind:this={intersectWrappers[1]}>
@@ -231,23 +229,23 @@
             Best graduate of the Faculty of Printing and Media Technology
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni mollitia, architecto labore,
-            exercitationem praesentium nulla cupiditate voluptas illo maiores aspernatur accusamus dolor odit, nisi cum
-            tempore assumenda natus!
+            I successfully graduated in my bachelor's degree in Print and Media Technology – Digital Publishing and have
+            been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for being the
+            best graduate student in my faculty.
           </div>
         </div>
       </div>
     </div>
-    <SlideScroller {scrollEvent} />
+    <SlideScroller {scrollEvent} slideIdentifier="about" />
     <div class="contact-wrapper color-white display-grid grid-template-columns-responsive-400">
       <a
         href="mailto:andreas.riedel95@gmail.com"
-        class="link pt-100 pb-100  pr-20 pl-20 headline1 display-flex justify-content-center align-items-center">Hit me
-        up!</a>
+        class="link-profile pt-100 pb-100  pr-20 pl-20 headline1 display-flex justify-content-center align-items-center">Hit
+        me up!</a>
       <a
         target="_blank"
         href="https://bitbucket.org/AndreasRiedel/"
-        class="link pt-100 pb-100 pr-20 pl-20  headline1 display-flex justify-content-center align-items-center">Check
+        class="link-profile pt-100 pb-100 pr-20 pl-20  headline1 display-flex justify-content-center align-items-center">Check
         out on GitHub!</a>
     </div>
   </div>

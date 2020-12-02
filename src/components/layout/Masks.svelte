@@ -131,7 +131,7 @@
       color: #fff;
       letter-spacing: 1.1;
       @media screen and (max-width: 800px) {
-        font-size: 20px;
+        font-size: 15px;
       }
     }
   }

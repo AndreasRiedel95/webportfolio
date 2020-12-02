@@ -24,13 +24,13 @@
       mask = 2;
       animate = true;
       filterClick.set(false);
-      displayNewSiteTime = 850;
-      transitionLength = 2500;
+      displayNewSiteTime = 1000;
+      transitionLength = 3000;
       // Animation for Projects and Profile
     } else {
       mask = 3;
-      displayNewSiteTime = 850;
-      transitionLength = 2500;
+      displayNewSiteTime = 1000;
+      transitionLength = 3000;
       animate = true;
     }
 
@@ -65,7 +65,7 @@
     margin: 0;
     overflow: hidden;
     background: rgba(33, 33, 32, 1);
-    user-select: none;
+    // user-select: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     line-height: 1.9;
@@ -77,21 +77,21 @@
   }
 
   /* Hide scrollbar */
-  html,
-  body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: transparent;
-  }
-  ::-webkit-scrollbar {
-    background-color: transparent;
-    display: none;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+  // html,
+  // body {
+  //   -ms-overflow-style: none;
+  //   scrollbar-width: none;
+  // }
+  // ::-webkit-scrollbar-thumb {
+  //   background-color: transparent;
+  // }
+  // ::-webkit-scrollbar {
+  //   background-color: transparent;
+  //   display: none;
+  // }
+  // ::-webkit-scrollbar-track {
+  //   background-color: transparent;
+  // }
 </style>
 
 {#if !destroyMask}

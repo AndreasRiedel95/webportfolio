@@ -58,16 +58,16 @@
       slides: {
         templates: [
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
-            <div class="slidescroller__content width-100" style="background: url('https://ik.imagekit.io/andreasriedel/opera_hall_kiuODjklZsJ8.jpg'); background-size: cover; min-height: 300px; max-height: 300px; background-position: 50% 50%;"></div>
+            <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/opera_hall_kiuODjklZsJ8.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Düsseldorf.</span>
           After my A-levels I followed my great passion for
           music and did a voluntary social year in Düsseldorf, at the Deutsche Oper
-          am Rhein.  After my exciting year at the longest bar in the world, I moved back to Stuttgart to start studying Print And Media Technology - Digital Publishing at the University of Media,
+          am Rhein.  After my exciting year at the longest bar in the world, I moved back to Stuttgart to start studying Print And Media Technology – Digital Publishing at the University of Media.
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
-            <div class="slidescroller__content width-100" style="background: url('https://ik.imagekit.io/andreasriedel/amsterdam_wiHN1x0zJE7rE.jpg'); background-size: cover; min-height: 300px; max-height: 300px; background-position: 50% 50%;"></div>
+            <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/amsterdam_wiHN1x0zJE7rE.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Amsterdam.</span>
                 During my studies I decided to spend a semester abroad. I completed my 4th semester at the Hogeschool van Amsterdam in the Minor Mobile Development (<a class="link" href="/project/turnOverApp"> Turn-Over-App</a>, <a class="link" href="/project/rijksmuseum"> Rijksuseum</a>).
@@ -75,7 +75,7 @@
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
-            <div class="slidescroller__content width-100" style="background: url('https://ik.imagekit.io/andreasriedel/hdm_bachelor_enhngctiGrES.jpg'); background-size: cover; min-height: 300px; max-height: 300px; background-position: 50% 0%;"></div>
+            <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/hdm_bachelor_enhngctiGrES.jpg'); background-size: cover; background-position: 50% 0%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Stuttgart.</span>
               Back in Germany, I completed my Bachelor's degree as the best graduate of my faculty (<a class="link" href="/project/learnplattform"> eLearning Platform</a>).
@@ -83,7 +83,7 @@
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
-            <div class="slidescroller__content width-100" style="background: url('https://ik.imagekit.io/andreasriedel/future_DnMREaIzPPKR.jpg'); background-size: cover; min-height: 300px; max-height: 300px; background-position: 50% 50%;"></div>
+            <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/future_DnMREaIzPPKR.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">To be continued....</span>
               In March 2020 I decided that I wanted to develop myself further. Well, here we are!
@@ -152,6 +152,15 @@
       align-items: center;
       color: #fff;
       background: var(--background);
+    }
+
+    .small-image {
+      height: 300px;
+      min-height: 300px;
+      @media screen and (max-width: 500px) {
+        height: 200px;
+        min-height: 200px;
+      }
     }
   }
 

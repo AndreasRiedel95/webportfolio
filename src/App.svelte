@@ -5,6 +5,7 @@
   import { Router, Route, NotFound, redirect } from 'pager/index.js';
   import { lastActiveRoute, filterClick } from 'util/store.js';
   import Masks from 'components/layout/Masks.svelte';
+  import Impressum from 'components/pages/Impressum.svelte';
   let mask = 0;
   let destroyMask;
   let animate = true;
@@ -77,21 +78,21 @@
   }
 
   /* Hide scrollbar */
-  // html,
-  // body {
-  //   -ms-overflow-style: none;
-  //   scrollbar-width: none;
-  // }
-  // ::-webkit-scrollbar-thumb {
-  //   background-color: transparent;
-  // }
-  // ::-webkit-scrollbar {
-  //   background-color: transparent;
-  //   display: none;
-  // }
-  // ::-webkit-scrollbar-track {
-  //   background-color: transparent;
-  // }
+  html,
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 </style>
 
 {#if !destroyMask}
@@ -101,5 +102,6 @@
   <Route path="/" component={Home} middleware={[maskTransition]} />
   <Route path="/profile" component={Profile} middleware={[maskTransition]} />
   <Route path="/project/:projectId" component={ProjectWrapper} middleware={[maskTransition]} />
+  <Route path="/impressum" component={Impressum} middleware={[maskTransition]} />
   <NotFound />
 </Router>

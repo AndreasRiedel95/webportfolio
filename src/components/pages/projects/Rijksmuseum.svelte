@@ -31,7 +31,7 @@
       introTitle:
         'An app development to guide tourists in an intuitive and easy way through the highlights of the Rijksmuseum ',
       introText: [
-        'The assignment was to develop a complete prototyping series - from a paper to an interactive prototype.',
+        'The assignment was to develop a complete prototyping series – from a paper to an interactive prototype.',
         'For this purpose I developed two use case scenarios that were tailored to a suitable persona.',
         'This app is all about easy navigation and intuitive swipe gestures. The goal was that the user should concentrate on one thing only and be distracted as little as possible. With his camera the user has the possibility to look at details of paintings and to get additional information.',
       ],
@@ -298,35 +298,37 @@
         </div>
       </div>
     </div>
-    <div
-      bind:this={wrappers[4]}
-      data-index="4"
-      class="color-black display-grid grid-template-columns-responsive-400 pl-50 pr-50 pt-100 pb-100 grid-gap-medium background-white max-width-1200 width-100 margin-left-auto margin-right-auto">
-      <div>
-        <div class:activeFadeUp={active >= 4} class="opacity-0 headline1 headline1--thin mb-30 color-black">
-          It's your turn!
-          <br />
-          Test the prototype now!
+    <div class="width-100 background-white">
+      <div
+        bind:this={wrappers[4]}
+        data-index="4"
+        class="color-black display-grid grid-template-columns-responsive-400 pl-50 pr-50 pt-100 pb-100 grid-gap-medium background-white max-width-1200 width-100 margin-left-auto margin-right-auto">
+        <div>
+          <div class:activeFadeUp={active >= 4} class="opacity-0 headline1 headline1--thin mb-30 color-black">
+            It's your turn!
+            <br />
+            Test the prototype now!
+          </div>
+          <p class="mb-20 opacity-0" class:activeFadeUpDelay300={active >= 4}>
+            I developed an interactive prototype with axure . You can try it out
+            <a target="_blank" class="link" href="http://4t2tyj.axshare.com/#c=2">here</a>.
+          </p>
+          <p class="mb-20 opacity-0" class:activeFadeUpDelay400={active >= 4}>
+            For the final presentation, I prepared an interactive presentation that explains the whole process and the
+            reasons for choosing several techniques in detail. If you are interested, you can view it
+            <a
+              target="_blank"
+              class="link"
+              href="https://www.icloud.com/keynote/0RSnJMtpDNqSDogDX9rJcIsqA#DesignPrototyp">here</a>.
+          </p>
         </div>
-        <p class="mb-20 opacity-0" class:activeFadeUpDelay300={active >= 4}>
-          I developed an interactive prototype with axure . You can try it out
-          <a target="_blank" class="link" href="http://4t2tyj.axshare.com/#c=2">here</a>.
-        </p>
-        <p class="mb-20 opacity-0" class:activeFadeUpDelay400={active >= 4}>
-          For the final presentation, I prepared an interactive presentation that explains the whole process and the
-          reasons for choosing several techniques in detail. If you are interested, you can view it
-          <a
-            target="_blank"
-            class="link"
-            href="https://www.icloud.com/keynote/0RSnJMtpDNqSDogDX9rJcIsqA#DesignPrototyp">here</a>.
-        </p>
+        <img
+          class:activeFadeUp={active >= 4}
+          class="opacity-0 justify-self-center width-100"
+          src="https://ik.imagekit.io/andreasriedel/rijksmuseum_phone_9zUXtR1htl3H.png"
+          alt="rijksmuseum"
+          style="max-width: 200px" />
       </div>
-      <img
-        class:activeFadeUp={active >= 4}
-        class="opacity-0 justify-self-center width-100"
-        src="https://ik.imagekit.io/andreasriedel/rijksmuseum_phone_9zUXtR1htl3H.png"
-        alt="rijksmuseum"
-        style="max-width: 200px" />
     </div>
   </div>
 </main>

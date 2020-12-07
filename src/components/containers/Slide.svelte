@@ -64,13 +64,15 @@
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
     user-select: none;
     align-items: var(--alignment);
     @media screen and (max-width: 800px) {
       align-items: center;
       width: 80vw;
       padding: 35vw 0;
+    }
+    @media screen and (max-width: 350px) {
+      align-items: flex-end;
     }
     &--image {
       -webkit-user-select: none;
@@ -84,16 +86,12 @@
       padding-right: 15vw;
       @media screen and (max-width: 800px) {
         width: 95vw;
-        padding-right: 15vw;
       }
     }
     &__inner {
       position: relative;
       padding-left: 20vw;
       width: 100%;
-      @media screen and (max-width: 800px) {
-        padding-left: 15vw;
-      }
     }
     &__award {
       position: absolute;

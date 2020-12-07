@@ -25,7 +25,7 @@
     {
       id: 0,
       uuid: Date.now(),
-      title: 'Turn-Over-App',
+      title: 'Turn- </br> Over-App',
       type: 'iOS App for iPad',
       filter: 'digital',
       subTitle: 'University',
@@ -60,7 +60,7 @@
       uuid: Date.now(),
       title: 'ecographis',
       filter: 'digital',
-      type: 'Website',
+      type: 'Website Development',
       subTitle: 'Work',
       imgSrc: 'https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg',
       url: 'project/ecographis',
@@ -105,7 +105,7 @@
       title: 'Poster </br> Gallery',
       type: 'Conception / Design',
       filter: 'print',
-      subTitle: 'University - Bachelorthesis',
+      subTitle: 'Hobby',
       imgSrc: 'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
       url: '/project/postergallery',
       award: false,
@@ -453,6 +453,15 @@
     }
   }
 
+  .impressum {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
   @keyframes grain {
     0%,
     100% {
@@ -544,4 +553,5 @@
       <div class="scrollbar__handle mt-10" style="transform: scaleX({scale})" bind:this={scrollHandle} />
     </div>
   </div>
+  <a class="impressum" href="/impressum">Impressum</a>
 </div>

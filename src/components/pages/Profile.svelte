@@ -50,6 +50,24 @@
     background-color: #fff;
   }
 
+  .footer {
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .impressum {
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
   .header {
     position: absolute;
     top: 0;
@@ -155,13 +173,13 @@
 
   .link-profile {
     text-decoration: none;
-    background-color: #000;
+    background: #000;
     color: #fff;
-    transition: background-color 0.5s;
+    transition: background 0.5s;
     width: 100%;
     height: 100%;
     &:hover {
-      background-color: rgba(241, 200, 95, 1);
+      background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     }
   }
 </style>
@@ -176,7 +194,7 @@
         <div
           in:fly={{ y: 80, duration: animationDuration, delay: animationDelay, easing: expoOut }}
           style="font-weight: 500">
-          Hi, I'm Andi! test
+          Hi, I'm Andi!
         </div>
         <div
           in:fly={{ y: 80, duration: animationDuration, delay: animationDelay + 300, easing: expoOut }}
@@ -202,7 +220,7 @@
       <div class="opacity-0" class:activeFadeUp={active >= 0}>
         <p>I know you are busy. Let me come straight to the point.</p>
         <p class="mt-20">
-          I grew up in Southern Germany and successfully completed my Bachelor's degree in Print and Media Technology -
+          I grew up in Southern Germany and successfully completed my Bachelor's degree in Print and Media Technology –
           Digital Publishing at the Stuttgart Media University. Two wonderful years I lived, studied and worked in
           Amsterdam. I like to create user-driven products and applications with fancy machines and special tools.
           Currently I am doing a PreMaster Program at the Bosch Engineering GmbH in the IoT-Cloud area and create data
@@ -249,5 +267,6 @@
         class="link-profile pt-100 pb-100 pr-20 pl-20  headline1 display-flex justify-content-center align-items-center">Check
         out on GitHub!</a>
     </div>
+    <div class="footer pl-70 pr-70"><a class="impressum" href="/impressum">Impressum</a></div>
   </div>
 </main>

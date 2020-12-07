@@ -127,8 +127,8 @@
     }
     &--font {
       font-size: 1.2vw;
-      font-family: 'Domine', serif;
       color: #fff;
+      font-weight: 500;
       letter-spacing: 1.1;
       @media screen and (max-width: 800px) {
         font-size: 15px;
@@ -148,7 +148,7 @@
       <div class="mask__inner">
         <div class="logo logo--mask">
           <div out:fly={{ y: 20, duration: 300 }} in:fly={{ y: -20, duration: 200 }} class="logo--font">
-            The curtain is about to open...
+            The curtain is about to raise...
           </div>
         </div>
         <div class="mask-line-wrapper">

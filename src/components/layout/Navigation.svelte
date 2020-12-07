@@ -61,6 +61,9 @@
       @media screen and (max-width: 500px) {
         font-size: 17px;
       }
+      @media screen and (max-width: 350px) {
+        font-size: 14px;
+      }
       &-mask {
         position: absolute;
         top: 0;
@@ -80,6 +83,9 @@
           color: #fff;
           @media screen and (max-width: 500px) {
             font-size: 17px;
+          }
+          @media screen and (max-width: 350px) {
+            font-size: 14px;
           }
           .filter__link:hover &,
           .filter__link.is-active & {

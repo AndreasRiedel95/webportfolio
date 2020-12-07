@@ -176,7 +176,7 @@
         <div
           in:fly={{ y: 80, duration: animationDuration, delay: animationDelay, easing: expoOut }}
           style="font-weight: 500">
-          Hi, I'm Andi!
+          Hi, I'm Andi! test
         </div>
         <div
           in:fly={{ y: 80, duration: animationDuration, delay: animationDelay + 300, easing: expoOut }}
@@ -202,10 +202,11 @@
       <div class="opacity-0" class:activeFadeUp={active >= 0}>
         <p>I know you are busy. Let me come straight to the point.</p>
         <p class="mt-20">
-          I grew up in Southern Germany and received my Bachelor's degree in Print and Media Technology - Digital
-          Publishing from the Stuttgart Media University. Two wonderful years I lived, studied and worked in Amsterdam.
-          I like to create special products and experience with fancy machines and special tools. Currently I am
-          completing a PreMaster Program at Bosch Engineering GmbH in the IoT-Cloud area and create data visualizations.
+          I grew up in Southern Germany and successfully completed my Bachelor's degree in Print and Media Technology -
+          Digital Publishing at the Stuttgart Media University. Two wonderful years I lived, studied and worked in
+          Amsterdam. I like to create user-driven products and applications with fancy machines and special tools.
+          Currently I am doing a PreMaster Program at the Bosch Engineering GmbH in the IoT-Cloud area and create data
+          visualizations.
         </p>
         <p class="mt-20">
           You can
@@ -226,10 +227,10 @@
           class:activeFadeUpDelay300={active >= 1} />
         <div class="award-grid__text-wrapper opacity-0" class:activeFadeUpDelay300={active >= 1}>
           <div class="headline2 headline2--thin mb-30" id="award">
-            Best graduate of the Faculty of Printing and Media Technology
+            Best graduate of the Faculty of Printing and Media Technology 2019
           </div>
           <div>
-            I successfully graduated in my bachelor's degree in Print and Media Technology – Digital Publishing and have
+            I successfully graduated in my Bachelor's degree in Print and Media Technology – Digital Publishing and have
             been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for being the
             best graduate student in my faculty.
           </div>

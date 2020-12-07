@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+      target: prod
+    image: webapp:prod
+    ports:
+      - '3000:3000'
+    restart: always
+    environment:
+      - PORT=3000

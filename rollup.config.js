@@ -7,7 +7,7 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import sveltePreprocess from 'svelte-preprocess';
 import alias from '@rollup/plugin-alias';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 
 const production = !process.env.ROLLUP_WATCH;
 console.log('Production', production);
@@ -72,10 +72,11 @@ export default {
       },
     }),
     aliases,
-    babel({
-      extensions: ['.js', '.mjs', '.html', '.svelte'],
-      include: ['src/**', 'node_modules/svelte/**'],
-    }),
+    production &&
+      babel({
+        extensions: ['.js', '.mjs', '.html', '.svelte'],
+        include: ['src/**', 'node_modules/svelte/**'],
+      }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In

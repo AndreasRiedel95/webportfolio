@@ -80,6 +80,17 @@
     {
       id: 4,
       uuid: Date.now(),
+      title: 'mueslibar',
+      type: 'Conception / Magazine',
+      filter: 'print',
+      subTitle: 'University',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg',
+      url: 'project/mueslibar',
+      award: false,
+    },
+    {
+      id: 5,
+      uuid: Date.now(),
       title: 'Turn- </br> Over-App',
       type: 'iOS App for iPad',
       filter: 'digital',
@@ -89,7 +100,7 @@
       award: false,
     },
     {
-      id: 5,
+      id: 6,
       uuid: Date.now(),
       title: 'Poster </br> Gallery',
       type: 'Conception / Design',

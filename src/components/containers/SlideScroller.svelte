@@ -75,7 +75,7 @@
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
-            <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/hdm_bachelor_enhngctiGrES.jpg'); background-size: cover; background-position: 50% 0%;"></div>
+            <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/IMG_7817_bsYhZD7VvD0Q.JPG'); background-size: cover; background-position: 50% 0%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Stuttgart.</span>
               Back in Germany, I completed my Bachelor's degree as the best graduate of my faculty (<a class="link" href="/project/learnplattform"> eLearning Platform</a>).
@@ -118,7 +118,6 @@
     inScroll = false;
     maxBound = innerWrapper.scrollWidth;
     vw > 1100 ? (wrapperHeight = maxBound - vw * 0.3) : (wrapperHeight = maxBound + vw);
-    console.log(wrapperHeight);
   };
 
   const calculateScroll = (e) => {

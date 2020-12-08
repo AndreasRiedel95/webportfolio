@@ -427,6 +427,15 @@
     }
   }
 
+  .scroll-indicator-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+
   .scroll-indicator {
     position: relative;
     display: block;
@@ -541,7 +550,7 @@
     {/if}
     <div class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center">
       {#if !isTouch}
-        <div class="display-flex justify-content-center align-items-center">
+        <div class="scroll-indicator-wrapper">
           <div class="scroll-indicator">
             <div class="scroll-indicator-mask" style="--translate: {-100 + scale * 100}%">
               <span style="--translate: {100 - scale * 100}%">Scroll Down / Drag</span>

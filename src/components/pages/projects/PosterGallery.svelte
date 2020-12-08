@@ -23,10 +23,11 @@
       url: 'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
     },
     intro: {
-      introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
+      introTitle: "It all started with having Photoshop on the parents' computer and the urge to try something new...",
       introText: [
-        'Obys agency is a fan of his photography and his vision, so our mission in creating this site was to remind the world of Lindbergh’s work and perhaps introduce someone to his art. Here in Ukraine, many people don’t know about him, unfortunately.',
-        'The site was created entirely on Readymag, so any extra development wasn’t needed. Before this, we had only used Readymag for internal tasks and meetings. The list of animation opportunities was very attractive to us.',
+        'Very soon I designed various posters for school events like school parties, band contests etc.',
+        'Together with Photoshop the interest in the programs InDesign and Illustrator arose. And then, at some point, programming was introduced to my world - and with it the opportunity to become even more creative. But I did not say goodbye to the classic design and I still like to design in those fancy programs like Sketch or Photoshop.',
+        'For now, enjoy browsing through a selection of my best posters of the early days.',
       ],
     },
   };

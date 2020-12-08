@@ -310,7 +310,7 @@
             Test the prototype now!
           </div>
           <p class="mb-20 opacity-0" class:activeFadeUpDelay300={active >= 4}>
-            I developed an interactive prototype with axure . You can try it out
+            I developed an interactive prototype with Axure . You can try it out
             <a target="_blank" class="link" href="http://4t2tyj.axshare.com/#c=2">here</a>.
           </p>
           <p class="mb-20 opacity-0" class:activeFadeUpDelay400={active >= 4}>

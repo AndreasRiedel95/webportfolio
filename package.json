@@ -5,7 +5,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "server": "node server.js",
-    "serve-dev": "concurrently \"node server.js\" \"npm run dev\" ",
+    "serve-dev": "run-p server dev",
     "serve-prod": "npm-run-all build server",
     "start": "sirv public --host 0.0.0.0 --single"
   },
@@ -27,7 +27,6 @@
   "dependencies": {
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.2.2",
-    "concurrently": "^5.3.0",
     "cssnano": "^4.1.10",
     "express": "^4.17.1",
     "flickity": "^2.2.1",

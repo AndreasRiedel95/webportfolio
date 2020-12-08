@@ -15,10 +15,12 @@
       url: 'https://ik.imagekit.io/andreasriedel/hero_projection_I8Ldon9x7QSD0.jpg',
     },
     intro: {
-      introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
+      introTitle:
+        "For the project <span class='font-italic'> Colorful World and Humanity</span> I developed a light installation. The goal was to merge the individual human being with the colorful world we're living in.",
       introText: [
-        'Obys agency is a fan of his photography and his vision, so our mission in creating this site was to remind the world of Lindbergh’s work and perhaps introduce someone to his art. Here in Ukraine, many people don’t know about him, unfortunately.',
-        'The site was created entirely on Readymag, so any extra development wasn’t needed. Before this, we had only used Readymag for internal tasks and meetings. The list of animation opportunities was very attractive to us.',
+        'A powerful beamer projects various images and patterns onto the faces of models sitting on a stool in front of a black screen.',
+        'By choosing the portrait photo, the person as an individual is meant to be placed in the center of attention. The individual forms a unity with the darkness and the light of the patterns.',
+        'Browse through the gallery and discover the expressive power of light, darkness and the individual human being.',
       ],
     },
     slideshow: {

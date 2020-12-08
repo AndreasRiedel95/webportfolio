@@ -29,11 +29,11 @@
     },
     intro: {
       introTitle:
-        'An app development to guide tourists in an intuitive and easy way through the highlights of the Rijksmuseum ',
+        'Conception of an app that presents visitors the highlights of the Rijksmuseum in an intuitive and simple way.',
       introText: [
-        'The assignment was to develop a complete prototyping series – from a paper to an interactive prototype.',
-        'For this purpose I developed two use case scenarios that were tailored to a suitable persona.',
-        'This app is all about easy navigation and intuitive swipe gestures. The goal was that the user should concentrate on one thing only and be distracted as little as possible. With his camera the user has the possibility to look at details of paintings and to get additional information.',
+        'The assignment was to develop a complete prototyping series – from a paper prototype to an interactive one.',
+        'For this purpose I developed two use case scenarios which were tailored to a suitable persona.',
+        'This app is all about easy navigation and intuitive swipe movements. The goal was to have the user concentrate on just one thing and be distracted as little as possible. Moreover, the user has the possibility to get more details and additional information by scanning the paintings.',
       ],
     },
     slideshow: {

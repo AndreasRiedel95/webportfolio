@@ -23,10 +23,10 @@
       url: 'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
     },
     intro: {
-      introTitle: "It all started with having Photoshop on the parents' computer and the urge to try something new...",
+      introTitle: "It all began with having Photoshop on the parents' computer and the urge to try something new...",
       introText: [
         'Very soon I designed various posters for school events like school parties, band contests etc.',
-        'Together with Photoshop the interest in the programs InDesign and Illustrator arose. And then, at some point, programming was introduced to my world - and with it the opportunity to become even more creative. But I did not say goodbye to the classic design and I still like to design in those fancy programs like Sketch or Photoshop.',
+        'Together with Photoshop the interest in the twin-programs InDesign and Illustrator arose. And then, at some point, programming was introduced to my world – and with it the opportunity to become even more creative. I did not say goodbye to the classic design of posters. I still like to design in those fancy programs like Sketch or Photoshop. So stay tuned!',
         'For now, enjoy browsing through a selection of my best posters of the early days.',
       ],
     },

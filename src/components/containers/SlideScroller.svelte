@@ -46,7 +46,7 @@
           `<div class="slidescroller__content" style="--background: linear-gradient(90deg, #4994e9 0%, #603db1 100%)">
             <div class="max-width-500">
               <span class="font-weight-medium">International.</span>
-             Due to my semester abroad in Amsterdam and my subsequent professional year as a Front-end developer in an Amsterdam start-up company,
+             Due to my semester abroad in Amsterdam and my subsequent professional year as a Front-end developer in an Amsterdamer Consulting and IT company,
              I am used to working in multicultural and international teams and living in an international environment.
             </div>
           </div>`,

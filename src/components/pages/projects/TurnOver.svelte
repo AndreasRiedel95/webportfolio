@@ -14,10 +14,11 @@
       url: '/videos/toa.mp4',
     },
     intro: {
-      introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
+      introTitle: 'A reacte native app to improve communication between flight crew and gate agents at the airport.',
       introText: [
-        'Obys agency is a fan of his photography and his vision, so our mission in creating this site was to remind the world of Lindbergh’s work and perhaps introduce someone to his art. Here in Ukraine, many people don’t know about him, unfortunately.',
-        'The site was created entirely on Readymag, so any extra development wasn’t needed. Before this, we had only used Readymag for internal tasks and meetings. The list of animation opportunities was very attractive to us.',
+        'This great project was a cooperation between the Hogeschool van Amsterdam and the Dutch IT and consulting company Gen25. ',
+        'The goal of the app is to avoid delays in flight operations by digitizing the communication between the crew and the gate agents at the airport.',
+        'The design was provided by Gen25. The application is developed in React Native and communicates with a Salesforce backend. The application has a login, a task manager and a chat/message function.Tasks are synchronized between the staff involved in a flight process.',
       ],
     },
   };

@@ -1,4 +1,9 @@
 <script>
+  // TODO:
+  // - How does it work -> diagram?
+  // - Vision
+  // - How is it used at the moment?
+
   import ProjectHeader from 'components/layout/ProjectHeader.svelte';
   import Parralax from 'components/layout/Parralax.svelte';
   import ProjectIntro from 'components/layout/ProjectIntro.svelte';
@@ -26,7 +31,7 @@
     header: {
       title: ['HTML- & CSS-', 'eLearning'],
       year: "18'",
-      skills: 'University <br /> Web, Application, Bachelorthesis',
+      skills: 'Bachelorthesis <br/> Fullstack-Programming <br/> Web-Application',
       award: true,
     },
     parralax: {
@@ -34,10 +39,12 @@
       url: '/videos/learnplatform.mp4',
     },
     intro: {
-      introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
+      introTitle:
+        'A prototypical eLearning-Environment for the course of study Print and Media Technology – Digital Publishing at the Stuttgart Media University.',
       introText: [
-        'Obys agency is a fan of his photography and his vision, so our mission in creating this site was to remind the world of Lindbergh’s work and perhaps introduce someone to his art. Here in Ukraine, many people don’t know about him, unfortunately.',
-        'The site was created entirely on Readymag, so any extra development wasn’t needed. Before this, we had only used Readymag for internal tasks and meetings. The list of animation opportunities was very attractive to us.',
+        'For my bachelor thesis, I developed a platform on which professors can define individual HTML and CSS tasks that have to be solved by the students.',
+        'The web application is able to check the entered code for correctness and to display the status of the solved task in real time.',
+        'The application relieves lecturers of the time-consuming review process and thus contributes to enormous time savings in daily business.',
       ],
     },
   };
@@ -151,8 +158,13 @@
       <div class="content-grid">
         <div class="content-grid__row" bind:this={wrappers[1]} data-index="1" class:activeFadeUp={active >= 1}>
           <div class="margin-left-auto max-width-400 mb-40">
-            <div class="headline2 headline2--thin mb-10" style="color: #929292">Admin panel for easy data fill in.</div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni.</div>
+            <div class="headline2 headline2--thin mb-10" style="color: #929292">
+              Admin panel for easy data and content entry.
+            </div>
+            <div>
+              Through the Admin User Interface, tasks and content can be easily entered, modified and deleted in the
+              MongoDB database.
+            </div>
           </div>
         </div>
         <div class="content-grid__row__image-wrapper mb-150" class:activeFadeUpDelay300={active >= 1}>
@@ -160,9 +172,12 @@
         </div>
         <div class="content-grid__row" bind:this={wrappers[2]} data-index="2" class:activeFadeUp={active >= 2}>
           <div class="margin-right-auto max-width-400 mb-40">
-            <div class="headline2 headline2--thin mb-10" style="color: #929292">Easy UI to navigate through.</div>
+            <div class="headline2 headline2--thin mb-10" style="color: #929292">
+              Easy and innovative UI to navigate through.
+            </div>
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni mollitia, architecto labore.
+              Due to the simple and elegant User Interface, students can work quickly and efficiently and do not get
+              lost in confusing structures.
             </div>
           </div>
         </div>
@@ -172,7 +187,10 @@
         <div class="content-grid__row" bind:this={wrappers[3]} data-index="3" class:activeFadeUp={active >= 3}>
           <div class="margin-left-auto max-width-400 mb-40">
             <div class="headline2 headline2--thin mb-10" style="color: #929292">Read. Understand. <br /> Solve.</div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quae magni.</div>
+            <div>
+              Users can not only solve given tasks, but also read up on the theory behind each topic. Thus they can work
+              and learn according to the principle: read, understand, apply.
+            </div>
           </div>
         </div>
         <div class="content-grid__row__image-wrapper mb-100" class:activeFadeUpDelay300={active >= 3}>

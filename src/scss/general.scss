@@ -20,6 +20,12 @@
     color: #fff;
     background-size: 100% 88%;
   }
+  &.--inverted {
+    color: #fff;
+    &:hover {
+      color: #000;
+    }
+  }
 }
 
 .divider {

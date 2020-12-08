@@ -35,10 +35,12 @@
       url: 'https://ik.imagekit.io/andreasriedel/ecographis_hero2_7Ii9E5onbVmqQ.jpg',
     },
     intro: {
-      introTitle: 'Our team created this site to memorialize the works of great fashion photographer Peter Lindbergh.',
+      introTitle:
+        'ecographis is a small design agency based near Stuttgart which develops and implements sustainable concepts and designs.',
       introText: [
-        'Obys agency is a fan of his photography and his vision, so our mission in creating this site was to remind the world of Lindbergh’s work and perhaps introduce someone to his art. Here in Ukraine, many people don’t know about him, unfortunately.',
-        'The site was created entirely on Readymag, so any extra development wasn’t needed. Before this, we had only used Readymag for internal tasks and meetings. The list of animation opportunities was very attractive to us.',
+        'The design was provided by the agency. I developed the site with HTML5, CSS3 and Javascript – of course full responsive and touch friendly.',
+        'The large, full-screen slideshows at the top of the pages are a special eye-catcher. Through those slides the highlighted projects get the attention they deserve.',
+        "You want to see the site in action? Then click <a target='_blank' class='link --inverted' href='https://ecographis.de/'>here</a>!",
       ],
     },
   };

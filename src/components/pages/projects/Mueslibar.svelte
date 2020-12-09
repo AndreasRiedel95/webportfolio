@@ -145,34 +145,6 @@
       <div>
         <Slideshow slides={template.slideshow.slides} options={template.slideshow.options} />
       </div>
-      <div class="width-100 background-white pt-100 pb-100">
-        <div
-          class="max-width-1200 width-100 pl-50 pr-50 margin-left-auto margin-right-auto display-flex flex-direction-column">
-          <div class="mb-100 max-width-500 margin-left-auto">
-            <div class="headline1 headline1--thin mb-30 color-black">
-              From conception
-              <br />
-              to handcrafted prototype
-            </div>
-            <div class="color-black">
-              Before we started designing and manufacturing the prototype, we scribbled a lot. The goal was to create a
-              prototype that would come as close as possible to a real product and that could later be presented in a
-              store.
-            </div>
-          </div>
-          <div class="imagecompare_wrapper">
-            <div class="imagecompare_wrapper__inner">
-              <ImageCompare
-                before="https://ik.imagekit.io/andreasriedel/mueslibar_compare_2_AkXw4e9LXJUR.jpg"
-                after="https://ik.imagekit.io/andreasriedel/mueslibar_compare_1_0ejGQRMK_1kx.jpg"
-                contain={true}>
-                <span slot="before">Conception</span>
-                <span slot="after">Final Prototype</span>
-              </ImageCompare>
-            </div>
-          </div>
-        </div>
-      </div>
       <div style="height: {wrapperHeight}px" class="logo-outer-wrapper" bind:this={logoWrapper}>
         <div
           class=" display-flex justify-content-center align-items-center width-100 max-width-1200 margin-left-auto margin-right-auto pl-50 pr-50"
@@ -242,6 +214,34 @@
                   src="/svg/mueslibar_logo_1.svg"
                   alt="mueslibar-logo" />
               {/if}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="width-100 background-white pt-100 pb-100">
+        <div
+          class="max-width-1200 width-100 pl-50 pr-50 margin-left-auto margin-right-auto display-flex flex-direction-column">
+          <div class="mb-100 max-width-500 margin-left-auto">
+            <div class="headline1 headline1--thin mb-30 color-black">
+              From conception
+              <br />
+              to handcrafted prototype
+            </div>
+            <div class="color-black">
+              Before we started designing and manufacturing the prototype, we scribbled a lot. The goal was to create a
+              prototype that would come as close as possible to a real product and that could later be presented in a
+              store.
+            </div>
+          </div>
+          <div class="imagecompare_wrapper">
+            <div class="imagecompare_wrapper__inner">
+              <ImageCompare
+                before="https://ik.imagekit.io/andreasriedel/mueslibar_compare_2_AkXw4e9LXJUR.jpg"
+                after="https://ik.imagekit.io/andreasriedel/mueslibar_compare_1_0ejGQRMK_1kx.jpg"
+                contain={true}>
+                <span slot="before">Conception</span>
+                <span slot="after">Final Prototype</span>
+              </ImageCompare>
             </div>
           </div>
         </div>

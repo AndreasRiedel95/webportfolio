@@ -15,8 +15,7 @@
       url: 'https://ik.imagekit.io/andreasriedel/hero_projection_I8Ldon9x7QSD0.jpg',
     },
     intro: {
-      introTitle:
-        "For the project <span class='font-italic'> Colorful World and Humanity</span> I developed a light installation. The goal was to merge the individual human being with the colorful world we're living in.",
+      introTitle: 'A light installation which merges the individual human being with the colorful world we live in.',
       introText: [
         'A powerful beamer projects various images and patterns onto the faces of models sitting on a stool in front of a black screen.',
         'By choosing the portrait photo, the person as an individual is meant to be placed in the center of attention. The individual forms a unity with the darkness and the light of the patterns.',

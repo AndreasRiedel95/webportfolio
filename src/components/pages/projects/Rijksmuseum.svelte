@@ -29,7 +29,7 @@
     },
     intro: {
       introTitle:
-        'Conception of an app that presents visitors the highlights of the Rijksmuseum in an intuitive and simple way.',
+        'Conception of an app that guides visitors on a highlight tour through the Rijksmuseum in an intuitive and simple way.',
       introText: [
         'The assignment was to develop a complete prototyping series – from a paper prototype to an interactive one.',
         'For this purpose I developed two use case scenarios which were tailored to a suitable persona.',

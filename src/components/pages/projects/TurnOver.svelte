@@ -16,7 +16,7 @@
     intro: {
       introTitle: 'A reacte native app to improve communication between flight crew and gate agents at the airport.',
       introText: [
-        'This great project was a cooperation between the Hogeschool van Amsterdam and the Dutch IT and consulting company Gen25. ',
+        'This project was a cooperation between the Hogeschool van Amsterdam and the Dutch IT and Consulting company Gen25. ',
         'The goal of the app is to avoid delays in flight operations by digitizing the communication between the crew and the gate agents at the airport.',
         'The design was provided by Gen25. The application is developed in React Native and communicates with a Salesforce backend. The application has a login, a task manager and a chat/message function.Tasks are synchronized between the staff involved in a flight process.',
       ],

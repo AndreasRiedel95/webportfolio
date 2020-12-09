@@ -36,7 +36,7 @@
     },
     intro: {
       introTitle:
-        'ecographis is a small design agency based near Stuttgart which develops and implements sustainable concepts and designs.',
+        'ecographis is a small design agency, which develops and implements sustainable concepts and designs.',
       introText: [
         'The design was provided by the agency. I developed the site with HTML5, CSS3 and Javascript – of course full responsive and touch friendly.',
         'The large, full-screen slideshows at the top of the pages are a special eye-catcher. Through those slides the highlighted projects get the attention they deserve.',

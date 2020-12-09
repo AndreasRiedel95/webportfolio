@@ -2,7 +2,6 @@
   import { fly, fade } from 'svelte/transition';
   import { expoOut, quadIn } from 'svelte/easing';
   export let mask = 0;
-  export let transitionLength = 6000;
   export let animate;
 
   $: if (!animate) {
@@ -147,7 +146,7 @@
       <div out:slideOutHorizontal={{ duration: 800, delay: 400 }} class="mask-slice__black" />
       <div class="mask__inner">
         <div class="logo logo--mask">
-          <div out:fly={{ y: 20, duration: 300 }} in:fly={{ y: -20, duration: 200 }} class="logo--font">
+          <div out:fly={{ y: 20, duration: 300 }} in:fade={{ duration: 100 }} class="logo--font">
             The curtain is about to raise...
           </div>
         </div>

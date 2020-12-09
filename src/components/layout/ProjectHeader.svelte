@@ -54,7 +54,7 @@
       font-style: italic;
       position: absolute;
       left: 0;
-      transform: translateX(-180%);
+      transform: translateX(-120%);
       top: 15px;
       font-size: 3rem;
       @media screen and (max-width: 950px) {

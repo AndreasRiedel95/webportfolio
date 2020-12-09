@@ -40,7 +40,7 @@
     },
     intro: {
       introTitle:
-        'A prototypical eLearning-Environment for the course of study Print and Media Technology – Digital Publishing at the Stuttgart Media University.',
+        'A prototypical eLearning-Environment for the Print and Media Technology – Digital Publishing course at the Stuttgart Media University.',
       introText: [
         'For my bachelor thesis, I developed a platform on which professors can define individual HTML and CSS tasks that have to be solved by the students.',
         'The web application is able to check the entered code for correctness and to display the status of the solved task in real time.',

@@ -51,7 +51,7 @@
   }
 
   .footer {
-    background-color: #fff;
+    background-color: #151515;
     width: 100%;
     position: relative;
     padding-top: 20px;
@@ -63,7 +63,7 @@
   }
 
   .impressum {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-size: 12px;
   }
@@ -177,6 +177,7 @@
     color: #fff;
     transition: background 0.5s;
     width: 100%;
+    text-align: center;
     height: 100%;
     &:hover {
       background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);

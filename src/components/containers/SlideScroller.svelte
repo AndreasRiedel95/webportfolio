@@ -57,7 +57,7 @@
       inside: false,
       slides: {
         templates: [
-          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
+          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/opera_hall_kiuODjklZsJ8.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Düsseldorf.</span>
@@ -66,7 +66,7 @@
           am Rhein.  After my exciting year at the longest bar in the world, I moved back to Stuttgart to start studying Print And Media Technology – Digital Publishing at the University of Media.
             </div>
           </div>`,
-          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
+          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/amsterdam_wiHN1x0zJE7rE.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Amsterdam.</span>
@@ -74,7 +74,7 @@
                 Because I liked it so much in Amsterdam, I also did a practical semester as a Front-end developer there.
             </div>
           </div>`,
-          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
+          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/IMG_7817_bsYhZD7VvD0Q.JPG'); background-size: cover; background-position: 50% 0%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Stuttgart.</span>
@@ -82,7 +82,7 @@
               While writing my thesis I moved back to Amsterdam to work as a Front-end developer.
             </div>
           </div>`,
-          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 95%">
+          `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/future_DnMREaIzPPKR.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">To be continued....</span>
@@ -141,10 +141,9 @@
 <style lang="scss">
   :global {
     .slidescroller__content {
-      width: 95%;
+      width: 85vw;
       flex-shrink: 0;
       min-height: 400px;
-      height: 100%;
       padding: 30px;
       display: flex;
       justify-content: center;
@@ -157,8 +156,12 @@
       height: 300px;
       min-height: 300px;
       @media screen and (max-width: 500px) {
-        height: 200px;
-        min-height: 200px;
+        height: 180px;
+        min-height: 180px;
+      }
+      @media screen and (max-width: 350px) {
+        height: 130px;
+        min-height: 130px;
       }
     }
   }
@@ -168,20 +171,16 @@
   }
 
   .wrapper {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     position: sticky;
     top: 0;
-    width: 100%;
     background-color: #fafafa;
     display: flex;
+    width: 100%;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    @media screen and (max-width: 700px) {
-      // align-items: flex-start;
-    }
+    padding-top: 5px;
+    padding-bottom: 5px;
     &__inner {
-      width: 100%;
       display: flex;
     }
   }
@@ -199,12 +198,18 @@
     width: 100px;
     height: 10px;
   }
+
+  .wrapper-100h {
+    height: calc(var(--vh, 1vh) * 100);
+  }
 </style>
 
 <svelte:window bind:innerWidth={vw} on:resize={getBoundings} bind:innerHeight={vh} />
 <div class="outer-wrapper" bind:this={wrapper} style="--height: {wrapperHeight}px">
-  <div class="wrapper" bind:this={innerWrapper}>
-    <div class="display-flex width-100 position-relative display-flex align-items-center" style="height: {vh - 120}px">
+  <div class="wrapper" bind:this={innerWrapper} style="--vh: {vh * 0.01}px">
+    <div
+      class="wrapper-100h display-flex width-100 position-relative display-flex align-items-center"
+      style="--vh: {vh * 0.01}px">
       <div class="wrapper__inner" style="transform: translate3d(-{actualScroll}px, 0,0)">
         {#each templates[slideIdentifier].slides.templates as template}
           <div class="divider-padding" />

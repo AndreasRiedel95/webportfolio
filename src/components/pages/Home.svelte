@@ -230,7 +230,7 @@
   const handleScroll = (e) => {
     if (dragging) return;
     let { spinY } = normalizeWheel(e);
-    data.current += spinY * 10;
+    data.current += spinY * 15;
     clamp();
   };
 

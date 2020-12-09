@@ -51,16 +51,19 @@
   let percentage = 0;
 
   onMount(() => {
-    calculateBoundings();
+    setTimeout(() => {
+      calculateBoundings();
+    }, 500);
   });
 
+  $: console.log($projectContainerScrollTop);
   const calculateBoundings = () => {
-    wrapperHeight = vh * 2.8;
-    startScroll = logoWrapper.getBoundingClientRect().top;
+    wrapperHeight = vh * 1.8;
+    startScroll = logoWrapper.getBoundingClientRect().top - vh;
   };
 
-  $: if ($projectContainerScrollTop >= startScroll + vh / 6) {
-    distance = $projectContainerScrollTop - (startScroll - vh / 6);
+  $: if ($projectContainerScrollTop >= startScroll) {
+    distance = $projectContainerScrollTop - startScroll;
     percentage = (100 / wrapperHeight) * distance;
   }
 </script>
@@ -117,11 +120,20 @@
     background-color: #000;
   }
 
+  .sticky-wrapper {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
   .logo-image-wrapper {
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
     height: 0;
     padding-bottom: 85%;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
   }
 
@@ -147,12 +159,11 @@
       </div>
       <div style="height: {wrapperHeight}px" class="logo-outer-wrapper" bind:this={logoWrapper}>
         <div
-          class=" display-flex justify-content-center align-items-center width-100 max-width-1200 margin-left-auto margin-right-auto pl-50 pr-50"
-          style="height: 100vh; position: sticky; top: 0">
+          class="sticky-wrapper display-flex justify-content-center align-items-center width-100 max-width-1200 margin-left-auto margin-right-auto pl-50 pr-50">
           <div
             class="display-grid grid-template-columns-responsive-400 jusify-content-center align-items-center grid-gap-small width-100">
             <div class="display-flex flex-direction-column justify-content-center align-items-center">
-              <div class="headline1 headline1--thin color-white">
+              <div class="headline1 headline1--thin color-white logo-headline">
                 One logo, a lot of
                 <br />
                 {#if percentage > 13}
@@ -239,7 +250,7 @@
                 before="https://ik.imagekit.io/andreasriedel/mueslibar_compare_2_AkXw4e9LXJUR.jpg"
                 after="https://ik.imagekit.io/andreasriedel/mueslibar_compare_1_0ejGQRMK_1kx.jpg"
                 contain={true}>
-                <span slot="before">Conception</span>
+                <span slot="before">Concept</span>
                 <span slot="after">Final Prototype</span>
               </ImageCompare>
             </div>

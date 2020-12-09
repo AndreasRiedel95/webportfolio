@@ -80,6 +80,7 @@
   /* Hide scrollbar */
   html,
   body {
+    scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }

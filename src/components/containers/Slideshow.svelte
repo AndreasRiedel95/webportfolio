@@ -9,10 +9,26 @@
 
   onMount(() => {
     flickity = new Flickity(flickityNode, options || {});
-    setTimeout(() => {
-      refreshFlickity();
-    }, 500);
+    preloadAll(slides)
+      .then((_) => {
+        console.log('Preloaded images');
+        refreshFlickity();
+      })
+      .catch((err) => console.error('Failed', err));
   });
+
+  const preload = (src) => {
+    return new Promise(function (resolve, reject) {
+      const img = new Image();
+      img.onload = function () {
+        resolve(img);
+      };
+      img.onerror = reject;
+      img.src = src;
+    });
+  };
+
+  const preloadAll = (sources) => Promise.all(sources.map(preload));
 
   const refreshFlickity = () => {
     if (!flickity) return;

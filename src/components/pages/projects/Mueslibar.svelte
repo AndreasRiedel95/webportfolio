@@ -55,7 +55,7 @@
   });
 
   const calculateBoundings = () => {
-    wrapperHeight = vh * 3.5;
+    wrapperHeight = vh * 2.8;
     startScroll = logoWrapper.getBoundingClientRect().top;
   };
 

@@ -11,7 +11,7 @@
     },
     parralax: {
       video: true,
-      url: '/videos/toa.mp4',
+      url: 'https://ik.imagekit.io/andreasriedel/toa_9dl_3LbnBmNL.mp4',
     },
     intro: {
       introTitle: 'A reacte native app to improve communication between flight crew and gate agents at the airport.',
@@ -45,6 +45,11 @@
     background-color: #161616;
     z-index: 10;
   }
+
+  .sticky-wrapper {
+    height: 200vh;
+    background-color: #fff;
+  }
 </style>
 
 <main>
@@ -53,6 +58,7 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
+      <div class="sticky-wrapper" />
     </div>
   </div>
 </main>

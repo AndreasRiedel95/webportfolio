@@ -6,8 +6,10 @@
   import PosterGallery from 'pages/projects/PosterGallery.svelte';
   import Learnplatform from 'pages/projects/Learnplatform.svelte';
   import Mueslibar from 'pages/projects/Mueslibar.svelte';
+  import DigitalInCar from 'pages/projects/DigitalInCar.svelte';
   import CloseButton from 'components/atoms/CloseButton.svelte';
   import { projectContainerScrollTop } from 'util/store.js';
+
   export let projectId;
 
   let templates = [
@@ -18,6 +20,7 @@
     { cp: PosterGallery, id: 'postergallery' },
     { cp: Learnplatform, id: 'learnplattform' },
     { cp: Mueslibar, id: 'mueslibar' },
+    { cp: DigitalInCar, id: 'digital-incar' },
   ];
   let template;
   $: if (projectId) {

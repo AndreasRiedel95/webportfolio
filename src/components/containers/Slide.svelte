@@ -69,10 +69,10 @@
     @media screen and (max-width: 800px) {
       align-items: center;
       width: 90vw;
-      transform: translateY(25px);
       padding: 40vw 0;
+      transform: translateY(50px);
     }
-    @media screen and (max-width: 350px) {
+    @media screen and (max-width: 400px) {
       align-items: flex-end;
       transform: translateY(0px);
     }

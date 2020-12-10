@@ -36,7 +36,7 @@
     },
     parralax: {
       video: true,
-      url: '/videos/learnplatform.mp4',
+      url: 'https://ik.imagekit.io/andreasriedel/learnplatform_mZP2IazOeN0vf.mp4',
     },
     intro: {
       introTitle:

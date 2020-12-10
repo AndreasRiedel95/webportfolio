@@ -68,11 +68,13 @@
     align-items: var(--alignment);
     @media screen and (max-width: 800px) {
       align-items: center;
-      width: 80vw;
-      padding: 35vw 0;
+      width: 90vw;
+      transform: translateY(25px);
+      padding: 40vw 0;
     }
     @media screen and (max-width: 350px) {
       align-items: flex-end;
+      transform: translateY(0px);
     }
     &--image {
       -webkit-user-select: none;
@@ -119,6 +121,9 @@
       color: transparent;
       -webkit-text-stroke: 1px rgba(#fff, 0.2);
       line-height: 1;
+      @media screen and (max-width: 800px) {
+        font-size: 50px;
+      }
     }
     &__type {
       position: absolute;

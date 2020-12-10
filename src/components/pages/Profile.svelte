@@ -175,7 +175,6 @@
     text-decoration: none;
     background: #000;
     color: #fff;
-    transition: background 0.5s;
     width: 100%;
     text-align: center;
     height: 100%;

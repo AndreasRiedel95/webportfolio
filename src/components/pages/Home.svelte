@@ -368,7 +368,7 @@
   .main {
     overflow: auto;
     width: 100%;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     -webkit-overflow-scrolling: touch;
     background: linear-gradient(0deg, #0e0e0e 0%, rgba(33, 33, 32, 1) 50%, #0e0e0e 100%);
     &:after {
@@ -518,7 +518,7 @@
   on:touchend|passive:true={(e) => handleTouchUp(e)}
   on:mousedown|passive:true={(e) => handleMouseDown(e)}
   on:mouseup|passive:true={(e) => handleMouseUp(e)} />
-<div class="main" bind:this={main}>
+<div class="main" bind:this={main} style="--vh: {windowHeight * 0.01}px">
   <div class="scroll" bind:this={scrollEle}>
     <Navigation on:handleItemClick={(e) => filterTemplates(e)} />
     {#if !filtering}

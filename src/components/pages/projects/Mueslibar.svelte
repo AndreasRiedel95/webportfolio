@@ -56,7 +56,6 @@
     }, 500);
   });
 
-  $: console.log($projectContainerScrollTop);
   const calculateBoundings = () => {
     wrapperHeight = vh * 1.8;
     startScroll = logoWrapper.getBoundingClientRect().top - vh;

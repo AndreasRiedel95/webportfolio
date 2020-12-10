@@ -193,10 +193,13 @@
 
   .intersector {
     position: absolute;
-    bottom: 0;
+    bottom: 2vw;
     right: 0;
     width: 100px;
     height: 10px;
+    @media screen and (max-width: 350px) {
+      bottom: 0;
+    }
   }
 
   .wrapper-100h {

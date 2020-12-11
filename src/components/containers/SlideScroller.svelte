@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import 'intersection-observer';
+  import { clamp } from 'util/helpers.js';
   export let scrollEvent;
   let maxBound;
   let transformWrapper = false;
@@ -131,10 +132,6 @@
       actualScroll = startScroll - (maxBound - e.target.scrollTop);
       actualScroll = clamp(actualScroll, 0, maxBound - vw);
     }
-  };
-
-  const clamp = (val, min, max) => {
-    return Math.min(Math.max(val, min), max);
   };
 </script>
 

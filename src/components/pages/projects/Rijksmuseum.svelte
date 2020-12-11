@@ -43,7 +43,7 @@
         '/svg/persona_2.svg',
         '/svg/persona_3.svg',
       ],
-      options: { imagesLoaded: true, freeScroll: true, contain: true, pageDots: false },
+      options: { imagesLoaded: true, freeScroll: true, freeScrollFriction: 0.03, contain: true, pageDots: false },
     },
   };
 

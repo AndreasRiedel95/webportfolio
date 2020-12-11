@@ -3,6 +3,7 @@
   import Flickity from 'flickity';
   export let slides = [];
   export let options;
+  export let divider = false;
   export let height = 600;
   let flickity;
   let flickityNode;
@@ -38,7 +39,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   .carousel {
     background: transparent;
   }
@@ -46,6 +47,15 @@
   .carousel img {
     display: block;
     height: var(--height);
+  }
+
+  .divider {
+    height: 0;
+    width: 40px;
+    background-color: transparent;
+    @media screen and (max-width: 500) {
+      width: 20px;
+    }
   }
 </style>
 
@@ -56,5 +66,10 @@
 </svelte:head>
 
 <div class="carousel" bind:this={flickityNode} style="--height: {height}px">
-  {#each slides as slide, i}<img src={slide} alt="slide{i}" />{/each}
+  {#each slides as slide, i}
+    <img src={slide} alt="slide{i}" />
+    {#if divider}
+      <div class="divider" />
+    {/if}
+  {/each}
 </div>

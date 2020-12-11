@@ -189,35 +189,63 @@
               </div>
             </div>
             <div class="logo-image-wrapper">
-              {#if percentage > 18}
+              {#if percentage > 10}
+                <img
+                  transition:fade={{ duration: 300 }}
+                  class="logo-image"
+                  src="/svg/mueslibar_logo_9.svg"
+                  alt="mueslibar-logo" />
+              {/if}
+              {#if percentage > 20}
+                <img
+                  transition:fade={{ duration: 300 }}
+                  class="logo-image"
+                  src="/svg/mueslibar_logo_8.svg"
+                  alt="mueslibar-logo" />
+              {/if}
+              {#if percentage > 30}
+                <img
+                  transition:fade={{ duration: 300 }}
+                  class="logo-image"
+                  src="/svg/mueslibar_logo_7.svg"
+                  alt="mueslibar-logo" />
+              {/if}
+              {#if percentage > 40}
+                <img
+                  transition:fade={{ duration: 300 }}
+                  class="logo-image"
+                  src="/svg/mueslibar_logo_6.svg"
+                  alt="mueslibar-logo" />
+              {/if}
+              {#if percentage > 50}
                 <img
                   transition:fade={{ duration: 300 }}
                   class="logo-image"
                   src="/svg/mueslibar_logo_5.svg"
                   alt="mueslibar-logo" />
               {/if}
-              {#if percentage > 36}
+              {#if percentage > 60}
                 <img
                   transition:fade={{ duration: 300 }}
                   class="logo-image"
                   src="/svg/mueslibar_logo_4.svg"
                   alt="mueslibar-logo" />
               {/if}
-              {#if percentage > 54}
+              {#if percentage > 70}
                 <img
                   transition:fade={{ duration: 300 }}
                   class="logo-image"
-                  src="/svg/mueslibar_logo_3.svg"
+                  src="/svg/mueslibar_logo_5.svg"
                   alt="mueslibar-logo" />
               {/if}
-              {#if percentage > 72}
+              {#if percentage > 80}
                 <img
                   transition:fade={{ duration: 300 }}
                   class="logo-image"
                   src="/svg/mueslibar_logo_2.svg"
                   alt="mueslibar-logo" />
               {/if}
-              {#if percentage > 91}
+              {#if percentage > 90}
                 <img
                   transition:fade={{ duration: 300 }}
                   class="logo-image"

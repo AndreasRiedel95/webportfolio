@@ -43,7 +43,7 @@
         'A prototypical eLearning-Environment for the Print and Media Technology – Digital Publishing course at the Stuttgart Media University.',
       introText: [
         'For my bachelor thesis, I developed a platform on which professors can define individual HTML and CSS tasks that have to be solved by the students.',
-        'The web application is able to check the entered code for correctness and to display the status of the solved task in real time.',
+        'The web application is able to check the entered code for correctness and to display the status of the solved task in real-time.',
         'The application relieves lecturers of the time-consuming review process and thus contributes to enormous time savings in daily business.',
       ],
     },
@@ -148,8 +148,8 @@
               Best graduate of the Faculty of Printing and Media Technology
             </div>
             <div>
-              I successfully graduated in my bachelor's degree in Print and Media Technology – Digital Publishing and
-              have been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for
+              I successfully graduated in my Bachelor's degree in Print and Media Technology – Digital Publishing. Here,
+              I've been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for
               being the best graduate student in my faculty.
             </div>
           </div>
@@ -162,7 +162,7 @@
               Admin panel for easy data and content entry.
             </div>
             <div>
-              Through the Admin User Interface, tasks and content can be easily entered, modified and deleted in the
+              Through the admin user interface, tasks and content can be easily entered, modified and deleted in the
               MongoDB database.
             </div>
           </div>
@@ -176,7 +176,7 @@
               Easy and innovative UI to navigate through.
             </div>
             <div>
-              Due to the simple and elegant User Interface, students can work quickly and efficiently and do not get
+              Due to the simple and elegant user interface, students can work quickly and efficiently and do not get
               lost in confusing structures.
             </div>
           </div>

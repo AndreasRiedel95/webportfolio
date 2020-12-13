@@ -24,15 +24,14 @@
           `<div class="slidescroller__content" style="--background: linear-gradient(90deg, rgba(225, 85, 66, 1) 0%, rgba(245, 200, 95, 1) 100%)">
             <div class="max-width-500">
               <span class="font-weight-medium">Allrounder.</span>
-              From development and conception to the programming of multimedia apps and websites: In my previous projects and companies for which I was allowed to work, I have gained a lot of practical experience in different areas. I am able to communicate with the respective specialists at eye level. I know the various possibilities of programming and their implementation and also have the technical knowledge and expertise of UX design.
+              From development and conception to the programming of multimedia apps and websites: In my previous projects and companies, I have gained a lot of practical experience in different areas. I am able to communicate with the respective specialists at eye level. I'm a programmer with additional expertise in UX Design.
             </div>
           </div>`,
           `<div class="slidescroller__content" style="--background: linear-gradient(90deg, rgba(241, 200, 95, 1) 0%, rgba(128, 195, 105, 1) 100%)">
             <div class="max-width-500">
               <span class="font-weight-medium">Maker.</span>
-              I firmly believe that <span class="font-italic">doing something</span> is better than <span class="font-italic">doing nothing</span>. In my last projects, I had to and was allowed to adapt and learn quickly to meet the
-              goals and above all my own requirements. My goal is to keep evolving and always doing something to be part of the Digital
-              Transformation. The most important thing for companies of the future is to offer their customers personalized digital solutions.
+              I firmly believe that <span class="font-italic">going forward</span> is better than <span class="font-italic">standing still</span>. I easily adapt to ever-changing environments, push boundaries and strive for innovation.
+              My goal is to keep evolving and always be part of the Digital Transformation. I'm aware that the most important thing for companies to last in the future is to offer their customers personalized and tailored digital solutions.
 
             </div>
           </div>`,
@@ -40,15 +39,15 @@
             <div class="max-width-500">
               <span class="font-weight-medium">Socializer.</span>
               Through my work at the Deutsche Oper am Rhein Düsseldorf as well as my two years of international experience in Amsterdam,
-              I have learned to communicate efficiently in interdisciplinary team constellations and different cultures.
-              It is important to me to do my tasks correctly and conscientiously. I always enjoy having fun and am an open-minded person.
+              I have learned to communicate efficiently in interdisciplinary team constellations and with different cultures.
+              It is important for me to accomplish my tasks correctly and conscientiously. I am an open-minded person enjoying having fun.
             </div>
           </div>`,
           `<div class="slidescroller__content" style="--background: linear-gradient(90deg, #4994e9 0%, #603db1 100%)">
             <div class="max-width-500">
               <span class="font-weight-medium">International.</span>
              Due to my semester abroad in Amsterdam and my subsequent professional year as a Front-end developer in an Amsterdamer Consulting and IT company,
-             I am used to working in multicultural and international teams and living in an international environment.
+             I am used to working in multicultural and international teams and living in an global environment.
             </div>
           </div>`,
         ],
@@ -62,17 +61,16 @@
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/opera_hall_kiuODjklZsJ8.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Düsseldorf.</span>
-          After my A-levels I followed my great passion for
-          music and did a voluntary social year in Düsseldorf, at the Deutsche Oper
-          am Rhein.  After my exciting year at the longest bar in the world, I moved back to Stuttgart to start studying Print And Media Technology – Digital Publishing at the University of Media.
+              After my A-levels, I followed my great passion for music and did a voluntary social year in Düsseldorf, at the Deutsche Oper
+              am Rhein. After my exciting year at the longest bar in the world, I moved back to Stuttgart to start studying Print And Media Technology – Digital Publishing at the University of Media.
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/amsterdam_wiHN1x0zJE7rE.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Amsterdam.</span>
-                During my studies I decided to spend a semester abroad. I completed my 4th semester at the Hogeschool van Amsterdam in the Minor Mobile Development (<a class="link" href="/project/turnOverApp"> Turn-Over-App</a>, <a class="link" href="/project/rijksmuseum"> Rijksuseum</a>).
-                Because I liked it so much in Amsterdam, I also did a practical semester as a Front-end developer there.
+                During my studies, I decided to spend a semester abroad. Here, I completed my 4th semester at the Hogeschool van Amsterdam in the Minor Mobile Development (<a class="link" href="/project/turnOverApp"> Turn-Over-App</a>, <a class="link" href="/project/rijksmuseum"> Rijksuseum</a>).
+                As I fell in love with Amsterdam and it's multicultural environment, I stayed there for an additional practical semester as a Front-end developer.
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
@@ -80,15 +78,15 @@
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Stuttgart.</span>
               Back in Germany, I completed my Bachelor's degree as the best graduate of my faculty (<a class="link" href="/project/learnplattform"> eLearning Platform</a>).
-              While writing my thesis I moved back to Amsterdam to work as a Front-end developer.
+              While writing my thesis, I moved back to Amsterdam to work as a Front-end developer in a Consulting and IT company.
             </div>
           </div>`,
           `<div class="display-flex flex-direction-column flex-shrink-0 height-100 justify-content-center" style="width: 85vw">
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/future_DnMREaIzPPKR.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">To be continued....</span>
-              In March 2020 I decided that I wanted to develop myself further. Well, here we are!
-              I am currently completing the PreMaster Program at Bosch Engineering GmbH in the IoT Cloud division. My current tasks are mainly in the areas of data visualization and cloud programming.
+              In March 2020, I decided that I wanted to develop myself further. Well, here we are!
+              I am currently completing the PreMaster Program at the Bosch Engineering GmbH in the IoT Cloud division. My current responsibilities are mainly in the field of data visualization and cloud programming.
             </div>
           </div>`,
         ],
@@ -97,12 +95,14 @@
   };
 
   $: calculateScroll(scrollEvent);
+  $: if (vw) {
+    getBoundings();
+  }
 
   onMount(() => {
     intersector.forEach((intersect) => {
       scrollObserver.observe(intersect);
     });
-
     getBoundings();
   });
 
@@ -165,6 +165,7 @@
 
   .outer-wrapper {
     height: var(--height);
+    width: 100vw;
   }
 
   .wrapper {
@@ -173,11 +174,16 @@
     top: 0;
     background-color: #fafafa;
     display: flex;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
     &__inner {
+      left: 0;
+      width: 100%;
+      position: absolute;
       display: flex;
     }
   }
@@ -204,7 +210,7 @@
   }
 </style>
 
-<svelte:window bind:innerWidth={vw} on:resize={getBoundings} bind:innerHeight={vh} />
+<svelte:window bind:innerWidth={vw} bind:innerHeight={vh} />
 <div class="outer-wrapper" bind:this={wrapper} style="--height: {wrapperHeight}px">
   <div class="wrapper" bind:this={innerWrapper} style="--vh: {vh * 0.01}px">
     <div

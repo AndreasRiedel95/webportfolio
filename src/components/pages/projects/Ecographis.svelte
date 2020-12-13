@@ -35,11 +35,10 @@
       url: 'https://ik.imagekit.io/andreasriedel/ecographis_hero2_7Ii9E5onbVmqQ.jpg',
     },
     intro: {
-      introTitle:
-        'ecographis is a small design agency, which develops and implements sustainable concepts and designs.',
+      introTitle: 'ecographis is a design agency, which develops and implements sustainable concepts and designs.',
       introText: [
-        'The design was provided by the agency. I developed the site with HTML5, CSS3 and Javascript – of course full responsive and touch friendly.',
-        'The large, full-screen slideshows at the top of the pages are a special eye-catcher. Through those slides the highlighted projects get the attention they deserve.',
+        'The design was provided by the agency. I developed the site with HTML5, CSS3 and Javascript – of course fully responsive and touch-friendly.',
+        'The large, full-screen slideshows at the top of the pages are an unique eye-catcher. Through those slides, the highlighted projects get the attention they deserve.',
         "You want to see the site in action? Then click <a target='_blank' class='link --inverted' href='https://ecographis.de/'>here</a>!",
       ],
     },

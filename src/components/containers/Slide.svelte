@@ -72,10 +72,6 @@
       padding: 40vw 0;
       transform: translateY(50px);
     }
-    @media screen and (max-width: 400px) {
-      align-items: flex-end;
-      transform: translateY(0px);
-    }
     &--image {
       -webkit-user-select: none;
       -moz-user-select: none;

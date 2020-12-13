@@ -28,12 +28,11 @@
       url: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero2_1jSB2H8_6t6n.jpg',
     },
     intro: {
-      introTitle:
-        'Conception of an app that guides visitors on a highlight tour through the Rijksmuseum in an intuitive and simple way.',
+      introTitle: 'Conception of an app that guides visitors through the Rijksmuseum in an intuitive and simple way.',
       introText: [
-        'The assignment was to develop a complete prototyping series – from a paper prototype to an interactive one.',
-        'For this purpose I developed two use case scenarios which were tailored to a suitable persona.',
-        'This app is all about easy navigation and intuitive swipe movements. The goal was to have the user concentrate on just one thing and be distracted as little as possible. Moreover, the user has the possibility to get more details and additional information by scanning the paintings.',
+        'The brief was to develop a complete prototyping series – from a paper prototype to an interactive one.',
+        'For this purpose, I developed two use case scenarios which were tailored to a suitable persona.',
+        'This app is all about easy navigation and intuitive swipe movements. The goal was to make the user concentrate and be as less distracted as possible. Moreover, the user can get more details and additional information by scanning the paintings.',
       ],
     },
     slideshow: {
@@ -310,12 +309,12 @@
             Test the prototype now!
           </div>
           <p class="mb-20 opacity-0" class:activeFadeUpDelay300={active >= 4}>
-            I developed an interactive prototype with Axure . You can try it out
+            I developed an interactive prototype with Axure. You can try it out
             <a target="_blank" class="link" href="http://4t2tyj.axshare.com/#c=2">here</a>.
           </p>
           <p class="mb-20 opacity-0" class:activeFadeUpDelay400={active >= 4}>
-            For the final presentation, I prepared an interactive presentation that explains the whole process and the
-            reasons for choosing several techniques in detail. If you are interested, you can view it
+            For the final presentation, I prepared interactive slides that explain the whole process and the reasons for
+            choosing several techniques in detail. If you are interested, you can learn more about it
             <a
               target="_blank"
               class="link"

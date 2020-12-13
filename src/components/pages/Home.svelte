@@ -223,7 +223,6 @@
   const on = () => {
     setBounds(slideArrays[0]);
     setBounds(slideArrays[1]);
-    setStyles();
     customRequestAnimationFrame();
   };
 
@@ -298,16 +297,6 @@
     setBounds(slideArrays[0]);
     setBounds(slideArrays[1]);
     resetScroll();
-    setStyles();
-  };
-
-  const setStyles = () => {
-    scrollEle.style.position = 'fixed';
-    scrollEle.style.top = 0;
-    scrollEle.style.left = 0;
-    scrollEle.style.height = '100%';
-    scrollEle.style.width = '100%';
-    scrollEle.style.overflow = 'hidden';
   };
 
   const preload = () => {
@@ -388,6 +377,7 @@
   .scroll {
     cursor: grab;
     position: fixed;
+    scroll-behavior: smooth;
     top: 0;
     left: 0;
     -webkit-overflow-scrolling: touch;

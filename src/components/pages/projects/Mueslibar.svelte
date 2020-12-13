@@ -20,11 +20,11 @@
     },
     intro: {
       introTitle:
-        "Whether breakfast lover or philistine. At the <span class='font-italic'>mueslibar </span> the right meal should be found for everyone.",
+        "Whether breakfast lover or philistine. At <span class='font-italic'>mueslibar, </span> every customer will find it's perfect breakfast.",
       introText: [
-        'Behind the idea of the mueslibar magazine is a fictional, hipster café. Everyone should find his perfect breakfast here. The magazine is kind of guide and should offer the guest the perfect muesli through information and playful questionnaires.',
-        'The design and presentation of the magazine should reflect the sustainable values of the café and the regional and organic ingredients used for each breakfast.',
-        'The logo represents the variety of cereal ingredients through the great variety of colors and the differently sized shapes. We also took a large part of the photos ourselves.',
+        'The concept of mueslibar stands for healthy, sustainable and handmade food, meeting the needs for everyone looking for a fresh breakfast. Through its informative and playful questionnaires, the magazine leads the customers to their personalized breakfast.',
+        'The design and presentation of the magazine reflect the sustainable values and the composition of regional and organic ingredients.',
+        'The logo represents the variety of cereal ingredients through the great diversity of colors and the different shapes. We also took a large part of the photos ourselves.',
       ],
     },
     slideshow: {
@@ -267,7 +267,7 @@
             </div>
             <div class="color-black">
               Before we started designing and manufacturing the prototype, we scribbled a lot. The goal was to create a
-              prototype that would come as close as possible to a real product and that could later be presented in a
+              prototype that would come as close as possible to a real product, and that could later be presented in a
               store.
             </div>
           </div>

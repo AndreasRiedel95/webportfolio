@@ -14,11 +14,11 @@
       url: 'https://ik.imagekit.io/andreasriedel/toa_9dl_3LbnBmNL.mp4',
     },
     intro: {
-      introTitle: 'A reacte native app to improve communication between flight crew and gate agents at the airport.',
+      introTitle: 'A React-Native-App to improve communication between flight crew and gate agents at the airport.',
       introText: [
         'This project was a cooperation between the Hogeschool van Amsterdam and the Dutch IT and Consulting company Gen25. ',
         'The goal of the app is to avoid delays in flight operations by digitizing the communication between the crew and the gate agents at the airport.',
-        'The design was provided by Gen25. The application is developed in React Native and communicates with a Salesforce backend. The application has a login, a task manager and a chat/message function.Tasks are synchronized between the staff involved in a flight process.',
+        'The design was provided by Gen25. The application is developed in React Native and communicates with a Salesforce backend. The application has a login, a task manager and a chat function. Tasks are synchronized between the staff involved in a flight process.',
       ],
     },
   };

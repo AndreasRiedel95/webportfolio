@@ -17,8 +17,8 @@
     intro: {
       introTitle: 'A light installation which merges the individual human being with the colorful world we live in.',
       introText: [
-        'A powerful beamer projects various images and patterns onto the faces of models sitting on a stool in front of a black screen.',
-        'By choosing the portrait photo, the person as an individual is meant to be placed in the center of attention. The individual forms a unity with the darkness and the light of the patterns.',
+        'Abstract artworks and patterns have been projected onto the faces of models in front of a black screen.',
+        'In portrait format, the individual is the centre of attention, being in unity with the darkness and the light of the patterns.',
         'Browse through the gallery and discover the expressive power of light, darkness and the individual human being.',
       ],
     },

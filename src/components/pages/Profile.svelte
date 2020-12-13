@@ -223,7 +223,7 @@
           I grew up in Southern Germany and successfully completed my Bachelor's degree in Print and Media Technology –
           Digital Publishing at the Stuttgart Media University. Two wonderful years I lived, studied and worked in
           Amsterdam. I like to create user-driven products and applications with fancy machines and special tools.
-          Currently I am doing a PreMaster Program at the Bosch Engineering GmbH in the IoT-Cloud area and create data
+          Currently, I am doing a PreMaster Program at the Bosch Engineering GmbH in the IoT-Cloud area and create data
           visualizations.
         </p>
         <p class="mt-20">
@@ -248,9 +248,9 @@
             Best graduate of the Faculty of Printing and Media Technology 2019
           </div>
           <div>
-            I successfully graduated in my Bachelor's degree in Print and Media Technology – Digital Publishing and have
-            been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for being the
-            best graduate student in my faculty.
+            I successfully graduated in my Bachelor's degree in Print and Media Technology – Digital Publishing. Here,
+            I've been awarded by the Print and Media Association of the State of Baden-Württemberg e.V. (dpmi) for being
+            the best graduate student in my faculty.
           </div>
         </div>
       </div>

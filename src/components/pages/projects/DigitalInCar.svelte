@@ -33,19 +33,19 @@
     header: {
       title: ['Digital InCar'],
       year: "17'",
-      skills: 'University</br>Programming, <br/> Projectmanagement',
+      skills: 'University</br>Programming, <br/> Project Management',
     },
     parralax: {
       video: true,
-      url: 'https://ik.imagekit.io/andreasriedel/DigitalInCarManual_Trailer_1_K5lFOab8ZZfXf.mp4',
+      url: 'https://ik.imagekit.io/andreasriedel/DigitalInCarManual_Trailer_1_oqd-LEgV76Pw.mp4',
     },
     intro: {
       introTitle:
-        'In cooperation with Arvato - Bertelsmann, we have designed and developed a digital on-board manual for trucks.',
+        'In cooperation with Arvato - Bertelsmann, we have designed and developed a digital onboard manual for trucks.',
       introText: [
-        'The Digital InCar Manual is a digital on-board manual for the truck of the future.',
-        'Our goal is to use the possibilities of a digital system to explain the operation of the vehicle to the user in an intuitive and simple way.',
-        'Therefore we rely on innovative ways to find articles and break the classical linear structures of an analog on-board manual. An elegant design completes the optimal user experience.',
+        'The Digital InCar Manual is a digital manual for trucks of the future.',
+        'Our goal is to capitalize on the possibilities of a digital system to explain the operation of the vehicle to the user intuitively and simply.',
+        'Therefore we rely on innovative ways to find the relevant chapters and challenge the traditional linear structures of an analogue onboard manual. An elegant design completes the optimal user experience.',
       ],
     },
     slideshow: {
@@ -83,7 +83,6 @@
     });
   });
 
-  $: console.log(rotate);
   onMount(() => {
     wrappers.forEach((wrapper) => {
       observer.observe(wrapper);
@@ -122,7 +121,6 @@
       } else {
         digitalOpacity = 0;
       }
-      console.log(percentage);
     } else {
       rotate = false;
     }
@@ -437,13 +435,12 @@
             class="opacity-0 headline1 headline1--thin mb-50 color-black max-width-600">
             The Identifier.
             <br />
-            Don't think, just find what you are looking for.
+            Don't overthink, just find what you are looking for.
           </div>
           <p class:activeFadeUpDelay300={active >= 2} class="opacity-0 color-black width-100 max-width-600">
-            Imagine you want to change the wheels of your vehicle and you are looking for instructions in the manual.
-            Normally, you would have to search for the right article in the rather long and confusing index. By using
-            the identifier, you can intuitively click to the appropriate article in just a few steps. Almost without
-            having to think.
+            Imagine you want to change the wheels of your vehicle, and you are looking for instructions in the manual.
+            Usually, you would have to search for the right chapter in the rather long and confusing index. Instead, our
+            identifier directly brings you to the chapter you are looking for. Almost without having to think.
           </p>
         </div>
       </div>
@@ -498,9 +495,9 @@
             Whereever you are.
           </div>
           <p class:activeFadeUpDelay300={active >= 5} class="opacity-0 color-white width-100 max-width-600">
-            Imagine you want to change the motor oil, but you need the checklist with you to make sure you do it right.
-            No problem. With just one click, you can send the article of your choice to your smartphone for further
-            editing.
+            Imagine you want to change the motor oil, but you need the provided checklist with you to make sure you do
+            it right. No problem. It takes you just one click, to send the chapter of your choice to your smartphone for
+            further editing.
           </p>
         </div>
       </div>

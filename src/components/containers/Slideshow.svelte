@@ -53,8 +53,8 @@
     height: 0;
     width: 40px;
     background-color: transparent;
-    @media screen and (max-width: 500) {
-      width: 20px;
+    @media screen and (max-width: 500px) {
+      width: 15px;
     }
   }
 </style>

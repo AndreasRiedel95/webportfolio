@@ -21,13 +21,11 @@
   .parallax-video {
     position: relative;
     padding-bottom: 56.25%;
-    pointer-events: none;
     height: 0;
     width: 100vw;
     overflow: hidden;
     & > video {
       width: 100%;
-      pointer-events: none;
       object-fit: cover;
       position: fixed;
       top: 0;

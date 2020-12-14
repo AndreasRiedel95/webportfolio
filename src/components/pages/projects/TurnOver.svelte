@@ -58,7 +58,6 @@
     <Parralax {...template.parralax} />
     <div class="content">
       <ProjectIntro {...template.intro} />
-      <div class="sticky-wrapper" />
     </div>
   </div>
 </main>

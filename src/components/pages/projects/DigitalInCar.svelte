@@ -75,7 +75,9 @@
       if (entry.isIntersecting) {
         active = parseInt(entry.target.dataset.index);
         if (entry.target.dataset.video) {
-          entry.target.querySelector('video').play();
+          let video = entry.target.querySelector('video');
+          video.currentTime = 0;
+          video.play();
         }
         observer.unobserve(entry.target);
       } else {
@@ -418,7 +420,7 @@
       <div class="pt-200 pb-200" style="background-color: #eaecf3;">
         <div data-index="1" bind:this={wrappers[1]} class="opacity-0 width-100" class:activeFadeUp={active >= 1}>
           <Slideshow
-            height={vw > 800 ? 600 : 200}
+            height={vw > 800 ? 600 : 190}
             divider={true}
             slides={template.slideshow.slides}
             options={template.slideshow.options} />
@@ -451,7 +453,7 @@
         class:activeFadeUp={active >= 3}
         class="opacity-0 width-100 display-flex flex-direction-column justify-content-center pl-50 pr-50">
         <div class="videoWrapper mt-50" style="transform: translateY(-50%)">
-          <video class="videoWrapper__inner" muted loop playsinline>
+          <video class="videoWrapper__inner" autoplay muted loop playsinline>
             <source
               src="https://ik.imagekit.io/andreasriedel/DigitalInCar_Identifier2_m4u5YtXz4Ck7k.mp4"
               type="video/mp4" />
@@ -511,7 +513,7 @@
         <div class="max-width-1200 width-100 margin-left-auto margin-right-auto" style="transform: translateY(-50%)">
           <div class="width-100 display-flex flex-direction-column justify-content-center">
             <div class="videoWrapper mt-50">
-              <video class="videoWrapper__inner" muted loop playsinline>
+              <video class="videoWrapper__inner" autoplay muted loop playsinline>
                 <source
                   src="https://ik.imagekit.io/andreasriedel/DigitalInCar_handover_UVqe7b4BitQW.mp4"
                   type="video/mp4" />

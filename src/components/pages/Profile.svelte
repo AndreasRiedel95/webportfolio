@@ -206,7 +206,7 @@
         <img
           in:fadeWidth={{ duration: animationDuration, delay: animationDelay }}
           class="header-img"
-          src="https://ik.imagekit.io/andreasriedel/profil_tgnA2Eu3_vIu_.jpg"
+          src="https://ik.imagekit.io/andreasriedel/Riedel_Andreas_J0lhSzUnLm5Fl.jpg"
           alt="Andreas Riedel" />
       </div>
     </div>

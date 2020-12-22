@@ -177,7 +177,7 @@
     </div>
   {/if}
 
-  <!-- Third Mask for project/profile: 3 Mask Tiles in white slide in and out starting from bottom to top -->
+  <!-- Third Mask for projects/profile: 3 Mask Tiles in white slide in and out starting from bottom to top -->
   {#if mask === 3}
     <div class="mask" style="display: flex">
       <div

@@ -116,7 +116,7 @@
   }
 
   .logo-outer-wrapper {
-    background-color: #000;
+    background-color: #161616;
   }
 
   .sticky-wrapper {

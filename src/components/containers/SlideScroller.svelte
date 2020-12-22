@@ -47,7 +47,7 @@
             <div class="max-width-500">
               <span class="font-weight-medium">International.</span>
              Due to my semester abroad in Amsterdam and my subsequent professional year as a Front-end developer in an Amsterdamer Consulting and IT company,
-             I am used to working in multicultural and international teams and living in an global environment.
+             I am used to working in multicultural and international teams and living in a global environment.
             </div>
           </div>`,
         ],
@@ -69,7 +69,7 @@
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/amsterdam_wiHN1x0zJE7rE.jpg'); background-size: cover; background-position: 50% 50%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Amsterdam.</span>
-                During my studies, I decided to spend a semester abroad. Here, I completed my 4th semester at the Hogeschool van Amsterdam in the Minor Mobile Development (<a class="link" href="/project/turnOverApp"> Turn-Over-App</a>, <a class="link" href="/project/rijksmuseum"> Rijksuseum</a>).
+                During my studies, I decided to spend a semester abroad. Here, I completed my 4th semester at the Hogeschool van Amsterdam in the Minor Mobile Development (<a class="link" href="/projects/turnOverApp"> Turn-Over-App</a>, <a class="link" href="/projects/rijksmuseum"> Rijksuseum</a>).
                 As I fell in love with Amsterdam and it's multicultural environment, I stayed there for an additional practical semester as a Front-end developer.
             </div>
           </div>`,
@@ -77,7 +77,7 @@
             <div class="slidescroller__content width-100 small-image" style="background: url('https://ik.imagekit.io/andreasriedel/IMG_7817_bsYhZD7VvD0Q.JPG'); background-size: cover; background-position: 50% 0%;"></div>
             <div class="mt-40 max-width-1000 pr-40 margin-left-auto margin-right-auto color-black">
               <span class="font-weight-medium">Stuttgart.</span>
-              Back in Germany, I completed my Bachelor's degree as the best graduate of my faculty (<a class="link" href="/project/learnplattform"> eLearning Platform</a>).
+              Back in Germany, I completed my Bachelor's degree as the best graduate of my faculty (<a class="link" href="/projects/learnplattform"> eLearning Platform</a>).
               While writing my thesis, I moved back to Amsterdam to work as a Front-end developer in a Consulting and IT company.
             </div>
           </div>`,

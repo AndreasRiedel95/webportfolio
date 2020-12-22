@@ -122,8 +122,8 @@
   </div>
   <div class="filter__item">
     <a class="filter__link" href="/profile">
-      <div class="filter__link-mask"><span>PROFIL</span></div>
-      PROFIL
+      <div class="filter__link-mask"><span>PROFILE</span></div>
+      PROFILE
     </a>
   </div>
 </nav>

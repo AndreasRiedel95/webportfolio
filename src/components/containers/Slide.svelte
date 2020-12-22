@@ -83,7 +83,8 @@
       width: 70vw;
       padding-right: 15vw;
       @media screen and (max-width: 800px) {
-        width: 95vw;
+        width: 110vw;
+        padding-right: 20vw;
       }
     }
     &__inner {

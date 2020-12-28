@@ -1,21 +1,21 @@
 <script>
-  import { onMount } from 'svelte';
-  import { isDragging } from 'util/store.js';
-  import { normalizeWheel } from 'util/normalizeWheel.js';
-  import Navigation from 'components/layout/Navigation.svelte';
-  import imagesLoaded from 'imagesloaded';
-  import Slide from 'components/containers/Slide.svelte';
-  import { filterClick } from 'util/store.js';
-  import { math } from 'util/helpers.js';
+  import { onMount } from "svelte";
+  import { isDragging } from "util/store.js";
+  import { normalizeWheel } from "util/normalizeWheel.js";
+  import Navigation from "components/layout/Navigation.svelte";
+  import imagesLoaded from "imagesloaded";
+  import Slide from "components/containers/Slide.svelte";
+  import { filterClick } from "util/store.js";
+  import { math } from "util/helpers.js";
   let isTouch = false;
 
   onMount(() => {
     (() => {
       window.addEventListener(
-        'touchstart',
+        "touchstart",
         function onFirstTouch() {
           isTouch = true;
-          window.removeEventListener('touchstart', onFirstTouch, false);
+          window.removeEventListener("touchstart", onFirstTouch, false);
         },
         false
       );
@@ -26,89 +26,96 @@
     {
       id: 0,
       uuid: Date.now(),
-      title: 'Rijksmuseum',
-      type: 'Prototyping',
-      filter: 'digital',
-      subTitle: 'University',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero_pwbx7z66hpfB.jpg',
-      url: '/projects/rijksmuseum',
+      title: "Rijksmuseum",
+      type: "Prototyping",
+      filter: "digital",
+      subTitle: "University",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/rijksmuseum_hero_pwbx7z66hpfB.jpg",
+      url: "/projects/rijksmuseum",
       award: false,
     },
     {
       id: 1,
       uuid: Date.now(),
-      title: 'eLearning </br> Platform',
-      type: 'Conception & Development',
-      filter: 'digital',
-      subTitle: 'University - Bachelorthesis',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/learnplatform_hero_K54PmTBtfmp0X.jpg',
-      url: '/projects/learnplattform',
+      title: "eLearning </br> Platform",
+      type: "Conception & Development",
+      filter: "digital",
+      subTitle: "University - Bachelorthesis",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/learnplatform_hero_K54PmTBtfmp0X.jpg",
+      url: "/projects/learnplattform",
       award: true,
     },
     {
       id: 2,
       uuid: Date.now(),
-      title: 'Human </br> Projection',
-      type: 'Conception & Photography',
-      filter: 'multimedia',
-      subTitle: 'University',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/projection_main_xo4imChmsDlT.jpg',
-      url: 'projects/human-projection',
+      title: "Human </br> Projection",
+      type: "Conception & Photography",
+      filter: "multimedia",
+      subTitle: "University",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/projection_main_xo4imChmsDlT.jpg",
+      url: "projects/human-projection",
       award: false,
     },
     {
       id: 2,
       uuid: Date.now(),
-      title: 'Digital InCar',
-      type: 'Conception & Development',
-      filter: 'digital',
-      subTitle: 'University',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg',
-      url: 'projects/digital-incar',
+      title: "Digital InCar",
+      type: "Conception & Development",
+      filter: "digital",
+      subTitle: "University",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg",
+      url: "projects/digital-incar",
       award: false,
     },
     {
       id: 3,
       uuid: Date.now(),
-      title: 'ecographis',
-      filter: 'digital',
-      type: 'Website Development',
-      subTitle: 'Work',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg',
-      url: 'projects/ecographis',
+      title: "ecographis",
+      filter: "digital",
+      type: "Website Development",
+      subTitle: "Work",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg",
+      url: "projects/ecographis",
       award: false,
     },
     {
       id: 4,
       uuid: Date.now(),
-      title: 'mueslibar',
-      type: 'Conception / Magazine',
-      filter: 'print',
-      subTitle: 'University',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg',
-      url: 'projects/mueslibar',
+      title: "mueslibar",
+      type: "Conception / Magazine",
+      filter: "print",
+      subTitle: "University",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg",
+      url: "projects/mueslibar",
       award: false,
     },
     {
       id: 5,
       uuid: Date.now(),
-      title: 'Turn- </br> Over-App',
-      type: 'iOS App Development',
-      filter: 'digital',
-      subTitle: 'University',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/toa_hero_qW8mBf8xWIA3.jpg',
-      url: '/projects/turnOverApp',
+      title: "Turn- </br> Over-App",
+      type: "iOS App Development",
+      filter: "digital",
+      subTitle: "University",
+      imgSrc: "https://ik.imagekit.io/andreasriedel/toa_hero_qW8mBf8xWIA3.jpg",
+      url: "/projects/turnOverApp",
       award: false,
     },
     {
       id: 6,
       uuid: Date.now(),
-      title: 'Poster </br> Gallery',
-      type: 'Design',
-      filter: 'print',
-      subTitle: 'Hobby',
-      imgSrc: 'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
-      url: '/projects/postergallery',
+      title: "Poster </br> Gallery",
+      type: "Design",
+      filter: "print",
+      subTitle: "Hobby",
+      imgSrc:
+        "https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg",
+      url: "/projects/postergallery",
       award: false,
     },
   ];
@@ -168,7 +175,7 @@
       slideArrays = [[], []];
       const filter = e.detail.filter;
       let temps = slideTemplates.reduce((accu, curr) => {
-        if (curr.filter === filter || filter === 'all') {
+        if (curr.filter === filter || filter === "all") {
           curr.uuid = Date.now();
           accu.push(curr);
         }
@@ -186,11 +193,11 @@
   };
 
   const getSlideAlignment = (i) => {
-    let alignment = 'flex-start';
+    let alignment = "flex-start";
     if (i % 2 === 0) {
-      alignment = 'center';
+      alignment = "center";
     } else if (i % 3 === 0) {
-      alignment = 'flex-end';
+      alignment = "flex-end";
     }
 
     return alignment;
@@ -230,7 +237,7 @@
   const handleScroll = (e) => {
     if (dragging) return;
     let { spinY } = normalizeWheel(e);
-    data.current += spinY * 15;
+    data.current += spinY * 45;
     clamp();
   };
 
@@ -331,7 +338,7 @@
     let w = 0;
     elems.forEach((el, index) => {
       bounds = el.getBoundingClientRect();
-      el.style.position = 'absolute';
+      el.style.position = "absolute";
       el.style.top = 0;
       el.style.left = `${w}px`;
       w = w + bounds.width;
@@ -360,11 +367,16 @@
     width: 100%;
     height: calc(var(--vh, 1vh) * 100);
     -webkit-overflow-scrolling: touch;
-    background: linear-gradient(0deg, #0e0e0e 0%, rgba(33, 33, 32, 1) 50%, #0e0e0e 100%);
+    background: linear-gradient(
+      0deg,
+      #0e0e0e 0%,
+      rgba(33, 33, 32, 1) 50%,
+      #0e0e0e 100%
+    );
     &:after {
       animation: grain 8s steps(10) infinite;
-      background-image: url('/images/noise.png');
-      content: '';
+      background-image: url("/images/noise.png");
+      content: "";
       pointer-events: none;
       height: 300%;
       left: -50%;
@@ -405,7 +417,7 @@
   .scrollbar {
     position: absolute;
     bottom: 7.5%;
-    width: 80%;
+    width: 85%;
     left: 50%;
     transform: translateX(-50%);
     &__handle {
@@ -432,7 +444,7 @@
     display: block;
     color: rgba(#fff, 0.5);
     text-decoration: none;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.5;
     overflow: hidden;
     &-mask {
@@ -446,7 +458,7 @@
       z-index: 2;
       span {
         display: block;
-        font-size: 13px;
+        font-size: 12px;
         transform: translate3d(var(--translate), 0, 0); //100%
         color: #fff;
       }
@@ -454,12 +466,32 @@
   }
 
   .impressum {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    color: #000;
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 10px;
+    transition: color 0.3s;
+    @media screen and (max-width: 800px) {
+      font-size: 12px;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .email-linkedin-wrapper {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    @media screen and (max-width: 800px) {
+      font-size: 12px;
+    }
+    & > a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s;
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 
   @keyframes grain {
@@ -539,19 +571,36 @@
         {/each}
       </div>
     {/if}
-    <div class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center">
+    <div
+      class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center">
       {#if !isTouch}
         <div class="scroll-indicator-wrapper">
           <div class="scroll-indicator">
-            <div class="scroll-indicator-mask" style="--translate: {-100 + scale * 100}%">
+            <div
+              class="scroll-indicator-mask"
+              style="--translate: {-100 + scale * 100}%">
               <span style="--translate: {100 - scale * 100}%">Scroll Down / Drag</span>
             </div>
             Scroll Down / Drag
           </div>
         </div>
       {/if}
-      <div class="scrollbar__handle mt-10" style="transform: scaleX({scale})" bind:this={scrollHandle} />
+      <div
+        class="scrollbar__handle mt-10"
+        style="transform: scaleX({scale})"
+        bind:this={scrollHandle} />
+      <div
+        class="display-flex width-100 justify-content-space-between"
+        style="margin-top: 5px">
+        <div class="email-linkedin-wrapper">
+          <a href="mailto:andreas.riedel95@gmail.com">Email</a>,&nbsp;
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/andreas-riedel-470206186/">
+            LinkedIn</a>
+        </div>
+        <a class="impressum" href="/impressum">Impressum</a>
+      </div>
     </div>
   </div>
-  <a class="impressum" href="/impressum">Impressum</a>
 </div>

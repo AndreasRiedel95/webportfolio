@@ -1,8 +1,8 @@
 <script>
   export let video;
   export let url;
-  import { projectContainerScrollTop } from 'util/store.js';
-  const xvalue = 'center';
+  import { projectContainerScrollTop } from "util/store.js";
+  const xvalue = "center";
   const factor = 0.1;
   let yvalue = 0;
   let lastVal = 0;
@@ -26,12 +26,15 @@
     overflow: hidden;
     & > video {
       width: 100%;
+      pointer-events: none;
       object-fit: cover;
-      position: fixed;
+      position: absolute;
+      left: 0;
       top: 0;
       z-index: 0;
       @media (hover: none) and (pointer: coarse) {
         position: relative;
+        pointer-events: all;
       }
     }
   }
@@ -61,5 +64,7 @@
     </video>
   </div>
 {:else}
-  <div style="background-position: {xvalue + ' ' + -yvalue + 'px'}; background-image: url({url});" class="parralax" />
+  <div
+    style="background-position: {xvalue + ' ' + -yvalue + 'px'}; background-image: url({url});"
+    class="parralax" />
 {/if}

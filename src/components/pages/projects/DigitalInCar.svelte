@@ -1,13 +1,13 @@
 <script>
-  import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
-  import 'intersection-observer';
-  import ProjectHeader from 'components/layout/ProjectHeader.svelte';
-  import Parralax from 'components/layout/Parralax.svelte';
-  import ProjectIntro from 'components/layout/ProjectIntro.svelte';
-  import Slideshow from 'components/containers/Slideshow.svelte';
-  import { projectContainerScrollTop } from 'util/store.js';
-  import { clamp, math } from 'util/helpers.js';
+  import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+  import "intersection-observer";
+  import ProjectHeader from "components/layout/ProjectHeader.svelte";
+  import Parralax from "components/layout/Parralax.svelte";
+  import ProjectIntro from "components/layout/ProjectIntro.svelte";
+  import Slideshow from "components/containers/Slideshow.svelte";
+  import { projectContainerScrollTop } from "util/store.js";
+  import { clamp, math } from "util/helpers.js";
 
   let vh;
   let vw;
@@ -31,30 +31,31 @@
 
   let template = {
     header: {
-      title: ['Digital InCar'],
+      title: ["Digital InCar"],
       year: "17'",
-      skills: 'University</br>Programming, <br/> Project Management',
+      skills: "University</br>Programming, <br/> Project Management",
     },
     parralax: {
       video: true,
-      url: 'https://ik.imagekit.io/andreasriedel/DigitalInCarManual_Trailer_1_oqd-LEgV76Pw.mp4',
+      url:
+        "https://ik.imagekit.io/andreasriedel/DigitalInCarManual_Trailer_1_oqd-LEgV76Pw.mp4",
     },
     intro: {
       introTitle:
-        'In cooperation with Arvato - Bertelsmann, we have designed and developed a digital onboard manual for trucks.',
+        "In cooperation with Arvato - Bertelsmann, we have designed and developed a digital onboard manual for trucks.",
       introText: [
-        'The Digital InCar Manual is a digital manual for trucks of the future.',
-        'Our goal is to capitalize on the possibilities of a digital system to explain the operation of the vehicle to the user intuitively and simply.',
-        'Therefore we rely on innovative ways to find the relevant chapters and challenge the traditional linear structures of an analogue onboard manual. An elegant design completes the optimal user experience.',
+        "The Digital InCar Manual is a digital manual for trucks of the future.",
+        "Our goal is to capitalize on the possibilities of a digital system to explain the operation of the vehicle to the user intuitively and simply.",
+        "Therefore we rely on innovative ways to find the relevant chapters and challenge the traditional linear structures of an analogue onboard manual. An elegant design completes the optimal user experience.",
       ],
     },
     slideshow: {
       slides: [
-        'https://ik.imagekit.io/andreasriedel/DigitalInCar_Home_5TkjusMUAmoT.JPG',
-        'https://ik.imagekit.io/andreasriedel/DigitalInCar_Ausstattung_ZPl_acUb9PRti.JPG',
-        'https://ik.imagekit.io/andreasriedel/DigitalInCar_Aussen2_qEyEmhPOcSduN.JPG',
-        'https://ik.imagekit.io/andreasriedel/DigitalInCar_Scheibenwischer_Wm1JRYd6iLyWc.JPG',
-        'https://ik.imagekit.io/andreasriedel/DigitalInCar_Artikel_tpg-i0Y-nLa2.JPG',
+        "https://ik.imagekit.io/andreasriedel/DigitalInCar_Home_5TkjusMUAmoT.JPG",
+        "https://ik.imagekit.io/andreasriedel/DigitalInCar_Ausstattung_ZPl_acUb9PRti.JPG",
+        "https://ik.imagekit.io/andreasriedel/DigitalInCar_Aussen2_qEyEmhPOcSduN.JPG",
+        "https://ik.imagekit.io/andreasriedel/DigitalInCar_Scheibenwischer_Wm1JRYd6iLyWc.JPG",
+        "https://ik.imagekit.io/andreasriedel/DigitalInCar_Artikel_tpg-i0Y-nLa2.JPG",
       ],
       options: {
         imagesLoaded: true,
@@ -75,7 +76,7 @@
       if (entry.isIntersecting) {
         active = parseInt(entry.target.dataset.index);
         if (entry.target.dataset.video) {
-          let video = entry.target.querySelector('video');
+          let video = entry.target.querySelector("video");
           video.currentTime = 0;
           video.play();
         }
@@ -279,11 +280,11 @@
 
   .grid-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'image text';
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "image text";
     @media screen and (max-width: 800px) {
       grid-template-columns: 1fr;
-      grid-template-areas: 'text' 'image';
+      grid-template-areas: "text" "image";
     }
   }
 
@@ -325,7 +326,9 @@
         class="pt-50 pb-50 display-flex justify-content-center align-items-center first-wrapper"
         class:invert
         style="--vh: {vh * 0.01}px">
-        <div class:invert class="digital-to-print" style="--vh: {vh * 0.01}px">From Print To Digital</div>
+        <div class:invert class="digital-to-print" style="--vh: {vh * 0.01}px">
+          From Print To Digital
+        </div>
         <div bind:this={inverted} class="invertEle" />
       </div>
       <div
@@ -334,16 +337,29 @@
         class="pt-50 display-flex flex-direction-column second-wrapper"
         style="height: {animationWrapperHeight}px">
         <div class="animation-wrapper mb-150 pl-50 pr-50">
-          <div class="position-relative width-100 height-100 display-flex align-items-center">
+          <div
+            class="position-relative width-100 height-100 display-flex align-items-center">
             <img
               src="/svg/manual.svg"
               class="manual"
               alt="Manual"
               style="--left: {manualLeft}%; --opacity: {manualOpacity}" />
             <div class="cog-wrapper">
-              <img src="/svg/cog_wheel.svg" class="cog-wheel cog-wheel--first" class:rotate alt="Cog Wheel" />
-              <img src="/svg/cog_wheel.svg" class="cog-wheel cog-wheel--second" class:rotate alt="Cog Wheel" />
-              <img src="/svg/cog_wheel.svg" class="cog-wheel cog-wheel--third" class:rotate alt="Cog Wheel" />
+              <img
+                src="/svg/cog_wheel.svg"
+                class="cog-wheel cog-wheel--first"
+                class:rotate
+                alt="Cog Wheel" />
+              <img
+                src="/svg/cog_wheel.svg"
+                class="cog-wheel cog-wheel--second"
+                class:rotate
+                alt="Cog Wheel" />
+              <img
+                src="/svg/cog_wheel.svg"
+                class="cog-wheel cog-wheel--third"
+                class:rotate
+                alt="Cog Wheel" />
             </div>
             <img
               src="/svg/digital-icon.svg"
@@ -378,7 +394,8 @@
         {/if}
       </div>
       <div class="third-wrapper pl-50 pr-50 display-flex flex-direction-column">
-        <div class="pt-200 max-width-1200 width-100 margin-left-auto margin-right-auto">
+        <div
+          class="pt-200 max-width-1200 width-100 margin-left-auto margin-right-auto">
           <div
             data-index="0"
             bind:this={wrappers[0]}
@@ -393,32 +410,52 @@
             <div
               class:activeFadeUpDelay300={active >= 0}
               class="opacity-0 display-flex text-center flex-direction-column color-black flex-shrink-0 justify-content-center align-items-center">
-              <img class="mb-20" width="100" src="/svg/icon_identifier.svg" alt="Identifier" />
+              <img
+                class="mb-20"
+                width="100"
+                src="/svg/icon_identifier.svg"
+                alt="Identifier" />
               Identifier.
             </div>
             <div
               class:activeFadeUpDelay400={active >= 0}
               class="opacity-0 display-flex text-center flex-direction-column color-black flex-shrink-0 justify-content-center align-items-center">
-              <img class="mb-20" width="100" src="/svg/icon_search.svg" alt="Search" />
+              <img
+                class="mb-20"
+                width="100"
+                src="/svg/icon_search.svg"
+                alt="Search" />
               Word Search.
             </div>
             <div
               class:activeFadeUpDelay500={active >= 0}
               class="opacity-0 display-flex flex-direction-column color-black flex-shrink-0 justify-content-center text-center align-items-center">
-              <img class="mb-20" width="100" src="/svg/icon_warning.svg" alt="Warning" />
+              <img
+                class="mb-20"
+                width="100"
+                src="/svg/icon_warning.svg"
+                alt="Warning" />
               Warning-Light-Keyboard.
             </div>
             <div
               class:activeFadeUpDelay600={active >= 0}
               class="opacity-0 display-flex flex-direction-column color-black flex-shrink-0 justify-content-center align-items-center text-center">
-              <img class="mb-20" width="100" src="/svg/icon_error.svg" alt="Error" />
+              <img
+                class="mb-20"
+                width="100"
+                src="/svg/icon_error.svg"
+                alt="Error" />
               Error Code Search.
             </div>
           </div>
         </div>
       </div>
       <div class="pt-200 pb-200" style="background-color: #eaecf3;">
-        <div data-index="1" bind:this={wrappers[1]} class="opacity-0 width-100" class:activeFadeUp={active >= 1}>
+        <div
+          data-index="1"
+          bind:this={wrappers[1]}
+          class="opacity-0 width-100"
+          class:activeFadeUp={active >= 1}>
           <Slideshow
             height={vw > 800 ? 600 : 190}
             divider={true}
@@ -439,10 +476,14 @@
             <br />
             Don't overthink, just find what you are looking for.
           </div>
-          <p class:activeFadeUpDelay300={active >= 2} class="opacity-0 color-black width-100 max-width-600">
-            Imagine you want to change the wheels of your vehicle, and you are looking for instructions in the manual.
-            Usually, you would have to search for the right chapter in the rather long and confusing index. Instead, our
-            identifier directly brings you to the chapter you are looking for. Almost without having to think.
+          <p
+            class:activeFadeUpDelay300={active >= 2}
+            class="opacity-0 color-black width-100 max-width-600">
+            Imagine you want to change the wheels of your vehicle, and you are
+            looking for instructions in the manual. Usually, you would have to
+            search for the right chapter in the rather long and confusing index.
+            Instead, our identifier directly brings you to the chapter you are
+            looking for. Almost without having to think.
           </p>
         </div>
       </div>
@@ -463,7 +504,10 @@
       <div
         style="padding-bottom: 28%"
         class="grid-wrapper height-100 grid-gap-medium margin-left-auto margin-right-auto  max-width-1200 width-100 pl-50 pr-50">
-        <div data-index="4" bind:this={wrappers[4]} class="display-flex width-100">
+        <div
+          data-index="4"
+          bind:this={wrappers[4]}
+          class="display-flex width-100">
           <img
             class:activeFadeUp={active >= 4}
             style="grid-area: image"
@@ -475,7 +519,8 @@
           style="grid-area: text"
           class:activeFadeUp={active >= 4}
           class="opacity-0 display-flex width-100 flex-direction-column justify-content-center">
-          <div class="headline2 headline2--thin mb-50 color-white max-width-600">
+          <div
+            class="headline2 headline2--thin mb-50 color-white max-width-600">
             The Warning-Light-Keyboard.
             <br />
             All warning lights at a glance.
@@ -483,23 +528,32 @@
           <p class="color-white width-100 max-width-600">
             An unknown warning light appears. What does that mean again?
             <br />
-            With our Warning-Light-Keyboard you can find all warning signals clearly arranged in one place.
+            With our Warning-Light-Keyboard you can find all warning signals
+            clearly arranged in one place.
           </p>
         </div>
       </div>
-      <div data-index="5" bind:this={wrappers[5]} class="pl-50 pr-50" style="padding-bottom: 28%">
+      <div
+        data-index="5"
+        bind:this={wrappers[5]}
+        class="pl-50 pr-50"
+        style="padding-bottom: 28%">
         <div
           class:activeFadeUp={active >= 5}
           class="opacity-0 width-100 max-width-1200 margin-left-auto margin-right-auto display-flex flex-direction-column position-relative">
-          <div class="headline1 headline1--thin mb-50 color-white max-width-600">
+          <div
+            class="headline1 headline1--thin mb-50 color-white max-width-600">
             Take it with you.
             <br />
             Whereever you are.
           </div>
-          <p class:activeFadeUpDelay300={active >= 5} class="opacity-0 color-white width-100 max-width-600">
-            Imagine you want to change the motor oil, but you need the provided checklist with you to make sure you do
-            it right. No problem. It takes you just one click, to send the chapter of your choice to your smartphone for
-            further editing.
+          <p
+            class:activeFadeUpDelay300={active >= 5}
+            class="opacity-0 color-white width-100 max-width-600">
+            Imagine you want to change the motor oil, but you need the provided
+            checklist with you to make sure you do it right. No problem. It
+            takes you just one click, to send the chapter of your choice to your
+            smartphone for further editing.
           </p>
         </div>
       </div>
@@ -510,10 +564,18 @@
         class:activeFadeUp={active >= 6}
         class="opacity-0  pr-50 pl-50"
         style="background-color: #eaecf3;">
-        <div class="max-width-1200 width-100 margin-left-auto margin-right-auto" style="transform: translateY(-50%)">
-          <div class="width-100 display-flex flex-direction-column justify-content-center">
+        <div
+          class="max-width-1200 width-100 margin-left-auto margin-right-auto"
+          style="transform: translateY(-50%)">
+          <div
+            class="width-100 display-flex flex-direction-column justify-content-center">
             <div class="videoWrapper mt-50">
-              <video class="videoWrapper__inner" autoplay muted loop playsinline>
+              <video
+                class="videoWrapper__inner"
+                autoplay
+                muted
+                loop
+                playsinline>
                 <source
                   src="https://ik.imagekit.io/andreasriedel/DigitalInCar_handover_UVqe7b4BitQW.mp4"
                   type="video/mp4" />

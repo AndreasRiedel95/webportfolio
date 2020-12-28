@@ -1,17 +1,17 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
   let isActive = 0;
   const linkItems = [
-    { title: 'All projects', filter: 'all' },
-    { title: 'Digital', filter: 'digital' },
-    { title: 'Print', filter: 'print' },
-    { title: 'Multimedia', filter: 'multimedia' },
+    { title: "All projects", filter: "all" },
+    { title: "Digital", filter: "digital" },
+    { title: "Print", filter: "print" },
+    { title: "Multimedia", filter: "multimedia" },
   ];
 
   const handleItemClick = (item, i) => {
     isActive = i;
-    dispatch('handleItemClick', { filter: item.filter });
+    dispatch("handleItemClick", { filter: item.filter });
   };
 </script>
 
@@ -31,7 +31,7 @@
   }
 
   .logo {
-    font-family: 'Domine';
+    font-family: "Domine";
   }
 
   .filter {
@@ -112,7 +112,11 @@
     <ul class="filter__list">
       {#each linkItems as item, i}
         <li class="filter__item">
-          <a href="#0" class="filter__link" on:click={() => handleItemClick(item, i)} class:is-active={i === isActive}>
+          <a
+            href="#0"
+            class="filter__link"
+            on:click={() => handleItemClick(item, i)}
+            class:is-active={i === isActive}>
             <div class="filter__link-mask"><span>{item.title}</span></div>
             {item.title}
           </a>

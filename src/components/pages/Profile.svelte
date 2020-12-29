@@ -233,7 +233,14 @@
         <p class="mt-20">
           You can
           <span class="font-weight-medium">contact me</span>
-          <a href="mailto:andreas.riedel95@gmail.com" class="link">here</a>.
+          <a href="mailto:andreas.riedel95@gmail.com" class="link">here</a>
+          or
+          <span class="font-weight-medium">ping me</span>
+          on
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/andreas-riedel-470206186/"
+            class="link">LinkedIn</a>.
         </p>
         <p class="mt-20">
           That's basically it. But if you’re still curious, keep scrolling.

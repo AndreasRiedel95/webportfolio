@@ -189,6 +189,8 @@
   const resetScroll = () => {
     skew = 0;
     data.current = 0;
+    data.last.one = 0;
+    data.last.two = 0;
     scrollY = 0;
   };
 
@@ -238,6 +240,7 @@
     if (dragging) return;
     let { spinY } = normalizeWheel(e);
     data.current += spinY * 45;
+    scrollY = data.current;
     clamp();
   };
 
@@ -579,9 +582,10 @@
             <div
               class="scroll-indicator-mask"
               style="--translate: {-100 + scale * 100}%">
-              <span style="--translate: {100 - scale * 100}%">Scroll Down / Drag</span>
+              <span style="--translate: {100 - scale * 100}%">SCROLL &#8645; or
+                DRAG &#8646;</span>
             </div>
-            Scroll Down / Drag
+            SCROLL &#8645; or DRAG &#8646;
           </div>
         </div>
       {/if}

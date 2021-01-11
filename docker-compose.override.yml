@@ -1,4 +1,4 @@
-version: '3.5'
+version: "3.5"
 services:
   app:
     build:
@@ -6,7 +6,7 @@ services:
       target: dev
     image: webapp:dev
     ports:
-      - '3000:3000'
-      - '35729:35729'
+      - "3000:3000"
+      - "35729:35729"
     volumes:
       - ./:/usr/src/app

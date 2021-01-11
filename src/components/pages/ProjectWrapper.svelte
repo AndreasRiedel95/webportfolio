@@ -1,33 +1,34 @@
 <script>
-  import TurnOver from 'pages/projects/TurnOver.svelte';
-  import Projection from 'pages/projects/Projection.svelte';
-  import Rijksmuseum from 'pages/projects/Rijksmuseum.svelte';
-  import Ecographis from 'pages/projects/Ecographis.svelte';
-  import PosterGallery from 'pages/projects/PosterGallery.svelte';
-  import Learnplatform from 'pages/projects/Learnplatform.svelte';
-  import Mueslibar from 'pages/projects/Mueslibar.svelte';
-  import DigitalInCar from 'pages/projects/DigitalInCar.svelte';
-  import CloseButton from 'components/atoms/CloseButton.svelte';
-  import { projectContainerScrollTop } from 'util/store.js';
+  import TurnOver from "pages/projects/TurnOver.svelte";
+  import Projection from "pages/projects/Projection.svelte";
+  import Rijksmuseum from "pages/projects/Rijksmuseum.svelte";
+  import Ecographis from "pages/projects/Ecographis.svelte";
+  import PosterGallery from "pages/projects/PosterGallery.svelte";
+  import Learnplatform from "pages/projects/Learnplatform.svelte";
+  import Mueslibar from "pages/projects/Mueslibar.svelte";
+  import DigitalInCar from "pages/projects/DigitalInCar.svelte";
+  import CloseButton from "components/atoms/CloseButton.svelte";
+  import Footer from "components/layout/Footer.svelte";
+  import { projectContainerScrollTop } from "util/store.js";
 
   export let projectId;
 
   let templates = [
-    { cp: TurnOver, id: 'turnOverApp' },
-    { cp: Projection, id: 'human-projection' },
-    { cp: Rijksmuseum, id: 'rijksmuseum' },
-    { cp: Ecographis, id: 'ecographis' },
-    { cp: PosterGallery, id: 'postergallery' },
-    { cp: Learnplatform, id: 'learnplattform' },
-    { cp: Mueslibar, id: 'mueslibar' },
-    { cp: DigitalInCar, id: 'digital-incar' },
+    { cp: TurnOver, id: "turnOverApp" },
+    { cp: Projection, id: "human-projection" },
+    { cp: Rijksmuseum, id: "rijksmuseum" },
+    { cp: Ecographis, id: "ecographis" },
+    { cp: PosterGallery, id: "postergallery" },
+    { cp: Learnplatform, id: "learnplattform" },
+    { cp: Mueslibar, id: "mueslibar" },
+    { cp: DigitalInCar, id: "digital-incar" },
   ];
   let template;
   $: if (projectId) {
     template = templates.find((t) => t.id === projectId);
     if (!template) {
       let url = window.location.href;
-      location.href = url + '/not-found';
+      location.href = url + "/not-found";
     }
   }
 </script>
@@ -58,4 +59,5 @@
     <CloseButton link="/" />
   </div>
   <svelte:component this={template.cp} />
+  <Footer />
 </main>

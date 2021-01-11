@@ -3,6 +3,7 @@
   import { fly } from "svelte/transition";
   import { expoOut } from "svelte/easing";
   import { onMount } from "svelte";
+  import Footer from "components/layout/Footer.svelte";
   import SlideScroller from "../containers/SlideScroller.svelte";
 
   let intersectWrappers = [];
@@ -48,24 +49,6 @@
     overflow-y: auto;
     scroll-behavior: smooth;
     background-color: #fff;
-  }
-
-  .footer {
-    background-color: #151515;
-    width: 100%;
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .impressum {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
   }
 
   .header {
@@ -285,17 +268,10 @@
         me up!</a>
       <a
         target="_blank"
-        href="https://bitbucket.org/AndreasRiedel/"
+        href="https://github.com/AndreasRiedel95"
         class="link-profile pt-100 pb-100 pr-20 pl-20  headline1 display-flex justify-content-center align-items-center">Check
         out on GitHub!</a>
     </div>
-    <div class="footer pl-70 pr-70">
-      <a
-        target="_blank"
-        href="https://www.linkedin.com/in/andreas-riedel-470206186/">
-        <img src="/svg/linkedin.svg" alt="Linked In Logo" />
-      </a>
-      <a class="impressum" href="/impressum">Impressum</a>
-    </div>
+    <Footer />
   </div>
 </main>

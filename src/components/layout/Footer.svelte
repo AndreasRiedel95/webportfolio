@@ -1,11 +1,17 @@
-<style>
+<style lang="scss">
     .footer {
         background-color: #000;
         width: 100%;
         position: relative;
         flex-shrink: 0;
         display: flex;
+        padding-left: 70px;
+        padding-right: 70px;
         align-items: center;
+        @media screen and (max-width: 500px) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
     }
 
     .footer-text {
@@ -19,7 +25,7 @@
     }
 </style>
 
-<div class="footer pl-70 pt-30 pb-30 pr-70">
+<div class="footer pt-30 pb-30">
     <div class="footer-text">Anreas Riedel © {new Date().getFullYear()}</div>
     <div class="display-flex margin-left-auto align-items-center">
         <a

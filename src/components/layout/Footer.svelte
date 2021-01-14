@@ -26,7 +26,11 @@
 </style>
 
 <div class="footer pt-30 pb-30">
-    <div class="footer-text">Anreas Riedel © {new Date().getFullYear()}</div>
+    <div class="footer-text display-flex align-items-center">
+        <a class="footer-text" href="/profile">Andreas Riedel</a>
+        &nbsp; ©
+        {new Date().getFullYear()}
+    </div>
     <div class="display-flex margin-left-auto align-items-center">
         <a
             class="icon display-flex mr-20"

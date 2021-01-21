@@ -41,6 +41,138 @@
   };
 </script>
 
+<main on:scroll={(e) => (scrollEvent = e)}>
+  <div class="header">
+    <CloseButton link="/" />
+  </div>
+  <div class="wrapper mt-100">
+    <div class="display-flex flex-direction-column mb-150 header-wrapper">
+      <div class="headline-text mb-50">
+        <div
+          in:fly={{
+            y: 80,
+            duration: animationDuration,
+            delay: animationDelay,
+            easing: expoOut,
+          }}
+          style="font-weight: 500"
+        >Hi, I'm Andi!</div>
+        <div
+          in:fly={{
+            y: 80,
+            duration: animationDuration,
+            delay: animationDelay + 300,
+            easing: expoOut,
+          }}
+          style="color: #8d8f9a"
+        >Creative Front-end Developer based in Stuttgart.</div>
+      </div>
+      <div class="header-img-wrapper">
+        <img
+          in:fadeWidth={{ duration: animationDuration, delay: animationDelay }}
+          class="header-img"
+          src="https://ik.imagekit.io/andreasriedel/Riedel_Andreas_J0lhSzUnLm5Fl.jpg"
+          alt="Andreas Riedel"
+        />
+      </div>
+    </div>
+    <div
+      class="intro-wrapper display-grid grid-template-columns-responsive-400 mt-150 mb-150 grid-gap-small position-relative"
+      data-index="0"
+      bind:this={intersectWrappers[0]}
+    >
+      <div
+        class="headline1 max-width-400 font-weight-bold opacity-0"
+        class:activeFadeUp={active >= 0}
+      >The whole is more than the sum of its parts.</div>
+      <div class="opacity-0" class:activeFadeUp={active >= 0}>
+        <p>I know you are busy. Let me come straight to the point.</p>
+        <p class="mt-20">
+          I grew up in Southern Germany and successfully completed my Bachelor's
+          degree in Print and Media Technology – Digital Publishing at the
+          Stuttgart Media University. Two wonderful years I lived, studied and
+          worked in Amsterdam. I like to create user-driven products and
+          applications with fancy machines and special tools. Currently, I am
+          doing a PreMaster Program at the Bosch Engineering GmbH in the
+          IoT-Cloud area and create data visualizations.
+        </p>
+        <p class="mt-20">
+          You can
+          <span class="font-weight-medium">contact me</span>
+          <a href="mailto:andreas.riedel95@gmail.com" class="link">here</a>,
+          <span class="font-weight-medium">ping me</span>
+          on
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/andreas-riedel-470206186/"
+            class="link">LinkedIn</a
+          >
+          or <span class="font-weight-medium">download</span>
+          <a
+            target="_blank"
+            class="link"
+            href="https://ik.imagekit.io/andreasriedel/CV_eng_2020_pc0g9Q8zb.pdf"
+            download>my resume</a
+          >.
+        </p>
+        <p class="mt-20">
+          That's basically it. But if you’re still curious, keep scrolling.
+        </p>
+      </div>
+    </div>
+    <SlideScroller {scrollEvent} slideIdentifier="skill" />
+    <div
+      class="pt-200 pb-150 mb-150 position-relative"
+      style="background-color: #fff"
+    >
+      <img class="award-img" src="/svg/award.svg" alt="award" width="110" />
+      <div
+        class="award-grid mb-100"
+        data-index="1"
+        bind:this={intersectWrappers[1]}
+      >
+        <img
+          src="https://ik.imagekit.io/andreasriedel/award_winning_qrMgxUUhtCnv.JPG"
+          alt="award winning"
+          style="width: 100%; opacity: 0"
+          class:activeFadeUpDelay300={active >= 1}
+        />
+        <div
+          class="award-grid__text-wrapper opacity-0"
+          class:activeFadeUpDelay300={active >= 1}
+        >
+          <div class="headline2 headline2--thin mb-30" id="award">
+            Best graduate of the Faculty of Printing and Media Technology 2019
+          </div>
+          <div>
+            I successfully graduated in my Bachelor's degree in Print and Media
+            Technology – Digital Publishing. Here, I've been awarded by the
+            Print and Media Association of the State of Baden-Württemberg e.V.
+            (dpmi) for being the best graduate student in my faculty.
+          </div>
+        </div>
+      </div>
+    </div>
+    <SlideScroller {scrollEvent} slideIdentifier="about" />
+    <div
+      class="contact-wrapper color-white display-grid grid-template-columns-responsive-400"
+    >
+      <a
+        href="mailto:andreas.riedel95@gmail.com"
+        class="link-profile pt-100 pb-100  pr-20 pl-20 headline1 display-flex justify-content-center align-items-center"
+        >Hit me up!</a
+      >
+      <a
+        target="_blank"
+        href="https://github.com/AndreasRiedel95"
+        class="link-profile pt-100 pb-100 pr-20 pl-20  headline1 display-flex justify-content-center align-items-center"
+        >Check out on GitHub!</a
+      >
+    </div>
+    <Footer />
+  </div>
+</main>
+
 <style lang="scss">
   main {
     width: 100%;
@@ -166,112 +298,3 @@
     }
   }
 </style>
-
-<main on:scroll={(e) => (scrollEvent = e)}>
-  <div class="header">
-    <CloseButton link="/" />
-  </div>
-  <div class="wrapper mt-100">
-    <div class="display-flex flex-direction-column mb-150 header-wrapper">
-      <div class="headline-text mb-50">
-        <div
-          in:fly={{ y: 80, duration: animationDuration, delay: animationDelay, easing: expoOut }}
-          style="font-weight: 500">
-          Hi, I'm Andi!
-        </div>
-        <div
-          in:fly={{ y: 80, duration: animationDuration, delay: animationDelay + 300, easing: expoOut }}
-          style="color: #8d8f9a">
-          Creative Front-end Developer based in Stuttgart.
-        </div>
-      </div>
-      <div class="header-img-wrapper">
-        <img
-          in:fadeWidth={{ duration: animationDuration, delay: animationDelay }}
-          class="header-img"
-          src="https://ik.imagekit.io/andreasriedel/Riedel_Andreas_J0lhSzUnLm5Fl.jpg"
-          alt="Andreas Riedel" />
-      </div>
-    </div>
-    <div
-      class="intro-wrapper display-grid grid-template-columns-responsive-400 mt-150 mb-150 grid-gap-small position-relative"
-      data-index="0"
-      bind:this={intersectWrappers[0]}>
-      <div
-        class="headline1 max-width-400 font-weight-bold opacity-0"
-        class:activeFadeUp={active >= 0}>
-        The whole is more than the sum of its parts.
-      </div>
-      <div class="opacity-0" class:activeFadeUp={active >= 0}>
-        <p>I know you are busy. Let me come straight to the point.</p>
-        <p class="mt-20">
-          I grew up in Southern Germany and successfully completed my Bachelor's
-          degree in Print and Media Technology – Digital Publishing at the
-          Stuttgart Media University. Two wonderful years I lived, studied and
-          worked in Amsterdam. I like to create user-driven products and
-          applications with fancy machines and special tools. Currently, I am
-          doing a PreMaster Program at the Bosch Engineering GmbH in the
-          IoT-Cloud area and create data visualizations.
-        </p>
-        <p class="mt-20">
-          You can
-          <span class="font-weight-medium">contact me</span>
-          <a href="mailto:andreas.riedel95@gmail.com" class="link">here</a>
-          or
-          <span class="font-weight-medium">ping me</span>
-          on
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/andreas-riedel-470206186/"
-            class="link">LinkedIn</a>.
-        </p>
-        <p class="mt-20">
-          That's basically it. But if you’re still curious, keep scrolling.
-        </p>
-      </div>
-    </div>
-    <SlideScroller {scrollEvent} slideIdentifier="skill" />
-    <div
-      class="pt-200 pb-150 mb-150 position-relative"
-      style="background-color: #fff">
-      <img class="award-img" src="/svg/award.svg" alt="award" width="110" />
-      <div
-        class="award-grid mb-100"
-        data-index="1"
-        bind:this={intersectWrappers[1]}>
-        <img
-          src="https://ik.imagekit.io/andreasriedel/award_winning_qrMgxUUhtCnv.JPG"
-          alt="award winning"
-          style="width: 100%; opacity: 0"
-          class:activeFadeUpDelay300={active >= 1} />
-        <div
-          class="award-grid__text-wrapper opacity-0"
-          class:activeFadeUpDelay300={active >= 1}>
-          <div class="headline2 headline2--thin mb-30" id="award">
-            Best graduate of the Faculty of Printing and Media Technology 2019
-          </div>
-          <div>
-            I successfully graduated in my Bachelor's degree in Print and Media
-            Technology – Digital Publishing. Here, I've been awarded by the
-            Print and Media Association of the State of Baden-Württemberg e.V.
-            (dpmi) for being the best graduate student in my faculty.
-          </div>
-        </div>
-      </div>
-    </div>
-    <SlideScroller {scrollEvent} slideIdentifier="about" />
-    <div
-      class="contact-wrapper color-white display-grid grid-template-columns-responsive-400">
-      <a
-        href="mailto:andreas.riedel95@gmail.com"
-        class="link-profile pt-100 pb-100  pr-20 pl-20 headline1 display-flex justify-content-center align-items-center">Hit
-        me up!</a>
-      <a
-        target="_blank"
-        href="https://github.com/AndreasRiedel95"
-        class="link-profile pt-100 pb-100 pr-20 pl-20  headline1 display-flex justify-content-center align-items-center">Check
-        out on GitHub!</a>
-    </div>
-    <Footer />
-  </div>
-</main>

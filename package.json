@@ -6,7 +6,7 @@
     "dev": "rollup -c -w",
     "server": "node server.js",
     "serve-dev": "run-p server dev",
-    "serve-prod": "npm-run-all build-app server",
+    "serve-prod": "npm-run-all -s server build-app",
     "start": "sirv public --host 0.0.0.0 --single"
   },
   "devDependencies": {

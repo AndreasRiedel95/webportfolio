@@ -111,7 +111,7 @@
           <a
             target="_blank"
             class="link"
-            href="https://ik.imagekit.io/andreasriedel/CV_eng_2020_pc0g9Q8zb.pdf"
+            href="https://ik.imagekit.io/andreasriedel/Riedel_Andreas_CV_2020_O4z1aFEkZvRS.pdf"
             download>my resume</a
           >.
         </p>

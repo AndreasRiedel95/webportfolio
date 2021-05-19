@@ -15,7 +15,10 @@
   const maskTransition = (ctx, next) => {
     destroyMask = false;
     //Init Load
-    if (Object.keys($lastActiveRoute).length === 0 && $lastActiveRoute.constructor === Object) {
+    if (
+      Object.keys($lastActiveRoute).length === 0 &&
+      $lastActiveRoute.constructor === Object
+    ) {
       mask = 1;
       animate = true;
       displayNewSiteTime = 2200;
@@ -47,6 +50,25 @@
     }, transitionLength);
   };
 </script>
+
+{#if !destroyMask}
+  <Masks {mask} {animate} />
+{/if}
+<Router>
+  <Route path="/" component={Home} middleware={[maskTransition]} />
+  <Route path="/profile" component={Profile} middleware={[maskTransition]} />
+  <Route
+    path="/projects/:projectId"
+    component={ProjectWrapper}
+    middleware={[maskTransition]}
+  />
+  <Route
+    path="/impressum"
+    component={Impressum}
+    middleware={[maskTransition]}
+  />
+  <NotFound />
+</Router>
 
 <style lang="scss" global>
   @use './scss/typography';
@@ -95,14 +117,3 @@
     background-color: transparent;
   }
 </style>
-
-{#if !destroyMask}
-  <Masks {mask} {animate} />
-{/if}
-<Router>
-  <Route path="/" component={Home} middleware={[maskTransition]} />
-  <Route path="/profile" component={Profile} middleware={[maskTransition]} />
-  <Route path="/projects/:projectId" component={ProjectWrapper} middleware={[maskTransition]} />
-  <Route path="/impressum" component={Impressum} middleware={[maskTransition]} />
-  <NotFound />
-</Router>

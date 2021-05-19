@@ -1,21 +1,21 @@
 <script>
-  import { onMount } from "svelte";
-  import { isDragging } from "util/store.js";
-  import { normalizeWheel } from "util/normalizeWheel.js";
-  import Navigation from "components/layout/Navigation.svelte";
-  import imagesLoaded from "imagesloaded";
-  import Slide from "components/containers/Slide.svelte";
-  import { filterClick } from "util/store.js";
-  import { math } from "util/helpers.js";
+  import { onMount } from 'svelte';
+  import { isDragging } from 'util/store.js';
+  import { normalizeWheel } from 'util/normalizeWheel.js';
+  import Navigation from 'components/layout/Navigation.svelte';
+  import imagesLoaded from 'imagesloaded';
+  import Slide from 'components/containers/Slide.svelte';
+  import { filterClick } from 'util/store.js';
+  import { math } from 'util/helpers.js';
   let isTouch = false;
 
   onMount(() => {
     (() => {
       window.addEventListener(
-        "touchstart",
+        'touchstart',
         function onFirstTouch() {
           isTouch = true;
-          window.removeEventListener("touchstart", onFirstTouch, false);
+          window.removeEventListener('touchstart', onFirstTouch, false);
         },
         false
       );
@@ -26,96 +26,96 @@
     {
       id: 0,
       uuid: Date.now(),
-      title: "Rijksmuseum",
-      type: "Prototyping",
-      filter: "digital",
-      subTitle: "University",
+      title: 'Rijksmuseum',
+      type: 'Prototyping',
+      filter: 'digital',
+      subTitle: 'University',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/rijksmuseum_hero_pwbx7z66hpfB.jpg",
-      url: "/projects/rijksmuseum",
+        'https://ik.imagekit.io/andreasriedel/rijksmuseum_hero_pwbx7z66hpfB.jpg',
+      url: '/projects/rijksmuseum',
       award: false,
     },
     {
       id: 1,
       uuid: Date.now(),
-      title: "eLearning </br> Platform",
-      type: "Conception & Development",
-      filter: "digital",
-      subTitle: "University - Bachelorthesis",
+      title: 'eLearning </br> Platform',
+      type: 'Conception & Development',
+      filter: 'digital',
+      subTitle: 'University - Bachelorthesis',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/learnplatform_hero_K54PmTBtfmp0X.jpg",
-      url: "/projects/learnplattform",
+        'https://ik.imagekit.io/andreasriedel/learnplatform_hero_K54PmTBtfmp0X.jpg',
+      url: '/projects/learnplattform',
       award: true,
     },
     {
       id: 2,
       uuid: Date.now(),
-      title: "Human </br> Projection",
-      type: "Conception & Photography",
-      filter: "multimedia",
-      subTitle: "University",
+      title: 'Human </br> Projection',
+      type: 'Conception & Photography',
+      filter: 'multimedia',
+      subTitle: 'University',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/projection_main_xo4imChmsDlT.jpg",
-      url: "projects/human-projection",
+        'https://ik.imagekit.io/andreasriedel/projection_main_xo4imChmsDlT.jpg',
+      url: 'projects/human-projection',
       award: false,
     },
     {
       id: 2,
       uuid: Date.now(),
-      title: "Digital InCar",
-      type: "Conception & Development",
-      filter: "digital",
-      subTitle: "University",
+      title: 'Digital InCar',
+      type: 'Conception & Development',
+      filter: 'digital',
+      subTitle: 'University',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg",
-      url: "projects/digital-incar",
+        'https://ik.imagekit.io/andreasriedel/manincar_hero_EYhguum9jzip1.jpg',
+      url: 'projects/digital-incar',
       award: false,
     },
     {
       id: 3,
       uuid: Date.now(),
-      title: "ecographis",
-      filter: "digital",
-      type: "Website Development",
-      subTitle: "Work",
+      title: 'ecographis',
+      filter: 'digital',
+      type: 'Website Development',
+      subTitle: 'Work',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg",
-      url: "projects/ecographis",
+        'https://ik.imagekit.io/andreasriedel/ecographis_hero_dR0C2elHNW3r.jpg',
+      url: 'projects/ecographis',
       award: false,
     },
     {
       id: 4,
       uuid: Date.now(),
-      title: "mueslibar",
-      type: "Conception / Magazine",
-      filter: "print",
-      subTitle: "University",
+      title: 'mueslibar',
+      type: 'Conception / Magazine',
+      filter: 'print',
+      subTitle: 'University',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg",
-      url: "projects/mueslibar",
+        'https://ik.imagekit.io/andreasriedel/mueslibar_hero_2_xyM2sGqqMRRRb.jpg',
+      url: 'projects/mueslibar',
       award: false,
     },
     {
       id: 5,
       uuid: Date.now(),
-      title: "Turn- </br> Over-App",
-      type: "iOS App Development",
-      filter: "digital",
-      subTitle: "University",
-      imgSrc: "https://ik.imagekit.io/andreasriedel/toa_hero_qW8mBf8xWIA3.jpg",
-      url: "/projects/turnOverApp",
+      title: 'Turn- </br> Over-App',
+      type: 'iOS App Development',
+      filter: 'digital',
+      subTitle: 'University',
+      imgSrc: 'https://ik.imagekit.io/andreasriedel/toa_hero_qW8mBf8xWIA3.jpg',
+      url: '/projects/turnOverApp',
       award: false,
     },
     {
       id: 6,
       uuid: Date.now(),
-      title: "Poster </br> Gallery",
-      type: "Design",
-      filter: "print",
-      subTitle: "Hobby",
+      title: 'Poster </br> Gallery',
+      type: 'Design',
+      filter: 'print',
+      subTitle: 'Hobby',
       imgSrc:
-        "https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg",
-      url: "/projects/postergallery",
+        'https://ik.imagekit.io/andreasriedel/poster_gallery_hero_2_eTyP5sKdz17ho.jpg',
+      url: '/projects/postergallery',
       award: false,
     },
   ];
@@ -175,7 +175,7 @@
       slideArrays = [[], []];
       const filter = e.detail.filter;
       let temps = slideTemplates.reduce((accu, curr) => {
-        if (curr.filter === filter || filter === "all") {
+        if (curr.filter === filter || filter === 'all') {
           curr.uuid = Date.now();
           accu.push(curr);
         }
@@ -195,11 +195,11 @@
   };
 
   const getSlideAlignment = (i) => {
-    let alignment = "flex-start";
+    let alignment = 'flex-start';
     if (i % 2 === 0) {
-      alignment = "center";
+      alignment = 'center';
     } else if (i % 3 === 0) {
-      alignment = "flex-end";
+      alignment = 'flex-end';
     }
 
     return alignment;
@@ -341,7 +341,7 @@
     let w = 0;
     elems.forEach((el, index) => {
       bounds = el.getBoundingClientRect();
-      el.style.position = "absolute";
+      el.style.position = 'absolute';
       el.style.top = 0;
       el.style.left = `${w}px`;
       w = w + bounds.width;
@@ -358,6 +358,99 @@
     data.current = Math.min(Math.max(data.current, 0), bounds.max);
   };
 </script>
+
+<svelte:window
+  bind:innerHeight={windowHeight}
+  bind:innerWidth={windowWidth}
+  on:resize={resize}
+  on:wheel|passive:true={(e) => handleScroll(e)}
+  on:keydown={(e) => handleKeyDown(e)}
+  on:mousemove|passive:true={(e) => handleMouseMove(e)}
+  on:touchstart|passive:true={(e) => handleTouchDown(e)}
+  on:touchmove|passive:true={(e) => handleTouchMove(e)}
+  on:touchend|passive:true={(e) => handleTouchUp(e)}
+  on:mousedown|passive:true={(e) => handleMouseDown(e)}
+  on:mouseup|passive:true={(e) => handleMouseUp(e)}
+/>
+<div class="main" bind:this={main} style="--vh: {windowHeight * 0.01}px">
+  <div class="scroll" bind:this={scrollEle}>
+    <Navigation on:handleItemClick={(e) => filterTemplates(e)} />
+    {#if !filtering}
+      <div
+        class="scroll-content"
+        bind:this={scrollContent[0]}
+        style="transform: translate3d(-{data.last.one.toFixed(
+          2
+        )}px, 0, 0) scaleY({bounce}) skewX({skew}deg); width: {scrollContentWidth}px"
+      >
+        {#each filteredTemplates as template, i}
+          <Slide
+            on:slideCreate={(e) => handleSlideCreate(e)}
+            imageSlide={true}
+            alignment={getSlideAlignment(i + 1)}
+            projectNr={i + 1}
+            {...template}
+          />
+        {/each}
+      </div>
+      <div
+        class="scroll-content scroll-content--last"
+        bind:this={scrollContent[1]}
+        style="transform: translate3d(-{data.last.two.toFixed(
+          2
+        )}px, 0, 0) scaleY({bounce}); width: {scrollContentWidth}px"
+      >
+        {#each filteredTemplates as template, i}
+          <Slide
+            on:slideCreate={(e) => handleSlideCreate(e)}
+            {...template}
+            alignment={getSlideAlignment(i + 1)}
+            projectNr={i + 1}
+          />
+        {/each}
+      </div>
+    {/if}
+    <div
+      class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center"
+    >
+      {#if !isTouch}
+        <div class="scroll-indicator-wrapper">
+          <div class="scroll-indicator">
+            <div
+              class="scroll-indicator-mask"
+              style="--translate: {-100 + scale * 100}%"
+            >
+              <span style="--translate: {100 - scale * 100}%"
+                >SCROLL &#8645; or DRAG &#8646;</span
+              >
+            </div>
+            SCROLL &#8645; or DRAG &#8646;
+          </div>
+        </div>
+      {/if}
+      <div
+        class="scrollbar__handle mt-10"
+        style="transform: scaleX({scale})"
+        bind:this={scrollHandle}
+      />
+      <div
+        class="display-flex width-100 justify-content-space-between"
+        style="margin-top: 5px"
+      >
+        <div class="email-linkedin-wrapper">
+          <a href="mailto:andreas.riedel95@gmail.com">Email</a>,&nbsp;
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/andreas-riedel-470206186/"
+          >
+            LinkedIn</a
+          >
+        </div>
+        <a class="impressum" href="/impressum">Impressum</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style lang="scss">
   figure {
@@ -378,8 +471,8 @@
     );
     &:after {
       animation: grain 8s steps(10) infinite;
-      background-image: url("/images/noise.png");
-      content: "";
+      background-image: url('/images/noise.png');
+      content: '';
       pointer-events: none;
       height: 300%;
       left: -50%;
@@ -531,80 +624,3 @@
     }
   }
 </style>
-
-<svelte:window
-  bind:innerHeight={windowHeight}
-  bind:innerWidth={windowWidth}
-  on:resize={resize}
-  on:wheel|passive:true={(e) => handleScroll(e)}
-  on:keydown={(e) => handleKeyDown(e)}
-  on:mousemove|passive:true={(e) => handleMouseMove(e)}
-  on:touchstart|passive:true={(e) => handleTouchDown(e)}
-  on:touchmove|passive:true={(e) => handleTouchMove(e)}
-  on:touchend|passive:true={(e) => handleTouchUp(e)}
-  on:mousedown|passive:true={(e) => handleMouseDown(e)}
-  on:mouseup|passive:true={(e) => handleMouseUp(e)} />
-<div class="main" bind:this={main} style="--vh: {windowHeight * 0.01}px">
-  <div class="scroll" bind:this={scrollEle}>
-    <Navigation on:handleItemClick={(e) => filterTemplates(e)} />
-    {#if !filtering}
-      <div
-        class="scroll-content"
-        bind:this={scrollContent[0]}
-        style="transform: translate3d(-{data.last.one.toFixed(2)}px, 0, 0) scaleY({bounce}) skewX({skew}deg); width: {scrollContentWidth}px">
-        {#each filteredTemplates as template, i}
-          <Slide
-            on:slideCreate={(e) => handleSlideCreate(e)}
-            imageSlide={true}
-            alignment={getSlideAlignment(i + 1)}
-            projectNr={i + 1}
-            {...template} />
-        {/each}
-      </div>
-      <div
-        class="scroll-content scroll-content--last"
-        bind:this={scrollContent[1]}
-        style="transform: translate3d(-{data.last.two.toFixed(2)}px, 0, 0) scaleY({bounce}); width: {scrollContentWidth}px">
-        {#each filteredTemplates as template, i}
-          <Slide
-            on:slideCreate={(e) => handleSlideCreate(e)}
-            {...template}
-            alignment={getSlideAlignment(i + 1)}
-            projectNr={i + 1} />
-        {/each}
-      </div>
-    {/if}
-    <div
-      class="scrollbar display-flex flex-direction-column width-100 justify-content-center align-items-center">
-      {#if !isTouch}
-        <div class="scroll-indicator-wrapper">
-          <div class="scroll-indicator">
-            <div
-              class="scroll-indicator-mask"
-              style="--translate: {-100 + scale * 100}%">
-              <span style="--translate: {100 - scale * 100}%">SCROLL &#8645; or
-                DRAG &#8646;</span>
-            </div>
-            SCROLL &#8645; or DRAG &#8646;
-          </div>
-        </div>
-      {/if}
-      <div
-        class="scrollbar__handle mt-10"
-        style="transform: scaleX({scale})"
-        bind:this={scrollHandle} />
-      <div
-        class="display-flex width-100 justify-content-space-between"
-        style="margin-top: 5px">
-        <div class="email-linkedin-wrapper">
-          <a href="mailto:andreas.riedel95@gmail.com">Email</a>,&nbsp;
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/andreas-riedel-470206186/">
-            LinkedIn</a>
-        </div>
-        <a class="impressum" href="/impressum">Impressum</a>
-      </div>
-    </div>
-  </div>
-</div>

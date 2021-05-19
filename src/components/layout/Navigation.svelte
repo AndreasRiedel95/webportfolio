@@ -1,19 +1,50 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher();
   let isActive = 0;
   const linkItems = [
-    { title: "All projects", filter: "all" },
-    { title: "Digital", filter: "digital" },
-    { title: "Print", filter: "print" },
-    { title: "Multimedia", filter: "multimedia" },
+    { title: 'All projects', filter: 'all' },
+    { title: 'Digital', filter: 'digital' },
+    { title: 'Print', filter: 'print' },
+    { title: 'Multimedia', filter: 'multimedia' },
   ];
 
   const handleItemClick = (item, i) => {
     isActive = i;
-    dispatch("handleItemClick", { filter: item.filter });
+    dispatch('handleItemClick', { filter: item.filter });
   };
 </script>
+
+<nav>
+  <div class="filter__item">
+    <a class="filter__link logo" href="/profile">
+      <img style="width: 40px" src="/svg/logo.svg" alt="Andreas Riedel logo" />
+    </a>
+  </div>
+  <div class="filter">
+    <ul class="filter__list">
+      {#each linkItems as item, i}
+        <li class="filter__item">
+          <a
+            href=""
+            class="filter__link"
+            on:click={() => handleItemClick(item, i)}
+            class:is-active={i === isActive}
+          >
+            <div class="filter__link-mask"><span>{item.title}</span></div>
+            {item.title}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+  <div class="filter__item">
+    <a class="filter__link" href="/profile">
+      <div class="filter__link-mask"><span>PROFILE</span></div>
+      PROFILE
+    </a>
+  </div>
+</nav>
 
 <style lang="scss">
   nav {
@@ -31,7 +62,7 @@
   }
 
   .logo {
-    font-family: "Domine";
+    font-family: 'Domine';
   }
 
   .filter {
@@ -100,34 +131,3 @@
     }
   }
 </style>
-
-<nav>
-  <div class="filter__item">
-    <a class="filter__link logo" href="/profile">
-      <div class="filter__link-mask"><span>Andreas Riedel</span></div>
-      Andreas Riedel
-    </a>
-  </div>
-  <div class="filter">
-    <ul class="filter__list">
-      {#each linkItems as item, i}
-        <li class="filter__item">
-          <a
-            href="#0"
-            class="filter__link"
-            on:click={() => handleItemClick(item, i)}
-            class:is-active={i === isActive}>
-            <div class="filter__link-mask"><span>{item.title}</span></div>
-            {item.title}
-          </a>
-        </li>
-      {/each}
-    </ul>
-  </div>
-  <div class="filter__item">
-    <a class="filter__link" href="/profile">
-      <div class="filter__link-mask"><span>PROFILE</span></div>
-      PROFILE
-    </a>
-  </div>
-</nav>

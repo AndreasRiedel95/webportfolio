@@ -118,7 +118,9 @@
   const getBoundings = () => {
     inScroll = false;
     maxBound = innerWrapper.scrollWidth;
-    vw > 1100 ? (wrapperHeight = maxBound - vw * 0.3) : (wrapperHeight = maxBound + vw);
+    vw > 1100
+      ? (wrapperHeight = maxBound - vw * 0.4)
+      : (wrapperHeight = maxBound + vw);
   };
 
   const calculateScroll = (e) => {
@@ -134,6 +136,32 @@
     }
   };
 </script>
+
+<svelte:window bind:innerWidth={vw} bind:innerHeight={vh} />
+<div
+  class="outer-wrapper"
+  bind:this={wrapper}
+  style="--height: {wrapperHeight}px"
+>
+  <div class="wrapper" bind:this={innerWrapper} style="--vh: {vh * 0.01}px">
+    <div
+      class="wrapper-100h display-flex width-100 position-relative display-flex align-items-center"
+      style="--vh: {vh * 0.01}px"
+    >
+      <div
+        class="wrapper__inner"
+        style="transform: translate3d(-{actualScroll}px, 0,0)"
+      >
+        {#each templates[slideIdentifier].slides.templates as template}
+          <div class="divider-padding" />
+          {@html template}
+        {/each}
+        <div class="divider-padding" />
+      </div>
+      <div class="intersector" bind:this={intersector[0]} />
+    </div>
+  </div>
+</div>
 
 <style lang="scss">
   :global {
@@ -209,21 +237,3 @@
     height: calc(var(--vh, 1vh) * 100);
   }
 </style>
-
-<svelte:window bind:innerWidth={vw} bind:innerHeight={vh} />
-<div class="outer-wrapper" bind:this={wrapper} style="--height: {wrapperHeight}px">
-  <div class="wrapper" bind:this={innerWrapper} style="--vh: {vh * 0.01}px">
-    <div
-      class="wrapper-100h display-flex width-100 position-relative display-flex align-items-center"
-      style="--vh: {vh * 0.01}px">
-      <div class="wrapper__inner" style="transform: translate3d(-{actualScroll}px, 0,0)">
-        {#each templates[slideIdentifier].slides.templates as template}
-          <div class="divider-padding" />
-          {@html template}
-        {/each}
-        <div class="divider-padding" />
-      </div>
-      <div class="intersector" bind:this={intersector[0]} />
-    </div>
-  </div>
-</div>

@@ -1,10 +1,10 @@
 <script>
-  import CloseButton from "components/atoms/CloseButton.svelte";
-  import { fly } from "svelte/transition";
-  import { expoOut } from "svelte/easing";
-  import { onMount } from "svelte";
-  import Footer from "components/layout/Footer.svelte";
-  import SlideScroller from "../containers/SlideScroller.svelte";
+  import CloseButton from 'components/atoms/CloseButton.svelte';
+  import { fly } from 'svelte/transition';
+  import { expoOut } from 'svelte/easing';
+  import { onMount } from 'svelte';
+  import Footer from 'components/layout/Footer.svelte';
+  import SlideScroller from '../containers/SlideScroller.svelte';
 
   let intersectWrappers = [];
   let active;
@@ -41,6 +41,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Andreas Riedel | Profile</title>
+</svelte:head>
+
 <main on:scroll={(e) => (scrollEvent = e)}>
   <div class="header">
     <CloseButton link="/" />
@@ -56,7 +60,9 @@
             easing: expoOut,
           }}
           style="font-weight: 500"
-        >Hi, I'm Andi!</div>
+        >
+          Hi, I'm Andi!
+        </div>
         <div
           in:fly={{
             y: 80,
@@ -65,7 +71,9 @@
             easing: expoOut,
           }}
           style="color: #8d8f9a"
-        >Creative Front-end Developer based in Stuttgart.</div>
+        >
+          Creative Front-end Developer based in Stuttgart.
+        </div>
       </div>
       <div class="header-img-wrapper">
         <img
@@ -84,7 +92,9 @@
       <div
         class="headline1 max-width-400 font-weight-bold opacity-0"
         class:activeFadeUp={active >= 0}
-      >The whole is more than the sum of its parts.</div>
+      >
+        The whole is more than the sum of its parts.
+      </div>
       <div class="opacity-0" class:activeFadeUp={active >= 0}>
         <p>I know you are busy. Let me come straight to the point.</p>
         <p class="mt-20">

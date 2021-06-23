@@ -1,32 +1,18 @@
 <script>
-  import CloseButton from "components/atoms/CloseButton.svelte";
+  import CloseButton from 'components/atoms/CloseButton.svelte';
 </script>
 
-<style>
-  .main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    scroll-behavior: smooth;
-  }
-
-  .close {
-    position: fixed;
-    right: 70px;
-    top: 20px;
-  }
-</style>
+<svelte:head>
+  <title>Andreas Riedel | Imprint</title>
+</svelte:head>
 
 <div class="main mb-100">
   <div class="close">
     <CloseButton link="/" />
   </div>
   <div
-    class="max-width-800 width-100 margin-left-auto margin-right-auto pl-50 pr-50 pt-100 pb-100 color-white">
+    class="max-width-800 width-100 margin-left-auto margin-right-auto pl-50 pr-50 pt-100 pb-100 color-white"
+  >
     <h1 class="headline1 mb-40">Impressum</h1>
 
     <h2 class="headline2 mb-20">Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
@@ -97,9 +83,28 @@
 
     <p class="mb-30">
       Quelle:
-      <a
-        style="color: #fff"
-        href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+      <a style="color: #fff" href="https://www.e-recht24.de"
+        >https://www.e-recht24.de</a
+      >
     </p>
   </div>
 </div>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
+  .close {
+    position: fixed;
+    right: 70px;
+    top: 20px;
+  }
+</style>

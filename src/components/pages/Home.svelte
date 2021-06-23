@@ -372,6 +372,10 @@
   on:mousedown|passive:true={(e) => handleMouseDown(e)}
   on:mouseup|passive:true={(e) => handleMouseUp(e)}
 />
+
+<svelte:head>
+  <title>Andreas Riedel | Frontend Developer</title>
+</svelte:head>
 <div class="main" bind:this={main} style="--vh: {windowHeight * 0.01}px">
   <div class="scroll" bind:this={scrollEle}>
     <Navigation on:handleItemClick={(e) => filterTemplates(e)} />
@@ -446,7 +450,7 @@
             LinkedIn</a
           >
         </div>
-        <a class="impressum" href="/impressum">Impressum</a>
+        <a class="impressum" href="/impressum">Imprint</a>
       </div>
     </div>
   </div>
